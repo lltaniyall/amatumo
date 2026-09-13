@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+  --bg:#17141a;
+  --surface:#211c25;
+  --surface2:#29222d;
+  --text:#eee7df;
+  --muted:#b9adb5;
+  --main:#645771;
+  --accent:#A95D84;
+  --cream:#d8c8b7;
+  --line:rgba(216,200,183,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--text);background:
+  radial-gradient(circle at 82% 8%,rgba(100,87,113,.24),transparent 30%),
+  linear-gradient(180deg,#17141a,#1a161c 50%,#151217);
+  font-family:"Noto Serif JP","Shippori Mincho",serif;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.055;
+  background-image:
+    linear-gradient(30deg,transparent 24%,var(--cream) 25%,var(--cream) 26%,transparent 27%,transparent 74%,var(--cream) 75%,var(--cream) 76%,transparent 77%),
+    linear-gradient(150deg,transparent 24%,var(--cream) 25%,var(--cream) 26%,transparent 27%,transparent 74%,var(--cream) 75%,var(--cream) 76%,transparent 77%);
+  background-size:54px 94px;
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+header{
+  height:72px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;
+  background:rgba(23,20,26,.9);backdrop-filter:blur(14px)
+}
+.logo{font:600 1.05rem "Playfair Display",serif;letter-spacing:.18em}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:1.5rem}
+nav a{font:600 .68rem "Playfair Display",serif;letter-spacing:.13em;color:var(--muted)}
+nav a:hover{color:var(--cream)}
+
+.hero{padding:10vw 9vw 8vw;min-height:62vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero::after{
+  content:"";position:absolute;right:7vw;top:12%;width:min(28vw,360px);aspect-ratio:1;opacity:.13;
+  background:
+    linear-gradient(30deg,transparent 24%,var(--cream) 25%,var(--cream) 27%,transparent 28%,transparent 72%,var(--cream) 73%,var(--cream) 75%,transparent 76%),
+    linear-gradient(150deg,transparent 24%,var(--cream) 25%,var(--cream) 27%,transparent 28%,transparent 72%,var(--cream) 73%,var(--cream) 75%,transparent 76%);
+  background-size:48px 84px;border:1px solid var(--line);transform:rotate(45deg)
+}
+.eyebrow{color:var(--accent);font:600 .68rem "Playfair Display",serif;letter-spacing:.22em}
+.hero h1{font:600 clamp(3.4rem,9vw,8rem)/.92 "Shippori Mincho",serif;letter-spacing:.04em;margin:1rem 0 1.7rem;position:relative;z-index:1}
+.hero h1 em{font-style:normal;color:var(--cream);font-family:"Playfair Display",serif;letter-spacing:.02em}
+.hero p{color:var(--muted);line-height:2.1;max-width:700px;position:relative;z-index:1}
+
+.section{padding:7vw 9vw;border-top:1px solid var(--line);position:relative}
+.section h2{font:600 clamp(2rem,4vw,3.8rem) "Shippori Mincho",serif;letter-spacing:.03em;margin:.5rem 0 2rem}
+.section:nth-of-type(even)::before{
+  content:"";position:absolute;left:0;top:0;width:100%;height:6px;opacity:.35;
+  background:repeating-linear-gradient(90deg,var(--main) 0 28px,var(--accent) 28px 31px,transparent 31px 48px)
+}
+.heroActions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem;position:relative;z-index:2}
+.primaryButton,.ghostButton{
+  display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.2rem;
+  border:1px solid var(--line);font:600 .72rem "Noto Serif JP",serif;letter-spacing:.08em
+}
+.primaryButton{background:var(--main);border-color:var(--main)}
+.ghostButton{background:rgba(255,255,255,.02)}
+.primaryButton:hover,.ghostButton:hover{border-color:var(--accent);background:var(--accent)}
+
+.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2rem}
+.sectionHead h2{margin-bottom:0}
+.textLink,.backlink{color:var(--muted);font:600 .68rem "Playfair Display",serif;letter-spacing:.12em}
+.backlink{display:inline-block;margin-bottom:2rem}
+.textLink:hover,.backlink:hover{color:var(--accent)}
+
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+#archiveCards{grid-template-columns:1fr}
+.card{
+  display:block;border:1px solid var(--line);background:linear-gradient(135deg,rgba(100,87,113,.12),rgba(169,93,132,.035));
+  padding:2rem;min-height:185px;position:relative;overflow:hidden
+}
+.card::after{content:"";position:absolute;right:-24px;bottom:-24px;width:92px;height:92px;border:1px solid rgba(169,93,132,.28);transform:rotate(45deg)}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);transition:.18s}
+.card-date{color:var(--accent);font:600 .72rem "Playfair Display",serif;letter-spacing:.13em}
+.card h3{font-size:1.35rem;margin:1rem 0}
+.card-meta,.muted{color:var(--muted);font-size:.78rem}
+
+.latestList,.rankingTable,.historyList,.artistSongList,.songTableWrap{border-top:1px solid var(--line)}
+.latestRow{display:grid;grid-template-columns:70px 135px 1fr 28px;gap:1rem;align-items:center;padding:1.25rem .6rem;border-bottom:1px solid var(--line)}
+.latestRow:hover,.rankingRow:hover,.historyCard:hover,.artistSongCard:hover{background:rgba(169,93,132,.075)}
+.latestNumber,.rankNumber{color:var(--main);font:600 .8rem "Playfair Display",serif}
+.latestDate{color:var(--accent);font:600 .72rem "Playfair Display",serif;letter-spacing:.06em}
+.latestArrow,.songArrow,.artistSongArrow{color:var(--accent)}
+
+.rankingHead,.rankingRow{display:grid;grid-template-columns:80px minmax(0,1.4fr) minmax(0,1fr) 90px;gap:1rem;align-items:center}
+.rankingHead{padding:.85rem .6rem;border-bottom:1px solid var(--line);color:var(--muted);font:600 .62rem "Playfair Display",serif;letter-spacing:.1em}
+.rankingHead span:last-child,.rankingCount{text-align:right}
+.rankingRow{padding:1.1rem .6rem;border-bottom:1px solid var(--line)}
+.rankingSong{font-weight:600}.rankingArtist{color:var(--muted);font-size:.9rem}
+.rankingSong span,.rankingArtist span,.rankingCount{color:var(--accent)}
+.rankingSong:hover,.rankingArtist:hover{color:var(--cream)}
+
+.socialGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.socialGrid>.socialCard:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - .5rem);justify-self:center}
+.socialCard{
+  min-height:145px;padding:1.5rem;border:1px solid var(--line);background:rgba(100,87,113,.09);
+  display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto 1fr;gap:.6rem 1rem
+}
+.socialCard:hover{border-color:var(--accent)}
+.socialIndex{color:var(--main);font:600 .65rem "Playfair Display",serif}
+.socialCard strong{font:600 clamp(1.3rem,3vw,2.2rem) "Playfair Display",serif}
+.socialCard small{grid-column:2;color:var(--muted);font:600 .62rem "Playfair Display",serif;letter-spacing:.1em}
+.socialArrow{grid-column:3;grid-row:1/span 2;align-self:center;color:var(--accent)}
+.socialCardDisabled{opacity:.5}.socialNote{color:var(--muted);font-size:.75rem}
+
+.toolbar{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:3rem}
+.search span{display:block;color:var(--accent);font-size:.7rem;letter-spacing:.15em;margin-bottom:.7rem}
+.search input{width:100%;background:transparent;color:var(--text);border:0;border-bottom:1px solid var(--line);padding:.9rem 0;font-size:1.15rem;outline:0}
+.search input:focus{border-color:var(--accent)}
+.stats{display:flex;align-items:baseline;gap:.6rem}.stats strong{font:600 2.1rem "Playfair Display";color:var(--accent)}.stats span{color:var(--muted);font-size:.65rem}
+
+.songTableHead,.songDbRow{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 120px;align-items:center;border-bottom:1px solid var(--line)}
+.sortBtn{padding:1rem;border:0;background:transparent;color:var(--muted);text-align:left;font-weight:600;cursor:pointer}
+.sortBtn:hover,.sortBtn.active{color:var(--cream)}.countHead,.songCount{text-align:right}
+.songTitleLink,.songArtist,.songCount{padding:1.1rem 1rem}.songTitleLink{display:flex;justify-content:space-between;gap:1rem;font-weight:600}
+.songArtist,.songCount{color:var(--muted)}.songTitleLink:hover,.artistLink:hover{color:var(--accent)}
+.artistLink{display:flex;justify-content:space-between;gap:1rem}
+
+.playerHead{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2rem}
+.playerHead h2,#archiveTitle{margin:.5rem 0;font:600 clamp(1.8rem,3vw,2.8rem) "Shippori Mincho",serif;line-height:1.3;letter-spacing:.02em}
+.share{background:var(--main);color:#fff;border:1px solid var(--main);padding:.95rem 1.2rem;font-weight:600;cursor:pointer}.share:hover{background:var(--accent);border-color:var(--accent)}
+.playerLayout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(280px,.8fr);gap:1rem}
+.video{aspect-ratio:16/9;background:#000}.video iframe,#player{width:100%;height:100%}
+.setlist{background:var(--surface);border:1px solid var(--line);overflow:auto}
+.setlistHead{display:flex;justify-content:space-between;padding:1rem;border-bottom:1px solid var(--line);color:var(--accent);font-size:.68rem;letter-spacing:.1em}
+.track{width:100%;display:grid;grid-template-columns:65px 1fr;padding:1rem;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--muted);text-align:left;cursor:pointer}
+.track:hover,.track.active{background:rgba(169,93,132,.08);color:var(--text)}
+.time{color:var(--accent);font:600 .7rem "Playfair Display",serif}.trackArtist{color:var(--muted);font-size:.82em}
+
+.historyHero{padding-top:6vw}.historyTitle{font:600 clamp(2.7rem,7vw,6rem)/1 "Shippori Mincho",serif;margin:1rem 0 2rem}
+.historyMeta{display:flex;gap:3rem;flex-wrap:wrap}.historyMeta div{display:flex;flex-direction:column;gap:.45rem}.historyMeta span{color:var(--accent);font-size:.65rem;letter-spacing:.12em}.historyMeta i{font-style:normal;color:var(--accent)}
+.historyCard{display:grid;grid-template-columns:150px 1fr 110px;gap:1rem;align-items:center;padding:1.2rem 1rem;border-bottom:1px solid var(--line)}
+.historyDate{color:var(--accent);font-size:.75rem}.historyArchiveTitle{font-weight:600}.historyListen{text-align:right;color:var(--muted);font-size:.68rem}
+.artistSongCard{display:grid;grid-template-columns:1fr 180px 28px;gap:1rem;align-items:center;padding:1.15rem 1rem;border-bottom:1px solid var(--line)}
+.artistSongTitle{font-weight:600}.artistSongCount{text-align:right;color:var(--muted);font-size:.7rem}
+
+.toast{position:fixed;right:24px;bottom:24px;z-index:100;max-width:min(420px,calc(100vw - 32px));padding:.95rem 1.1rem;border:1px solid var(--line);background:rgba(33,28,37,.97);box-shadow:0 14px 40px rgba(0,0,0,.34);font-size:.82rem;opacity:0;transform:translateY(14px);pointer-events:none;transition:.2s}
+.toast::before{content:"✓";margin-right:.55rem;color:var(--accent);font-weight:700}.toast.error::before{content:"!";color:var(--accent)}.toast.show{opacity:1;transform:translateY(0)}
+
+footer{padding:3rem 9vw;border-top:1px solid var(--line);display:flex;gap:1.5rem;color:var(--muted);font-size:.72rem}footer b{color:var(--cream)}
+
+@media(max-width:760px){
+  header{padding:0 5vw}nav{gap:.8rem}nav a{font-size:.58rem}
+  .hero{padding:20vw 7vw 14vw}.hero h1{font-size:15vw}.hero::after{opacity:.07;width:55vw}
+  .section{padding:14vw 6vw}.cards{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}.stats{display:none}
+  .heroActions{flex-direction:column}.sectionHead{align-items:start;flex-direction:column;gap:.8rem}
+  .latestRow{grid-template-columns:42px 105px 1fr 20px;padding:1rem .25rem}.latestTitle{font-size:.88rem}
+  .rankingHead,.rankingRow{grid-template-columns:42px minmax(0,1fr) 68px}.rankingHead span:nth-child(3),.rankingArtist{display:none}
+  .socialGrid{grid-template-columns:1fr}.socialGrid>.socialCard:last-child:nth-child(odd){grid-column:auto;width:100%}
+  .songTableHead,.songDbRow{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 72px}.sortBtn,.songTitleLink,.songArtist,.songCount{padding:.95rem .6rem}
+  .playerHead{align-items:start;flex-direction:column}.playerLayout{grid-template-columns:1fr}#archiveTitle{font-size:clamp(1.55rem,7vw,2.15rem)}
+  .historyCard{grid-template-columns:105px 1fr}.historyListen{grid-column:2;text-align:left}
+  .artistSongCard{grid-template-columns:1fr 95px 22px;padding:.95rem .6rem}
+  .toast{right:16px;bottom:16px;left:16px;max-width:none}footer{flex-wrap:wrap}
+}

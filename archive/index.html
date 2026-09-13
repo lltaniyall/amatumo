@@ -1,0 +1,11 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ARCHIVE | 活動名</title><link rel="stylesheet" href="../style.css"></head><body>
+<header><a class="logo" href="../">NAME<span>_</span></a><nav><a href="./">ARCHIVE</a><a href="../songs/">SONGS</a></nav></header>
+<main><section class="hero"><p class="eyebrow">LIVE ARCHIVE</p><h1>ARCHIVE</h1><p>配信日ごとに歌枠をまとめています。カードをクリックすると、その日の専用プレーヤーページへ移動します。</p></section>
+<section class="section"><div id="archiveCards" class="cards"></div></section></main><footer><b>NAME</b><span>ARCHIVE</span></footer>
+<script src="../data/archives.js"></script><script>
+const root=document.getElementById("archiveCards");
+root.innerHTML=[...ARCHIVES].reverse().map(a=>{
+ const count=a.songs.filter(s=>s.type==="song").length;
+ return `<a class="card" href="./${a.date}/"><span class="card-date">${a.date.replaceAll("-",".")}</span><h3>${a.title}</h3><p class="card-meta">${count} SONGS</p></a>`;
+}).join("");
+</script></body></html>
