@@ -37,7 +37,7 @@ if(!archive){
 
 $("#dateLabel").textContent=jpArchiveDate(archive.date);
 $("#archiveTitle").textContent=archive.title;
-$("#meta").textContent=`${archive.songs.filter(s=>s.type==="song").length} SONGS`;
+$("#meta").textContent=jpDaijiCount(archive.songs.filter(s=>s.type==="song").length);
 $("#footDate").textContent=jpArchiveDate(archive.date);
 
 $("#tracks").innerHTML=archive.songs.map(s=>

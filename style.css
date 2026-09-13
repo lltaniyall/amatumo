@@ -2083,3 +2083,59 @@ button[data-share]{
     font-size:.69rem !important;
   }
 }
+
+
+/* ===== Archive detail final polish ===== */
+
+/* タイトル周辺に一覧ページと同じ小さな金線＋菱形 */
+.archiveTitle,
+.archive-detail .title,
+.archiveHeader h1{
+  position:relative;
+}
+
+.archiveTitle::after,
+.archive-detail .title::after,
+.archiveHeader h1::after{
+  content:"";
+  display:block;
+  width:132px;
+  height:10px;
+  margin-top:12px;
+  background:
+    linear-gradient(#C3A46D,#C3A46D) left center/58px 1px no-repeat,
+    linear-gradient(#C3A46D,#C3A46D) right center/58px 1px no-repeat;
+  opacity:.72;
+}
+
+/* SHARE はさらに一回りだけ小さく */
+.shareBtn,
+#shareBtn,
+button[data-share]{
+  padding:7px 12px !important;
+  font-size:.66rem !important;
+  min-height:30px !important;
+  letter-spacing:.07em !important;
+}
+
+/* 旧クラス名にも当てる */
+.share,
+.share-button,
+button.share{
+  padding:7px 12px !important;
+  font-size:.66rem !important;
+  min-height:30px !important;
+  letter-spacing:.07em !important;
+}
+
+@media (max-width:640px){
+  .shareBtn,
+  #shareBtn,
+  button[data-share],
+  .share,
+  .share-button,
+  button.share{
+    padding:7px 11px !important;
+    font-size:.64rem !important;
+  }
+}
