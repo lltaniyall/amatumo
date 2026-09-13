@@ -2543,3 +2543,89 @@ body > header{
   content:none !important;
   display:none !important;
 }
+
+
+/* =========================================================
+   SONG HISTORY — 歌唱履歴
+   ========================================================= */
+
+/* 上部の余白を圧縮 */
+.songHistoryPage .hero,
+.historyPage .hero,
+body:has(.history-list) .hero,
+body:has(#historyList) .hero{
+  min-height:0 !important;
+  padding-top:62px !important;
+  padding-bottom:50px !important;
+}
+
+/* 歌唱履歴見出し：TOPと同じ金線＋◆ */
+.historySection h2::after,
+.history-list-section h2::after{
+  content:"◆";
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:280px;
+  max-width:72%;
+  height:18px;
+  margin:14px 0 20px;
+  color:#C3A46D;
+  font-size:.7rem;
+  line-height:1;
+  background:
+    linear-gradient(90deg,transparent,rgba(195,164,109,.9)) left center/calc(50% - 14px) 1px no-repeat,
+    linear-gradient(90deg,rgba(195,164,109,.9),transparent) right center/calc(50% - 14px) 1px no-repeat;
+}
+
+/* 履歴行をアーカイブ一覧のカード表現へ */
+.history-list a,
+#historyList a,
+.historyRow{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(110deg,rgba(244,238,245,.93),rgba(232,223,234,.82)) !important;
+  border-color:rgba(116,85,123,.22) !important;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease;
+}
+
+.history-list a::after,
+#historyList a::after,
+.historyRow::after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:32%;
+  height:100%;
+  background:url("../../assets/asanoha.png") right bottom/135px auto repeat;
+  opacity:.07;
+  -webkit-mask-image:linear-gradient(110deg,transparent,#000);
+  mask-image:linear-gradient(110deg,transparent,#000);
+  pointer-events:none;
+}
+
+.history-list a:hover,
+#historyList a:hover,
+.historyRow:hover{
+  transform:translateY(-1px);
+  border-color:rgba(195,164,109,.68) !important;
+  background:rgba(244,238,245,.96) !important;
+}
+
+.historyDate,
+.history-date{
+  color:#9A6D91 !important;
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  letter-spacing:.06em;
+}
+
+@media (max-width:640px){
+  .songHistoryPage .hero,
+  .historyPage .hero,
+  body:has(.history-list) .hero,
+  body:has(#historyList) .hero{
+    padding-top:44px !important;
+    padding-bottom:38px !important;
+  }
+}

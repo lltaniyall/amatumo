@@ -3,12 +3,12 @@
 
 <main>
 <section class="section historyHero">
-  <a class="backlink" href="../">← SONG DATABASE</a>
+  <a class="backlink" href="../">← 歌の目録へ</a>
   <p class="eyebrow">PERFORMANCE HISTORY</p>
   <h1 id="songTitle" class="historyTitle">SONG</h1>
   <div class="historyMeta">
-    <div><span>ARTIST</span><strong id="artistName">-</strong></div>
-    <div><span>TOTAL</span><strong><i id="totalCount">0</i> PERFORMANCES</strong></div>
+    <div><span>歌手名</span><strong id="artistName">-</strong></div>
+    <div><span>歌った回数</span><strong><i id="totalCount">0</i> PERFORMANCES</strong></div>
   </div>
 </section>
 
@@ -63,9 +63,31 @@ if(!performances.length){
     <a class="historyCard" href="../../archive/${p.date}/?t=${p.time}">
       <div class="historyDate">${p.date.replaceAll("-",".")}</div>
       <div class="historyArchiveTitle">${p.archiveTitle}</div>
-      <div class="historyListen">LISTEN ↗</div>
+      <div class="historyListen">視聴 ↗</div>
     </a>
   `).join("");
 }
 </script>
+
+<script>
+function formatHistoryDate(value){
+  const k="〇一二三四五六七八九";
+  const [y,m,d]=value.split("-").map(Number);
+  const n=x=>x<10?k[x]:x===10?"十":x<20?"十"+k[x-10]:
+    k[Math.floor(x/10)]+"十"+(x%10?k[x%10]:"");
+  return String(y).split("").map(x=>k[Number(x)]).join("")+"年"+n(m)+"月"+n(d)+"日";
+}
+document.addEventListener("DOMContentLoaded",()=>{
+  document.querySelectorAll(".historyDate,.history-date,.date").forEach(el=>{
+    const t=el.textContent.trim();
+    if(/^\d{4}[.-]\d{1,2}[.-]\d{1,2}$/.test(t)){
+      el.textContent=formatHistoryDate(t.replace(/\./g,"-"));
+    }
+  });
+  document.querySelectorAll("a,button").forEach(el=>{
+    if(el.textContent.trim()==="LISTEN ↗") el.textContent="視聴 ↗";
+  });
+});
+</script>
+
 </body></html>
