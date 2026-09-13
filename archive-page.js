@@ -1,3 +1,22 @@
+
+function jpArchiveDate(value){
+  const simple = "〇一二三四五六七八九";
+  const [y,m,d] = value.split("-").map(Number);
+  const num = n => n < 10 ? simple[n] : n === 10 ? "十" :
+    n < 20 ? "十" + simple[n-10] :
+    simple[Math.floor(n/10)] + "十" + (n%10 ? simple[n%10] : "");
+  return String(y).split("").map(x => simple[Number(x)]).join("") + "年" + num(m) + "月" + num(d) + "日";
+}
+function jpDaijiCount(n){
+  const d = ["","壱","弐","参","肆","伍","陸","漆","捌","玖"];
+  n = Math.max(0, Math.floor(Number(n)||0));
+  if(n === 0) return "〇曲";
+  if(n < 10) return d[n] + "曲";
+  if(n < 20) return "拾" + (n%10 ? d[n%10] : "") + "曲";
+  if(n < 100) return d[Math.floor(n/10)] + "拾" + (n%10 ? d[n%10] : "") + "曲";
+  return String(n).split("").map(x => d[Number(x)] || "〇").join("") + "曲";
+}
+
 let player,ready=false,currentTime=0;
 const $=s=>document.querySelector(s);
 const date=location.pathname.split("/").filter(Boolean).pop();
@@ -16,10 +35,10 @@ if(!archive){
   throw new Error("Archive not found");
 }
 
-$("#dateLabel").textContent=archive.date;
+$("#dateLabel").textContent=jpArchiveDate(archive.date);
 $("#archiveTitle").textContent=archive.title;
 $("#meta").textContent=`${archive.songs.filter(s=>s.type==="song").length} SONGS`;
-$("#footDate").textContent=archive.date;
+$("#footDate").textContent=jpArchiveDate(archive.date);
 
 $("#tracks").innerHTML=archive.songs.map(s=>
   `<button class="track" data-t="${s.time}">

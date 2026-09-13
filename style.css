@@ -1992,3 +1992,94 @@ header{
     padding-left:12px;
   }
 }
+
+
+/* =========================================================
+   ARCHIVE DETAIL — 一覧ページの意匠へ統一
+   ========================================================= */
+
+/* 詳細ページの背景模様は動画を邪魔しない濃度へ */
+.archivePage,
+.archiveDetail,
+body.archive-detail{
+  background-color:#E8DFEA;
+}
+
+.archivePage::before,
+.archiveDetail::before{
+  opacity:.025 !important;
+}
+
+/* 戻る導線・日付・曲数 */
+.archiveBack,
+.backLink,
+.archive-detail .back{
+  color:#74557B !important;
+  letter-spacing:.06em;
+}
+
+.archiveDate,
+.archive-detail .date,
+.archiveMeta,
+.archive-detail .meta{
+  color:#9A6D91 !important;
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  letter-spacing:.08em;
+}
+
+/* プレイヤーとセットリストの枠を紫＋金の文法へ */
+.playerWrap,
+.archivePlayer,
+.setlist,
+.setList{
+  border-color:rgba(116,85,123,.25) !important;
+}
+
+.setlist,
+.setList{
+  background:rgba(244,238,245,.76) !important;
+}
+
+.setlistHeader,
+.setListHeader{
+  color:#74557B !important;
+  border-bottom:1px solid rgba(116,85,123,.22) !important;
+  letter-spacing:.12em;
+}
+
+.setlist a:hover,
+.setList a:hover,
+.setlistRow:hover{
+  background:rgba(195,164,109,.10) !important;
+}
+
+/* SHARE：機能はそのまま、見た目だけ一回り小さく */
+.shareBtn,
+#shareBtn,
+button[data-share]{
+  min-width:0 !important;
+  padding:9px 15px !important;
+  font-size:.72rem !important;
+  line-height:1.1 !important;
+  letter-spacing:.08em !important;
+  border:1px solid rgba(195,164,109,.65) !important;
+  background:#74557B !important;
+  color:#fff !important;
+  box-shadow:0 5px 12px rgba(93,65,100,.10) !important;
+}
+
+/* ご案内はTOPで確定した中サイズ感を維持 */
+.archivePage #socials #socialLinks > .socialCard,
+.archiveDetail #socials #socialLinks > .socialCard{
+  min-height:108px !important;
+  padding:20px 22px !important;
+}
+
+@media (max-width:640px){
+  .shareBtn,
+  #shareBtn,
+  button[data-share]{
+    padding:8px 13px !important;
+    font-size:.69rem !important;
+  }
+}
