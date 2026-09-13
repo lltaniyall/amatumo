@@ -2288,3 +2288,105 @@ button.share{
     padding-bottom:42px !important;
   }
 }
+
+
+/* =========================================================
+   SONGS INDEX FIX — precise targeting only
+   ========================================================= */
+
+/* Undo broad first-child section assumptions from previous pass */
+.songsFixed > section:first-child,
+.songsFixed > section:nth-child(2){
+  min-height:initial !important;
+}
+
+/* Header must stay in normal document flow */
+body > header{
+  position:relative !important;
+  z-index:20;
+}
+
+/* Hero: target the page's existing hero container by content area */
+.songsFixed .pageHero,
+.songsFixed .songsHero,
+.songsFixed .hero,
+.songsFixed .mv{
+  position:relative;
+  overflow:hidden;
+  min-height:0 !important;
+  padding-top:68px !important;
+  padding-bottom:54px !important;
+  background:rgba(244,238,245,.44) !important;
+  border-bottom:1px solid rgba(116,85,123,.22) !important;
+}
+
+/* If the page lacks a named hero class, style the container that owns the h1 */
+.songsFixed h1{
+  color:#74557B !important;
+  font:600 clamp(2.35rem,5vw,4.6rem) "Shippori Mincho","Noto Serif JP",serif !important;
+  letter-spacing:.07em !important;
+  line-height:1.15 !important;
+  margin-top:0 !important;
+}
+
+.songsFixed h1::after{
+  content:"";
+  display:block;
+  width:min(280px,42vw);
+  height:18px;
+  margin-top:18px;
+  background:
+    linear-gradient(#C3A46D,#C3A46D) left center/calc(50% - 12px) 1px no-repeat,
+    linear-gradient(#C3A46D,#C3A46D) right center/calc(50% - 12px) 1px no-repeat;
+  opacity:.78;
+}
+
+/* Prevent header overlap artifacts */
+.songsFixed{
+  position:relative;
+  z-index:1;
+}
+
+/* Search/table region spacing only */
+.songsFixed .searchArea,
+.songsFixed .songsList,
+.songsFixed .database,
+.songsFixed .songDatabase{
+  padding-top:44px !important;
+  padding-bottom:56px !important;
+}
+
+/* Keep current table functionality/readability */
+.songsFixed table{
+  background:rgba(244,238,245,.68) !important;
+  border:1px solid rgba(116,85,123,.20) !important;
+  box-shadow:0 8px 22px rgba(93,65,100,.045);
+}
+
+.songsFixed thead{
+  background:rgba(232,223,234,.78) !important;
+  border-bottom:1px solid rgba(195,164,109,.55) !important;
+}
+
+.songsFixed tbody tr:hover{
+  background:rgba(195,164,109,.09) !important;
+}
+
+/* Total songs label */
+.songsFixed .songCount,
+.songsFixed .count,
+.songsFixed .total{
+  color:#74557B !important;
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  letter-spacing:.10em;
+}
+
+@media (max-width:640px){
+  .songsFixed .pageHero,
+  .songsFixed .songsHero,
+  .songsFixed .hero,
+  .songsFixed .mv{
+    padding-top:48px !important;
+    padding-bottom:40px !important;
+  }
+}

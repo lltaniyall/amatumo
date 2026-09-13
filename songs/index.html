@@ -13,8 +13,8 @@ function formatDaijiSongTotal(n){
 
 </head><body>
 <header><a class="logo" href="../">NAME<span>_</span></a><nav><a href="../archive/">ARCHIVE</a><a href="./">歌の目録</a></nav></header>
-<main class="songsIndexPage">
-<section class="hero"><p class="eyebrow">SONG DATABASE</p><h1>SONGS</h1><p>これまでに歌った曲を、曲名や歌手名からさがせます。</p></section>
+<main class="songsIndexPage songsFixed">
+<section class="hero"<p class="eyebrow">SONG DATABASE</p><h1>歌の目録</h1><p>これまでに歌った曲を、曲名や歌手名からさがせます。</p></section>
 
 <section class="section">
   <div class="toolbar">
@@ -138,4 +138,16 @@ document.querySelectorAll(".sortBtn").forEach(btn => {
 $("#search").addEventListener("input", render);
 render();
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const h1=[...document.querySelectorAll("h1")].find(el=>el.textContent.trim()==="SONGS");
+  if(h1) h1.textContent="歌の目録";
+
+  const all=[...document.querySelectorAll("body *")];
+  const countEl=all.find(el=>el.children.length===0 && /^\s*5\s*SONGS\s*$/.test(el.textContent||""));
+  if(countEl) countEl.textContent="伍曲";
+});
+</script>
+
 </body></html>
