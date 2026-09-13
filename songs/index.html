@@ -1,19 +1,32 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SONG DATABASE | 活動名</title><link rel="stylesheet" href="../style.css"></head><body>
-<header><a class="logo" href="../">NAME<span>_</span></a><nav><a href="../archive/">ARCHIVE</a><a href="./">SONGS</a></nav></header>
-<main>
-<section class="hero"><p class="eyebrow">SONG DATABASE</p><h1>SONGS</h1><p>曲名・アーティスト名から検索。曲名・アーティスト名・歌唱回数で並べ替えでき、曲名をクリックすると歌唱履歴ページへ移動します。</p></section>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SONG DATABASE | 活動名</title><link rel="stylesheet" href="../style.css">
+<script>
+function formatDaijiSongTotal(n){
+  const d=["","壱","弐","参","肆","伍","陸","漆","捌","玖"];
+  n=Math.max(0,Math.floor(Number(n)||0));
+  if(n===0)return "〇曲";
+  if(n<10)return d[n]+"曲";
+  if(n<20)return "拾"+(n%10?d[n%10]:"")+"曲";
+  if(n<100)return d[Math.floor(n/10)]+"拾"+(n%10?d[n%10]:"")+"曲";
+  return String(n).split("").map(x=>d[Number(x)]||"〇").join("")+"曲";
+}
+</script>
+
+</head><body>
+<header><a class="logo" href="../">NAME<span>_</span></a><nav><a href="../archive/">ARCHIVE</a><a href="./">歌の目録</a></nav></header>
+<main class="songsIndexPage">
+<section class="hero"><p class="eyebrow">SONG DATABASE</p><h1>SONGS</h1><p>これまでに歌った曲を、曲名や歌手名からさがせます。</p></section>
 
 <section class="section">
   <div class="toolbar">
-    <label class="search"><span>SEARCH</span><input id="search" type="search" placeholder="曲名・アーティスト名を検索…"></label>
+    <label class="search"><span>SEARCH</span><input id="search" type="search" placeholder="曲名・歌手名からさがす…"></label>
     <div class="stats"><strong id="count">0</strong><span>SONGS</span></div>
   </div>
 
   <div class="songTableWrap">
     <div class="songTableHead">
       <button class="sortBtn" data-key="title">曲名 <span class="sortMark">↕</span></button>
-      <button class="sortBtn" data-key="artist">アーティスト <span class="sortMark">↕</span></button>
-      <button class="sortBtn countHead" data-key="count">歌唱回数 <span class="sortMark">↕</span></button>
+      <button class="sortBtn" data-key="artist">歌手名 <span class="sortMark">↕</span></button>
+      <button class="sortBtn countHead" data-key="count">歌った回数 <span class="sortMark">↕</span></button>
     </div>
     <div id="songList"></div>
   </div>

@@ -2139,3 +2139,152 @@ button.share{
     font-size:.64rem !important;
   }
 }
+
+
+/* =========================================================
+   SONGS INDEX — 歌の目録
+   ========================================================= */
+
+.songsIndexPage{
+  background:linear-gradient(180deg,rgba(232,223,234,.74),rgba(221,209,223,.78) 55%,rgba(213,198,218,.76));
+}
+
+/* 旧SONGSヒーローを「歌枠の記録」と兄弟デザインへ */
+.songsIndexPage .pageHero,
+.songsIndexPage .songsHero,
+.songsIndexPage > section:first-child{
+  position:relative;
+  overflow:hidden;
+  min-height:0 !important;
+  padding-top:72px !important;
+  padding-bottom:62px !important;
+  background:rgba(244,238,245,.44);
+  border-bottom:1px solid rgba(116,85,123,.22);
+}
+
+.songsIndexPage .pageHero::after,
+.songsIndexPage .songsHero::after,
+.songsIndexPage > section:first-child::after{
+  content:"";
+  position:absolute;
+  width:330px;
+  height:330px;
+  right:-72px;
+  top:-96px;
+  background:url("../assets/asanoha.png") center/210px auto repeat;
+  opacity:.075;
+  -webkit-mask-image:radial-gradient(circle at center,#000 20%,rgba(0,0,0,.78) 50%,transparent 74%);
+  mask-image:radial-gradient(circle at center,#000 20%,rgba(0,0,0,.78) 50%,transparent 74%);
+  pointer-events:none;
+}
+
+.songsIndexPage h1{
+  color:#74557B !important;
+  font:600 clamp(2.35rem,5vw,4.6rem) "Shippori Mincho","Noto Serif JP",serif !important;
+  letter-spacing:.07em !important;
+  line-height:1.15 !important;
+}
+
+/* 見出し下の金線＋菱形 */
+.songsIndexPage h1::after{
+  content:"";
+  display:block;
+  width:min(280px,42vw);
+  height:18px;
+  margin-top:18px;
+  background:
+    linear-gradient(#C3A46D,#C3A46D) left center/calc(50% - 12px) 1px no-repeat,
+    linear-gradient(#C3A46D,#C3A46D) right center/calc(50% - 12px) 1px no-repeat;
+  opacity:.78;
+}
+
+.songsIndexPage .songsSection,
+.songsIndexPage .databaseSection,
+.songsIndexPage > section:nth-child(2){
+  position:relative;
+  overflow:hidden;
+  padding-top:48px !important;
+  padding-bottom:62px !important;
+}
+
+/* 検索欄 */
+.songsIndexPage input[type="search"],
+.songsIndexPage input[type="text"]{
+  border:0 !important;
+  border-bottom:1px solid rgba(116,85,123,.38) !important;
+  background:transparent !important;
+  color:#3f3343 !important;
+  padding:11px 2px !important;
+}
+
+.songsIndexPage input:focus{
+  outline:none !important;
+  border-bottom-color:#C3A46D !important;
+}
+
+/* 曲数表示 */
+.songsIndexPage .songCount,
+.songsIndexPage .count{
+  color:#74557B !important;
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  letter-spacing:.10em;
+}
+
+/* 表：機能性は保ちつつTOPのカード表現へ */
+.songsIndexPage table{
+  background:rgba(244,238,245,.68) !important;
+  border:1px solid rgba(116,85,123,.20) !important;
+  box-shadow:0 8px 22px rgba(93,65,100,.045);
+}
+
+.songsIndexPage thead{
+  background:rgba(232,223,234,.78) !important;
+  border-bottom:1px solid rgba(195,164,109,.55) !important;
+}
+
+.songsIndexPage th{
+  color:#74557B !important;
+  font-weight:500 !important;
+}
+
+.songsIndexPage td{
+  border-color:rgba(116,85,123,.16) !important;
+}
+
+.songsIndexPage tbody tr{
+  transition:background .18s ease;
+}
+
+.songsIndexPage tbody tr:hover{
+  background:rgba(195,164,109,.09) !important;
+}
+
+.songsIndexPage tbody a{
+  color:inherit;
+}
+
+@media (max-width:640px){
+  .songsIndexPage .pageHero,
+  .songsIndexPage .songsHero,
+  .songsIndexPage > section:first-child{
+    padding-top:50px !important;
+    padding-bottom:44px !important;
+  }
+
+  .songsIndexPage .pageHero::after,
+  .songsIndexPage .songsHero::after,
+  .songsIndexPage > section:first-child::after{
+    width:230px;
+    height:230px;
+    right:-85px;
+    top:-72px;
+    background-size:155px auto;
+  }
+
+  .songsIndexPage .songsSection,
+  .songsIndexPage .databaseSection,
+  .songsIndexPage > section:nth-child(2){
+    padding-top:36px !important;
+    padding-bottom:42px !important;
+  }
+}
