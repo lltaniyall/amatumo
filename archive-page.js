@@ -151,3 +151,55 @@ $("#share").onclick=async()=>{
 let tag=document.createElement("script");
 tag.src="https://www.youtube.com/iframe_api";
 document.head.appendChild(tag);
+
+
+/* ご案内：各アーカイブページ下部 */
+function escapeSocialHtml(value){
+  return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function renderArchiveSocials(){
+  const socials = Array.isArray(window.SITE_CONFIG?.socials)
+    ? window.SITE_CONFIG.socials
+    : (typeof SITE_CONFIG !== "undefined" && Array.isArray(SITE_CONFIG.socials) ? SITE_CONFIG.socials : []);
+
+  if(!socials.length) return;
+
+  const section = document.createElement("section");
+  section.className = "section archiveSocialSection";
+  section.id = "socials";
+  section.innerHTML = `
+    <p class="eyebrow">LINKS</p>
+    <h2>ご案内</h2>
+    <div class="socialGrid"></div>
+  `;
+
+  const grid = section.querySelector(".socialGrid");
+  grid.innerHTML = socials.map((item, index) => {
+    const label = item.label || `LINK ${index + 1}`;
+    const sub = item.sub || "SOCIAL";
+    const url = item.url || "";
+    const enabled = /^https?:\/\//i.test(url);
+
+    return enabled
+      ? `<a class="socialCard" href="${escapeSocialHtml(url)}" target="_blank" rel="noopener noreferrer">
+           <strong>${escapeSocialHtml(label)}</strong>
+           <small>${escapeSocialHtml(sub)}</small>
+           <span class="socialArrow">↗</span>
+         </a>`
+      : `<div class="socialCard socialCardDisabled" aria-disabled="true">
+           <strong>${escapeSocialHtml(label)}</strong>
+           <small>${escapeSocialHtml(sub)}</small>
+           <span class="socialArrow">URL SETTING</span>
+         </div>`;
+  }).join("");
+
+  document.querySelector("main")?.appendChild(section);
+}
+
+renderArchiveSocials();
