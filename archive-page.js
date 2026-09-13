@@ -5,7 +5,7 @@ function jpArchiveDate(value){
   const num = n => n < 10 ? simple[n] : n === 10 ? "十" :
     n < 20 ? "十" + simple[n-10] :
     simple[Math.floor(n/10)] + "十" + (n%10 ? simple[n%10] : "");
-  return String(y).split("").map(x => simple[Number(x)]).join("") + "年" + num(m) + "月" + num(d) + "日";
+  return String(y).split("").map(x => simple[Number(x)]).join("") + "年 " + num(m) + "月 " + num(d) + "日";
 }
 function jpDaijiCount(n){
   const d = ["","壱","弐","参","肆","伍","陸","漆","捌","玖"];

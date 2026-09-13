@@ -14,7 +14,7 @@
 
 <section class="section">
   <p class="eyebrow">ARCHIVES</p>
-  <h2>歌唱履歴</h2>
+  <h2>歌唱履歴</h2><div class="heroRule pageTitleRule historyTitleRule" aria-hidden="true"><span>◆</span></div>
   <div id="historyList" class="historyList"></div>
   <p id="notFound" class="muted" hidden>該当する歌唱履歴が見つかりませんでした。</p>
 </section>
@@ -75,7 +75,7 @@ function formatHistoryDate(value){
   const [y,m,d]=value.split("-").map(Number);
   const n=x=>x<10?k[x]:x===10?"十":x<20?"十"+k[x-10]:
     k[Math.floor(x/10)]+"十"+(x%10?k[x%10]:"");
-  return String(y).split("").map(x=>k[Number(x)]).join("")+"年"+n(m)+"月"+n(d)+"日";
+  return String(y).split("").map(x=>k[Number(x)]).join("")+"年 "+n(m)+"月 "+n(d)+"日";
 }
 document.addEventListener("DOMContentLoaded",()=>{
   document.querySelectorAll(".historyDate,.history-date,.date").forEach(el=>{

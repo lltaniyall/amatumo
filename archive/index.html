@@ -43,7 +43,7 @@ function formatArchiveDate(value){
     : n === 10 ? "十"
     : n < 20 ? "十" + simpleKanji[n - 10]
     : simpleKanji[Math.floor(n / 10)] + "十" + (n % 10 ? simpleKanji[n % 10] : "");
-  return `${year}年${jpNumber(m)}月${jpNumber(d)}日`;
+  return `${year}年 ${jpNumber(m)}月 ${jpNumber(d)}日`;
 }
 
 function formatDaijiCount(n){

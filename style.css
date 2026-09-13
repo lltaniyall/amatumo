@@ -2629,3 +2629,48 @@ body:has(#historyList) .hero{
     padding-bottom:38px !important;
   }
 }
+
+
+/* =========================================================
+   HISTORY POLISH — date spacing / total / title rule
+   ========================================================= */
+
+/* 歌唱履歴の金線はHTMLに1個だけ置いたものを使用 */
+.historyTitleRule{
+  width:220px !important;
+  max-width:68% !important;
+  margin:13px 0 20px !important;
+}
+
+/* 旧CSS疑似要素による履歴見出し装飾は停止 */
+.historySection h2::after,
+.history-list-section h2::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* 漢数字の日付は「年 月 日」の塊で一行表示 */
+.historyDate,
+.history-date,
+#historyList .date,
+.historyRow .date,
+.archiveIndexCard .card-date,
+.archiveDate,
+.archive-detail .date{
+  white-space:nowrap !important;
+}
+
+/* 履歴カードの日付列を少し広げる */
+#historyList > *,
+.history-list > *,
+.historyRow{
+  grid-template-columns:minmax(150px,auto) minmax(0,1fr) auto !important;
+}
+
+@media (max-width:640px){
+  .historyDate,
+  .history-date,
+  #historyList .date{
+    white-space:normal !important;
+  }
+}
