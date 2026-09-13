@@ -2481,3 +2481,65 @@ body > header{
     margin:17px 0 15px !important;
   }
 }
+
+
+/* =========================================================
+   PAGE TITLE GOLD RULE — duplicate fix
+   サブページ見出しはこの1本だけを描画
+   ========================================================= */
+
+.heroRule.pageTitleRule{
+  position:relative !important;
+  height:18px !important;
+  background:none !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+/* TOP側 .heroRule の既存描画を明示的に上書き */
+.heroRule.pageTitleRule::before,
+.heroRule.pageTitleRule::after{
+  content:"" !important;
+  position:static !important;
+  transform:none !important;
+  width:auto !important;
+  height:1px !important;
+  display:block !important;
+  flex:1 1 auto !important;
+  opacity:1 !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+.heroRule.pageTitleRule::before{
+  background:linear-gradient(90deg,transparent,rgba(195,164,109,.9)) !important;
+}
+
+.heroRule.pageTitleRule::after{
+  background:linear-gradient(90deg,rgba(195,164,109,.9),transparent) !important;
+}
+
+.heroRule.pageTitleRule span{
+  display:block !important;
+  position:static !important;
+  width:auto !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  transform:none !important;
+  background:none !important;
+  border:0 !important;
+  box-shadow:none !important;
+  color:#C3A46D !important;
+  font-size:.7rem !important;
+  line-height:1 !important;
+}
+
+/* h1自身に残っている旧装飾は完全停止 */
+.songsPageHero h1::before,
+.songsPageHero h1::after,
+.archiveIndexHero h1::before,
+.archiveIndexHero h1::after{
+  content:none !important;
+  display:none !important;
+}
