@@ -1,29 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root{
-  --bg:#eee7df;
-  --surface:#f8f3ed;
-  --surface2:#e7dde4;
-  --text:#352f38;
-  --muted:#776d76;
-  --main:#645771;
-  --accent:#A95D84;
-  --cream:#fffaf4;
-  --line:rgba(100,87,113,.22);
+  --bg:#f1e9ed;
+  --surface:#faf5f7;
+  --surface2:#e9dfe9;
+  --text:#352b38;
+  --muted:#7b6d7d;
+  --main:#74557B;
+  --deep:#5d4164;
+  --accent:#9a6d91;
+  --rose:#cba9bd;
+  --softrose:#dcc8d5;
+  --cream:#fff9f6;
+  --gold:#c3a46d;
+  --line:rgba(116,85,123,.24);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;color:var(--text);
+  margin:0;
+  color:var(--text);
   background:
-    radial-gradient(circle at 82% 8%,rgba(169,93,132,.12),transparent 30%),
-    linear-gradient(180deg,#f3ede6,#eee7df 55%,#e9e0e3);
+    radial-gradient(circle at 84% 7%,rgba(204,170,173,.24),transparent 28%),
+    radial-gradient(circle at 3% 62%,rgba(109,76,97,.08),transparent 24%),
+    linear-gradient(180deg,#f5edf1 0%,#f1e9ed 50%,#e9dfe9 100%);
   font-family:"Noto Serif JP","Shippori Mincho",serif;
 }
 body::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.085;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='83.14' viewBox='0 0 96 83.14'%3E%3Cg fill='none' stroke='%23645771' stroke-width='1'%3E%3Cpath d='M0 0L24 41.57L48 0L72 41.57L96 0M0 83.14L24 41.57L48 83.14L72 41.57L96 83.14M0 0L48 27.71L96 0M0 83.14L48 55.43L96 83.14M0 27.71L24 41.57L0 55.43M96 27.71L72 41.57L96 55.43M48 0V27.71M48 55.43V83.14M24 0L24 41.57M72 0L72 41.57M24 41.57L24 83.14M72 41.57L72 83.14'/%3E%3C/g%3E%3C/svg%3E");
-  background-size:96px 83.14px;
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.055;
+  background-image:url("./assets/asanoha.png");
+  background-size:120px 207.846px;
 }
 a{color:inherit;text-decoration:none}
 button,input{font:inherit}
@@ -163,3 +174,616 @@ footer{padding:3rem 9vw;border-top:1px solid var(--line);display:flex;gap:1.5rem
 }
 
 .toast{color:#fffaf4}
+
+
+/* ===== v3 / approved palette + true 麻の葉 direction ===== */
+header{
+  background:rgba(248,242,237,.90);
+  border-bottom:1px solid rgba(109,76,97,.20);
+  box-shadow:0 8px 30px rgba(90,59,84,.05);
+}
+.logo{color:var(--deep)}
+.logo span{color:var(--gold)}
+nav a:hover{color:var(--accent)}
+
+.hero{
+  min-height:64vh;
+  background:
+    linear-gradient(90deg,rgba(255,250,245,.82),rgba(255,250,245,.36)),
+    radial-gradient(circle at 76% 42%,rgba(204,170,173,.18),transparent 32%);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  left:-62px;
+  top:18%;
+  width:210px;
+  height:210px;
+  border-radius:50%;
+  opacity:.20;
+  background-image:url("./assets/asanoha.png");
+  background-size:86px auto;
+  border:1px solid rgba(109,76,97,.18);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-54px;
+  top:-42px;
+  width:min(38vw,440px);
+  aspect-ratio:1;
+  border-radius:50%;
+  opacity:.18;
+  background-color:rgba(204,170,173,.18);
+  background-image:url("./assets/asanoha.png");
+  background-size:92px auto;
+  border:1px solid rgba(109,76,97,.22);
+  transform:none;
+}
+.hero h1{color:var(--deep);text-shadow:0 1px 0 rgba(255,255,255,.45)}
+.hero h1 em{color:var(--accent)}
+.eyebrow{color:var(--accent)}
+
+.section{
+  background:rgba(255,250,245,.43);
+}
+.section:nth-of-type(even){
+  background:rgba(248,242,237,.58);
+}
+.section:nth-of-type(even)::before{
+  height:4px;
+  opacity:.55;
+  background:linear-gradient(90deg,transparent,var(--rose),var(--main),var(--rose),transparent);
+}
+
+.primaryButton,.share{
+  background:linear-gradient(180deg,#755368,#64455c);
+  border-color:var(--deep);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 5px 14px rgba(90,59,84,.12);
+}
+.primaryButton:hover,.share:hover{
+  background:var(--accent);
+}
+.ghostButton{
+  background:rgba(255,250,245,.78);
+  color:var(--deep);
+  border-color:rgba(109,76,97,.34);
+}
+.ghostButton:hover{
+  color:#fff;
+  background:var(--accent);
+}
+
+.card,.socialCard{
+  background:rgba(255,250,245,.72);
+  box-shadow:0 8px 28px rgba(90,59,84,.045);
+}
+.card::after{
+  width:110px;
+  height:110px;
+  right:-38px;
+  bottom:-38px;
+  border:0;
+  transform:none;
+  opacity:.11;
+  background-image:url("./assets/asanoha.png");
+  background-size:70px auto;
+}
+.card-date,.latestDate,.historyDate,.time{color:var(--accent)}
+.latestNumber,.rankNumber,.socialIndex{color:var(--rose)}
+.rankingSong span,.rankingArtist span,.rankingCount,.songArrow,.artistSongArrow,.latestArrow{color:var(--accent)}
+
+.rankingRow,.latestRow,.historyCard,.artistSongCard{
+  background:rgba(255,250,245,.30);
+}
+.rankingRow:hover,.latestRow:hover,.historyCard:hover,.artistSongCard:hover{
+  background:rgba(204,170,173,.13);
+}
+
+.socialCard{
+  position:relative;
+  overflow:hidden;
+}
+.socialCard::after{
+  content:"";
+  position:absolute;
+  right:-32px;
+  bottom:-36px;
+  width:120px;
+  height:120px;
+  opacity:.065;
+  background-image:url("./assets/asanoha.png");
+  background-size:64px auto;
+}
+
+.songTableWrap,.latestList,.rankingTable,.historyList,.artistSongList{
+  background:rgba(255,250,245,.30);
+}
+.songDbRow:hover{background:rgba(204,170,173,.11)}
+.sortBtn:hover,.sortBtn.active,.songTitleLink:hover,.artistLink:hover{color:var(--accent)}
+
+.setlist{background:rgba(248,242,237,.92)}
+.track:hover,.track.active{background:rgba(204,170,173,.15)}
+.video{box-shadow:0 14px 36px rgba(90,59,84,.12)}
+
+footer{
+  position:relative;
+  overflow:hidden;
+  background:var(--deep);
+  color:#d8c5cd;
+  border-top:0;
+}
+footer::after{
+  content:"";
+  position:absolute;
+  right:-25px;
+  bottom:-65px;
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  opacity:.16;
+  background-image:url("./assets/asanoha.png");
+  background-size:80px auto;
+  filter:brightness(3);
+}
+footer b{color:#fff7f0}
+
+.toast{
+  background:rgba(90,59,84,.96);
+  color:#fffaf5;
+  border-color:rgba(255,255,255,.15);
+}
+
+@media(max-width:760px){
+  .hero::before{width:145px;height:145px;left:-70px;opacity:.13}
+  .hero::after{width:62vw;right:-26vw;top:1%;opacity:.12}
+}
+
+
+/* ===== v5 / #74557B palette study ===== */
+body{
+  background:
+    radial-gradient(circle at 84% 7%,rgba(203,169,189,.25),transparent 28%),
+    radial-gradient(circle at 3% 62%,rgba(116,85,123,.09),transparent 24%),
+    linear-gradient(180deg,#f7f0f3 0%,#f1e9ed 50%,#e9dfe9 100%);
+}
+header{background:rgba(250,245,247,.91)}
+.hero{
+  background:
+    linear-gradient(90deg,rgba(255,249,246,.84),rgba(255,249,246,.38)),
+    radial-gradient(circle at 76% 42%,rgba(203,169,189,.20),transparent 32%);
+}
+.hero::after{background-color:rgba(203,169,189,.20)}
+.section{background:rgba(255,249,246,.46)}
+.section:nth-of-type(even){background:rgba(250,245,247,.62)}
+.primaryButton,.share{
+  background:linear-gradient(180deg,#806087,#684a70);
+}
+.card,.socialCard{background:rgba(255,249,246,.76)}
+.rankingRow,.latestRow,.historyCard,.artistSongCard,
+.songTableWrap,.latestList,.rankingTable,.historyList,.artistSongList{
+  background:rgba(255,249,246,.33);
+}
+.rankingRow:hover,.latestRow:hover,.historyCard:hover,.artistSongCard:hover,
+.songDbRow:hover,.track:hover,.track.active{
+  background:rgba(203,169,189,.15);
+}
+.setlist{background:rgba(250,245,247,.94)}
+footer{background:#5d4164}
+.toast{background:rgba(93,65,100,.97)}
+
+
+/* ===== v6 / lavender background adjustment ===== */
+:root{
+  --bg:#ddd1df;
+  --surface:#eee5ef;
+  --surface2:#d8c9dc;
+  --cream:#f8f1f5;
+}
+body{
+  background:
+    radial-gradient(circle at 84% 7%,rgba(154,109,145,.22),transparent 30%),
+    radial-gradient(circle at 4% 62%,rgba(116,85,123,.16),transparent 27%),
+    linear-gradient(180deg,#e8dfea 0%,#ddd1df 52%,#d5c6da 100%);
+}
+header{
+  background:rgba(238,229,239,.92);
+}
+.hero{
+  background:
+    linear-gradient(90deg,rgba(239,230,240,.80),rgba(221,209,223,.56)),
+    radial-gradient(circle at 76% 42%,rgba(203,169,189,.25),transparent 34%);
+}
+.section{
+  background:rgba(239,230,240,.48);
+}
+.section:nth-of-type(even){
+  background:rgba(222,209,225,.54);
+}
+.card,.socialCard{
+  background:rgba(244,236,242,.68);
+}
+.rankingRow,.latestRow,.historyCard,.artistSongCard,
+.songTableWrap,.latestList,.rankingTable,.historyList,.artistSongList{
+  background:rgba(239,230,240,.38);
+}
+.setlist{
+  background:rgba(238,229,239,.92);
+}
+.ghostButton{
+  background:rgba(244,236,242,.68);
+}
+
+
+/* ===== v7 / Taisho hero + #625870 ichimatsu ===== */
+.hero-v7{
+  position:relative;
+  min-height:680px;
+  padding:84px clamp(24px,5vw,72px) 56px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:minmax(70px,120px) minmax(0,1fr) minmax(70px,120px);
+  gap:clamp(18px,3vw,40px);
+  align-items:center;
+  isolation:isolate;
+  border-bottom:1px solid rgba(116,85,123,.22);
+  background:
+    radial-gradient(circle at 50% 15%,rgba(255,255,255,.16),transparent 30%),
+    linear-gradient(180deg,rgba(232,223,234,.88),rgba(221,209,223,.80));
+}
+.hero-v7::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  background-image:url("./assets/asanoha.png");
+  background-size:118px auto;
+  opacity:.10;
+}
+.hero-v7::after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(195,164,109,.55);
+  box-shadow:inset 0 0 0 6px rgba(116,85,123,.035);
+  pointer-events:none;
+}
+.heroPattern{
+  position:absolute;
+  z-index:-1;
+  width:min(32vw,430px);
+  height:min(32vw,430px);
+  border-radius:50%;
+  overflow:hidden;
+  border:1px solid rgba(195,164,109,.48);
+  box-shadow:0 18px 55px rgba(93,65,100,.10);
+}
+.heroPattern::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%),
+    linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%);
+  background-position:0 0,30px 30px;
+  background-size:60px 60px;
+  opacity:.44;
+}
+.heroPattern::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("./assets/asanoha.png");
+  background-size:96px auto;
+  opacity:.22;
+  mix-blend-mode:multiply;
+}
+.heroPattern-left{left:-150px;top:90px}
+.heroPattern-right{right:-160px;bottom:44px}
+
+.heroCenter{
+  width:min(860px,100%);
+  margin:0 auto;
+  text-align:center;
+  position:relative;
+}
+.heroEyebrow{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin-bottom:22px;
+  font-family:"Playfair Display","Times New Roman",serif;
+  letter-spacing:.28em;
+  font-size:.78rem;
+  color:#625870;
+}
+.heroEyebrow i{
+  color:var(--gold);
+  font-style:normal;
+  font-size:.7em;
+}
+.heroTitleFrame{
+  position:relative;
+  width:min(640px,100%);
+  margin:0 auto;
+  padding:44px clamp(24px,5vw,56px) 38px;
+  background:linear-gradient(180deg,rgba(248,241,245,.82),rgba(238,229,239,.70));
+  border:1px solid rgba(195,164,109,.62);
+  box-shadow:
+    0 24px 70px rgba(93,65,100,.10),
+    inset 0 0 0 6px rgba(116,85,123,.028);
+}
+.heroTitleFrame::before,.heroTitleFrame::after{
+  content:"◆";
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--gold);
+  font-size:.72rem;
+}
+.heroTitleFrame::before{left:14px}
+.heroTitleFrame::after{right:14px}
+.heroKissa{
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  letter-spacing:.35em;
+  font-size:.9rem;
+  color:#625870;
+  margin-bottom:14px;
+}
+.hero-v7 h1{
+  margin:0;
+  color:var(--deep);
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  font-weight:600;
+  font-size:clamp(3rem,8vw,6rem);
+  letter-spacing:.22em;
+  text-indent:.22em;
+  line-height:1.08;
+}
+.heroOfficial{
+  margin-top:10px;
+  font-family:"Playfair Display","Times New Roman",serif;
+  letter-spacing:.38em;
+  text-indent:.38em;
+  color:#625870;
+  font-size:.95rem;
+}
+.heroRule{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin:24px auto 20px;
+  width:min(280px,72%);
+  color:var(--gold);
+}
+.heroRule::before,.heroRule::after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,rgba(195,164,109,.9));
+}
+.heroRule::after{background:linear-gradient(90deg,rgba(195,164,109,.9),transparent)}
+.heroRule span{font-size:.7rem}
+.heroCatchcopy{
+  margin:0;
+  color:var(--text);
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  letter-spacing:.12em;
+  line-height:1.9;
+}
+.heroSide{
+  writing-mode:vertical-rl;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  min-height:310px;
+  padding:26px 14px;
+  border:1px solid rgba(195,164,109,.52);
+  background:linear-gradient(180deg,rgba(98,88,112,.96),rgba(93,65,100,.94));
+  color:#f8f1f5;
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  letter-spacing:.18em;
+  line-height:1.8;
+  box-shadow:0 14px 40px rgba(93,65,100,.12);
+}
+.heroSide span+span{margin-top:1.1em}
+.heroSide-left{justify-self:start}
+.heroSide-right{justify-self:end}
+.hero-v7 .heroActions{
+  display:grid;
+  grid-template-columns:1.08fr .9fr 1.08fr;
+  gap:14px;
+  margin:28px auto 0;
+  width:min(860px,100%);
+}
+.hero-v7 .heroActions a{
+  min-height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:0;
+  letter-spacing:.08em;
+  border:1px solid rgba(195,164,109,.65);
+  box-shadow:inset 0 0 0 4px rgba(255,255,255,.05);
+}
+.hero-v7 .primaryButton{background:linear-gradient(180deg,#74557B,#5d4164)}
+.hero-v7 .ghostButton{background:rgba(248,241,245,.68);color:#5d4164}
+.heroScroll{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:8px;
+  margin-top:22px;
+  font-size:.68rem;
+  letter-spacing:.28em;
+  color:#625870;
+}
+.heroScroll i{
+  display:block;
+  width:1px;
+  height:34px;
+  background:linear-gradient(#625870,transparent);
+}
+
+@media (max-width:900px){
+  .hero-v7{grid-template-columns:1fr;min-height:auto;padding-top:62px}
+  .heroSide{display:none}
+  .heroPattern{width:280px;height:280px;opacity:.70}
+  .heroPattern-left{left:-160px;top:50px}
+  .heroPattern-right{right:-150px;bottom:10px}
+}
+@media (max-width:640px){
+  .hero-v7{padding:50px 18px 38px}
+  .hero-v7::after{inset:10px}
+  .heroTitleFrame{padding:34px 22px 30px}
+  .hero-v7 h1{font-size:clamp(2.7rem,16vw,4.6rem);letter-spacing:.14em;text-indent:.14em}
+  .hero-v7 .heroActions{grid-template-columns:1fr}
+  .hero-v7 .heroActions a{min-height:62px}
+}
+
+
+/* ===== v8 / circular accent cleanup ===== */
+/* 円形アクセントは #625870 の市松模様だけにする */
+.heroPattern::after{
+  content:none !important;
+  display:none !important;
+}
+
+
+/* ===== v9 / force both circular accents to ichimatsu only ===== */
+.heroPattern,
+.heroPattern-left,
+.heroPattern-right{
+  background:none !important;
+  background-image:none !important;
+}
+
+.heroPattern::before,
+.heroPattern-left::before,
+.heroPattern-right::before{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:
+    linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%),
+    linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%) !important;
+  background-position:0 0,30px 30px !important;
+  background-size:60px 60px !important;
+  opacity:.44 !important;
+}
+
+.heroPattern::after,
+.heroPattern-left::after,
+.heroPattern-right::after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+  background-image:none !important;
+}
+
+
+/* ===== no-left-ornament test ===== */
+.heroPattern-left{
+  display:none !important;
+}
+
+
+/* ===== Asanoha duplicate-layer cleanup ===== */
+/* ファーストビュー全面に重なっていた2枚目の麻の葉レイヤーだけを停止 */
+.hero-v7::before{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+  background-image:none !important;
+}
+
+/* 左の丸装飾は引き続き非表示 */
+.heroPattern-left{
+  display:none !important;
+}
+
+
+/* ===== hero title update: 喫茶〇〇 / 歌枠らいぶらりゐ ===== */
+.heroKissa{
+  margin-bottom:18px;
+  font-size:clamp(.95rem,1.8vw,1.2rem);
+  letter-spacing:.42em;
+  text-indent:.42em;
+  color:#625870;
+}
+
+.heroLibraryTitle{
+  margin:0;
+  color:var(--deep);
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  font-weight:600;
+  font-size:clamp(2.4rem,6.2vw,5rem) !important;
+  line-height:1.25 !important;
+  letter-spacing:.14em !important;
+  text-indent:.14em !important;
+  white-space:normal;
+}
+
+/* Official Site は使用しない */
+.heroOfficial{
+  display:none !important;
+}
+
+@media (max-width:640px){
+  .heroLibraryTitle{
+    font-size:clamp(2rem,11vw,3.5rem) !important;
+    letter-spacing:.08em !important;
+    text-indent:.08em !important;
+  }
+}
+
+
+/* ===== 歌枠らいぶらりゐ：1行固定 ===== */
+.heroLibraryTitle{
+  white-space:nowrap !important;
+  font-size:clamp(2rem,5vw,4.25rem) !important;
+  letter-spacing:.10em !important;
+  text-indent:.10em !important;
+}
+
+@media (max-width:640px){
+  .heroLibraryTitle{
+    font-size:clamp(1.55rem,8vw,2.65rem) !important;
+    letter-spacing:.04em !important;
+    text-indent:.04em !important;
+  }
+}
+
+
+/* ===== hero title fit + catchcopy removal ===== */
+.heroLibraryTitle{
+  white-space:nowrap !important;
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+  font-size:clamp(1.75rem,4.15vw,3.55rem) !important;
+  letter-spacing:.045em !important;
+  text-indent:0 !important;
+  line-height:1.2 !important;
+}
+
+.heroCatchcopy{
+  display:none !important;
+}
+
+/* キャッチコピー削除後の下側余白を整える */
+.heroRule{
+  margin-bottom:0 !important;
+}
+
+@media (max-width:640px){
+  .heroLibraryTitle{
+    font-size:clamp(1.35rem,7.2vw,2.35rem) !important;
+    letter-spacing:.015em !important;
+  }
+}
