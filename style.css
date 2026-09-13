@@ -2390,3 +2390,94 @@ body > header{
     padding-bottom:40px !important;
   }
 }
+
+
+/* =========================================================
+   GOLD ORNAMENT UNIFICATION
+   TOP と同じ「ぼかし金線 + ◆」へ統一
+   ========================================================= */
+
+/* 旧アーカイブ専用装飾は無効化 */
+.archiveTitleRule{
+  display:none !important;
+}
+
+/* 曲一覧で追加していた疑似要素の金線も無効化 */
+.songsFixed h1::after,
+.songsIndexPage h1::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* TOP の .heroRule と同じ造形。
+   サブページでは見出しが左揃えなので位置だけ左に合わせる。 */
+.pageTitleRule{
+  width:min(280px,72%) !important;
+  margin:20px 0 18px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:14px !important;
+  color:var(--gold) !important;
+}
+
+.pageTitleRule::before,
+.pageTitleRule::after{
+  content:"" !important;
+  display:block !important;
+  height:1px !important;
+  flex:1 !important;
+}
+
+.pageTitleRule::before{
+  background:linear-gradient(90deg,transparent,rgba(195,164,109,.9)) !important;
+}
+
+.pageTitleRule::after{
+  background:linear-gradient(90deg,rgba(195,164,109,.9),transparent) !important;
+}
+
+.pageTitleRule span{
+  color:var(--gold) !important;
+  font-size:.7rem !important;
+  line-height:1 !important;
+}
+
+/* SONGS hero: archive pageと同じ落ち着いた高さに */
+.songsPageHero{
+  position:relative;
+  overflow:hidden;
+  min-height:0 !important;
+  padding:72px 9vw 62px !important;
+  background:rgba(244,238,245,.44) !important;
+  border-bottom:1px solid rgba(116,85,123,.22) !important;
+  text-align:left !important;
+}
+
+.songsPageHero h1{
+  margin:0 !important;
+  color:var(--main) !important;
+  font:600 clamp(2.35rem,5vw,4.6rem) "Shippori Mincho","Noto Serif JP",serif !important;
+  letter-spacing:.07em !important;
+  text-indent:0 !important;
+  line-height:1.15 !important;
+}
+
+.songsLead{
+  margin:0;
+  color:var(--muted);
+  font-size:.86rem;
+  letter-spacing:.05em;
+  line-height:2;
+}
+
+@media (max-width:640px){
+  .songsPageHero{
+    padding:50px 7vw 44px !important;
+  }
+
+  .pageTitleRule{
+    width:min(250px,76%) !important;
+    margin:17px 0 15px !important;
+  }
+}
