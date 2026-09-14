@@ -1,4 +1,124 @@
 const ARCHIVES = [
+{
+"date":"2026-07-26",
+"title":"【 歌枠 】好きな曲歌つたりのんびり雑談したりする日曜日♡【 甘萬つもり｜#個人Vtuber 】"
+"videoId":"45Sc-gQ-wPg"
+"songs" [
+{
+"title":"開始"
+"time":"57"
+"type":"talk"
+}
+{
+"title":"W-B-X ～W-Boiled Extreme～"
+"artist":"上木彩矢 With TAKUYA"
+"time":"716"
+"type":"song"
+}
+{
+"title":"世田谷ナイトサファリ"
+"artist":"みきとP"
+"time":"1077"
+"type":"song"
+}
+{
+"title":"僕は初音ミクとキスをした"
+"artist":"みきとP"
+"time":"2162"
+"type":"song"
+}
+{
+"title":"プロポーズ"
+"artist":"内緒のピアス"
+"time":"2493"
+"type":"song"
+}
+{
+"title":"蝶"
+"artist":"Acid Black Cherry"
+"time":"3253"
+"type":"song"
+}
+{
+"title":"月光花"
+"artist":"Janne Da Arc"
+"time":"3857"
+"type":"song"
+}
+{
+"title":"夏恋"
+"artist":"シド"
+"time":"4279"
+"type":"song"
+}
+{
+"title":"林檎飴"
+"artist":"シド"
+"time":"5000"
+"type":"song"
+}
+{
+"title":"誘惑"
+"artist":"GLAY"
+"time":"5338"
+"type":"song"
+}
+{
+"title":"You & Me"
+"artist":"田村ゆかり"
+"time":"5913"
+"type":"song"
+}
+{
+"title":"fancy baby doll"
+"artist":"田村ゆかり"
+"time":"6194"
+"type":"song"
+}
+{
+"title":"歌うたいのバラッド"
+"artist":"斉藤和義"
+"time":"6793"
+"type":"song"
+}
+{
+"title":"おやすみ泣き声、さよなら歌姫"
+"artist":"クリープハイプ"
+"time":"7452"
+"type":"song"
+}
+{
+"title":"左耳"
+"artist":"クリープハイプ"
+"time":"7787"
+"type":"song"
+}
+{
+"title":"盛れ！ミ・アモーレ"
+"artist":"Juice=Juice"
+"time":"8123"
+"type":"song"
+}
+{
+"title":"好きすぎて滅！"
+"artist":"M!LK"
+"time":"8453"
+"type":"song"
+}
+{
+"title":"愛を伝えたいだとか"
+"artist":"あいみょん"
+"time":"8780"
+"type":"song"
+}
+{
+"title":"カプチーノ"
+"artist":"椎名林檎"
+"time":"9052"
+"type":"song"
+},
+]
+},
   {
     "date": "2026-12-21",
     "title": "冬の夜歌 / DEMO",
