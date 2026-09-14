@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
 
 :root{
-  --bg:#f1e9ed;
-  --surface:#faf5f7;
-  --surface2:#e9dfe9;
   --text:#352b38;
   --muted:#7b6d7d;
   --main:#74557B;
@@ -11,21 +8,24 @@
   --accent:#9a6d91;
   --rose:#cba9bd;
   --softrose:#dcc8d5;
-  --cream:#fff9f6;
   --gold:#c3a46d;
   --line:rgba(116,85,123,.24);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   color:var(--text);
-  background:
-    radial-gradient(circle at 84% 7%,rgba(204,170,173,.24),transparent 28%),
-    radial-gradient(circle at 3% 62%,rgba(109,76,97,.08),transparent 24%),
-    linear-gradient(180deg,#f5edf1 0%,#f1e9ed 50%,#e9dfe9 100%);
   font-family:"Noto Serif JP","Shippori Mincho",serif;
 }
+
 body::before{
   content:"";
   position:fixed;
@@ -36,162 +36,780 @@ body::before{
   background-image:url("./assets/asanoha.png");
   background-size:120px 207.846px;
 }
-a{color:inherit;text-decoration:none}
-button,input{font:inherit}
-header{
-  height:72px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;
-  border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;
-  background:rgba(248,243,237,.9);backdrop-filter:blur(14px)
+
+a{
+  color:inherit;
+  text-decoration:none;
 }
-.logo{font:600 1.05rem "Playfair Display",serif;letter-spacing:.18em}
-.logo span{color:var(--accent)}
-nav{display:flex;gap:1.5rem}
-nav a{font:600 .68rem "Playfair Display",serif;letter-spacing:.13em;color:var(--muted)}
-nav a:hover{color:var(--cream)}
 
-.hero{padding:10vw 9vw 8vw;min-height:62vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.hero::after{
-  content:"";position:absolute;right:6vw;top:12%;width:min(31vw,390px);aspect-ratio:1;
-  opacity:.17;border:1px solid rgba(100,87,113,.28);border-radius:50%;
-  background-color:rgba(255,250,244,.5);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='83.14' viewBox='0 0 96 83.14'%3E%3Cg fill='none' stroke='%23A95D84' stroke-width='1.2'%3E%3Cpath d='M0 0L24 41.57L48 0L72 41.57L96 0M0 83.14L24 41.57L48 83.14L72 41.57L96 83.14M0 0L48 27.71L96 0M0 83.14L48 55.43L96 83.14M0 27.71L24 41.57L0 55.43M96 27.71L72 41.57L96 55.43M48 0V27.71M48 55.43V83.14M24 0V41.57M72 0V41.57M24 41.57V83.14M72 41.57V83.14'/%3E%3C/g%3E%3C/svg%3E");
-  background-size:72px 62.36px;
-}.eyebrow{color:var(--accent);font:600 .68rem "Playfair Display",serif;letter-spacing:.22em}
-.hero h1{font:600 clamp(3.4rem,9vw,8rem)/.92 "Shippori Mincho",serif;letter-spacing:.04em;margin:1rem 0 1.7rem;position:relative;z-index:1}
-.hero h1 em{font-style:normal;color:var(--cream);font-family:"Playfair Display",serif;letter-spacing:.02em}
-.hero p{color:var(--muted);line-height:2.1;max-width:700px;position:relative;z-index:1}
+button,input{
+  font:inherit;
+}
 
-.section{padding:7vw 9vw;border-top:1px solid var(--line);position:relative}
-.section h2{font:600 clamp(2rem,4vw,3.8rem) "Shippori Mincho",serif;letter-spacing:.03em;margin:.5rem 0 2rem}
+header{
+  height:72px;
+  padding:0 7vw;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(14px);
+}
+
+.logo{
+  font:600 1.05rem "Playfair Display",serif;
+  letter-spacing:.18em;
+}
+
+nav{
+  display:flex;
+  gap:1.5rem;
+}
+
+nav a{
+  font:600 .68rem "Playfair Display",serif;
+  letter-spacing:.13em;
+  color:var(--muted);
+}
+
+.hero{
+  padding:10vw 9vw 8vw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.eyebrow{
+  font:600 .68rem "Playfair Display",serif;
+  letter-spacing:.22em;
+}
+
+.hero h1{
+  font:600 clamp(3.4rem,9vw,8rem)/.92 "Shippori Mincho",serif;
+  letter-spacing:.04em;
+  margin:1rem 0 1.7rem;
+  position:relative;
+  z-index:1;
+}
+
+.hero h1 em{
+  font-style:normal;
+  font-family:"Playfair Display",serif;
+  letter-spacing:.02em;
+}
+
+.hero p{
+  color:var(--muted);
+  line-height:2.1;
+  max-width:700px;
+  position:relative;
+  z-index:1;
+}
+
+.section{
+  padding:7vw 9vw;
+  border-top:1px solid var(--line);
+  position:relative;
+}
+
+.section h2{
+  font:600 clamp(2rem,4vw,3.8rem) "Shippori Mincho",serif;
+  letter-spacing:.03em;
+  margin:.5rem 0 2rem;
+}
+
 .section:nth-of-type(even)::before{
-  content:"";position:absolute;left:0;top:0;width:100%;height:6px;opacity:.35;
-  background:repeating-linear-gradient(90deg,var(--main) 0 28px,var(--accent) 28px 31px,transparent 31px 48px)
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
 }
-.heroActions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem;position:relative;z-index:2}
+
+.heroActions{
+  display:flex;
+  gap:.8rem;
+  flex-wrap:wrap;
+  margin-top:1.2rem;
+  position:relative;
+  z-index:2;
+}
+
 .primaryButton,.ghostButton{
-  display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.2rem;
-  border:1px solid var(--line);font:600 .72rem "Noto Serif JP",serif;letter-spacing:.08em
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.95rem 1.2rem;
+  border:1px solid var(--line);
+  font:600 .72rem "Noto Serif JP",serif;
+  letter-spacing:.08em;
 }
-.primaryButton{background:var(--main);border-color:var(--main)}
-.ghostButton{background:rgba(255,250,244,.65)}
-.primaryButton:hover,.ghostButton:hover{border-color:var(--accent);background:var(--accent)}
 
-.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2rem}
-.sectionHead h2{margin-bottom:0}
-.textLink,.backlink{color:var(--muted);font:600 .68rem "Playfair Display",serif;letter-spacing:.12em}
-.backlink{display:inline-block;margin-bottom:2rem}
-.textLink:hover,.backlink:hover{color:var(--accent)}
+.primaryButton{
+  background:var(--main);
+  border-color:var(--main);
+}
 
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-#archiveCards{grid-template-columns:1fr}
+.primaryButton:hover,.ghostButton:hover{
+  border-color:var(--accent);
+  background:var(--accent);
+}
+
+.sectionHead{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:2rem;
+  margin-bottom:2rem;
+}
+
+.sectionHead h2{
+  margin-bottom:0;
+}
+
+.textLink,.backlink{
+  color:var(--muted);
+  font:600 .68rem "Playfair Display",serif;
+  letter-spacing:.12em;
+}
+
+.backlink{
+  display:inline-block;
+  margin-bottom:2rem;
+}
+
+.textLink:hover,.backlink:hover{
+  color:var(--accent);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+}
+
+#archiveCards{
+  grid-template-columns:1fr;
+}
+
 .card{
-  display:block;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,250,244,.9),rgba(169,93,132,.055));
-  padding:2rem;min-height:185px;position:relative;overflow:hidden
+  display:block;
+  border:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(255,250,244,.9),rgba(169,93,132,.055));
+  padding:2rem;
+  min-height:185px;
+  position:relative;
+  overflow:hidden;
 }
-.card::after{content:"";position:absolute;right:-24px;bottom:-24px;width:92px;height:92px;border:1px solid rgba(169,93,132,.28);transform:rotate(45deg)}
-.card:hover{border-color:var(--accent);transform:translateY(-2px);transition:.18s}
-.card-date{color:var(--accent);font:600 .72rem "Playfair Display",serif;letter-spacing:.13em}
-.card h3{font-size:1.35rem;margin:1rem 0}
-.card-meta,.muted{color:var(--muted);font-size:.78rem}
 
-.latestList,.rankingTable,.historyList,.artistSongList,.songTableWrap{border-top:1px solid var(--line)}
-.latestRow{display:grid;grid-template-columns:70px 135px 1fr 28px;gap:1rem;align-items:center;padding:1.25rem .6rem;border-bottom:1px solid var(--line)}
-.latestRow:hover,.rankingRow:hover,.historyCard:hover,.artistSongCard:hover{background:rgba(169,93,132,.075)}
-.latestNumber,.rankNumber{color:var(--main);font:600 .8rem "Playfair Display",serif}
-.latestDate{color:var(--accent);font:600 .72rem "Playfair Display",serif;letter-spacing:.06em}
-.latestArrow,.songArrow,.artistSongArrow{color:var(--accent)}
+.card::after{
+  content:"";
+  position:absolute;
+}
 
-.rankingHead,.rankingRow{display:grid;grid-template-columns:80px minmax(0,1.4fr) minmax(0,1fr) 90px;gap:1rem;align-items:center}
-.rankingHead{padding:.85rem .6rem;border-bottom:1px solid var(--line);color:var(--muted);font:600 .62rem "Playfair Display",serif;letter-spacing:.1em}
-.rankingHead span:last-child,.rankingCount{text-align:right}
-.rankingRow{padding:1.1rem .6rem;border-bottom:1px solid var(--line)}
-.rankingSong{font-weight:600}.rankingArtist{color:var(--muted);font-size:.9rem}
-.rankingSong span,.rankingArtist span,.rankingCount{color:var(--accent)}
-.rankingSong:hover,.rankingArtist:hover{color:var(--cream)}
+.card:hover{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+  transition:.18s;
+}
 
-.socialGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.socialGrid>.socialCard:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - .5rem);justify-self:center}
+.card-date{
+  color:var(--accent);
+  font:600 .72rem "Playfair Display",serif;
+  letter-spacing:.13em;
+}
+
+.card h3{
+  font-size:1.35rem;
+  margin:1rem 0;
+}
+
+.card-meta,.muted{
+  color:var(--muted);
+  font-size:.78rem;
+}
+
+.latestList,.rankingTable,.historyList,.artistSongList,.songTableWrap{
+  border-top:1px solid var(--line);
+}
+
+.latestRow{
+  display:grid;
+  grid-template-columns:70px 135px 1fr 28px;
+  gap:1rem;
+  align-items:center;
+  padding:1.25rem .6rem;
+  border-bottom:1px solid var(--line);
+}
+
+.latestRow:hover,.rankingRow:hover,.historyCard:hover,.artistSongCard:hover{
+  background:rgba(169,93,132,.075);
+}
+
+.latestNumber,.rankNumber{
+  color:var(--main);
+  font:600 .8rem "Playfair Display",serif;
+}
+
+.latestDate{
+  color:var(--accent);
+  font:600 .72rem "Playfair Display",serif;
+  letter-spacing:.06em;
+}
+
+.latestArrow,.songArrow,.artistSongArrow{
+  color:var(--accent);
+}
+
+.rankingHead,.rankingRow{
+  display:grid;
+  grid-template-columns:80px minmax(0,1.4fr) minmax(0,1fr) 90px;
+  gap:1rem;
+  align-items:center;
+}
+
+.rankingHead{
+  padding:.85rem .6rem;
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+  font:600 .62rem "Playfair Display",serif;
+  letter-spacing:.1em;
+}
+
+.rankingHead span:last-child,.rankingCount{
+  text-align:right;
+}
+
+.rankingRow{
+  padding:1.1rem .6rem;
+  border-bottom:1px solid var(--line);
+}
+
+.rankingSong{
+  font-weight:600;
+}
+
+.rankingArtist{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+.rankingSong span,.rankingArtist span,.rankingCount{
+  color:var(--accent);
+}
+
+.rankingSong:hover,.rankingArtist:hover{
+  color:var(--cream);
+}
+
+.socialGrid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+}
+
+.socialGrid>.socialCard:last-child:nth-child(odd){
+  grid-column:1/-1;
+  width:calc(50% - .5rem);
+  justify-self:center;
+}
+
 .socialCard{
-  min-height:145px;padding:1.5rem;border:1px solid var(--line);background:rgba(255,250,244,.72);
-  display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto 1fr;gap:.6rem 1rem
-}
-.socialCard:hover{border-color:var(--accent)}
-.socialIndex{color:var(--main);font:600 .65rem "Playfair Display",serif}
-.socialCard strong{font:600 clamp(1.3rem,3vw,2.2rem) "Playfair Display",serif}
-.socialCard small{grid-column:2;color:var(--muted);font:600 .62rem "Playfair Display",serif;letter-spacing:.1em}
-.socialArrow{grid-column:3;grid-row:1/span 2;align-self:center;color:var(--accent)}
-.socialCardDisabled{opacity:.5}.socialNote{color:var(--muted);font-size:.75rem}
-
-.toolbar{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:3rem}
-.search span{display:block;color:var(--accent);font-size:.7rem;letter-spacing:.15em;margin-bottom:.7rem}
-.search input{width:100%;background:transparent;color:var(--text);border:0;border-bottom:1px solid var(--line);padding:.9rem 0;font-size:1.15rem;outline:0}
-.search input:focus{border-color:var(--accent)}
-.stats{display:flex;align-items:baseline;gap:.6rem}.stats strong{font:600 2.1rem "Playfair Display";color:var(--accent)}.stats span{color:var(--muted);font-size:.65rem}
-
-.songTableHead,.songDbRow{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 120px;align-items:center;border-bottom:1px solid var(--line)}
-.sortBtn{padding:1rem;border:0;background:transparent;color:var(--muted);text-align:left;font-weight:600;cursor:pointer}
-.sortBtn:hover,.sortBtn.active{color:var(--cream)}.countHead,.songCount{text-align:right}
-.songTitleLink,.songArtist,.songCount{padding:1.1rem 1rem}.songTitleLink{display:flex;justify-content:space-between;gap:1rem;font-weight:600}
-.songArtist,.songCount{color:var(--muted)}.songTitleLink:hover,.artistLink:hover{color:var(--accent)}
-.artistLink{display:flex;justify-content:space-between;gap:1rem}
-
-.playerHead{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2rem}
-.playerHead h2,#archiveTitle{margin:.5rem 0;font:600 clamp(1.8rem,3vw,2.8rem) "Shippori Mincho",serif;line-height:1.3;letter-spacing:.02em}
-.share{background:var(--main);color:#fff;border:1px solid var(--main);padding:.95rem 1.2rem;font-weight:600;cursor:pointer}.share:hover{background:var(--accent);border-color:var(--accent)}
-.playerLayout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(280px,.8fr);gap:1rem}
-.video{aspect-ratio:16/9;background:#000}.video iframe,#player{width:100%;height:100%}
-.setlist{background:var(--surface);border:1px solid var(--line);overflow:auto}
-.setlistHead{display:flex;justify-content:space-between;padding:1rem;border-bottom:1px solid var(--line);color:var(--accent);font-size:.68rem;letter-spacing:.1em}
-.track{width:100%;display:grid;grid-template-columns:65px 1fr;padding:1rem;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--muted);text-align:left;cursor:pointer}
-.track:hover,.track.active{background:rgba(169,93,132,.08);color:var(--text)}
-.time{color:var(--accent);font:600 .7rem "Playfair Display",serif}.trackArtist{color:var(--muted);font-size:.82em}
-
-.historyHero{padding-top:6vw}.historyTitle{font:600 clamp(2.7rem,7vw,6rem)/1 "Shippori Mincho",serif;margin:1rem 0 2rem}
-.historyMeta{display:flex;gap:3rem;flex-wrap:wrap}.historyMeta div{display:flex;flex-direction:column;gap:.45rem}.historyMeta span{color:var(--accent);font-size:.65rem;letter-spacing:.12em}.historyMeta i{font-style:normal;color:var(--accent)}
-.historyCard{display:grid;grid-template-columns:150px 1fr 110px;gap:1rem;align-items:center;padding:1.2rem 1rem;border-bottom:1px solid var(--line)}
-.historyDate{color:var(--accent);font-size:.75rem}.historyArchiveTitle{font-weight:600}.historyListen{text-align:right;color:var(--muted);font-size:.68rem}
-.artistSongCard{display:grid;grid-template-columns:1fr 180px 28px;gap:1rem;align-items:center;padding:1.15rem 1rem;border-bottom:1px solid var(--line)}
-.artistSongTitle{font-weight:600}.artistSongCount{text-align:right;color:var(--muted);font-size:.7rem}
-
-.toast{position:fixed;right:24px;bottom:24px;z-index:100;max-width:min(420px,calc(100vw - 32px));padding:.95rem 1.1rem;border:1px solid var(--line);background:rgba(53,47,56,.96);box-shadow:0 14px 40px rgba(53,47,56,.18);font-size:.82rem;opacity:0;transform:translateY(14px);pointer-events:none;transition:.2s}
-.toast::before{content:"✓";margin-right:.55rem;color:var(--accent);font-weight:700}.toast.error::before{content:"!";color:var(--accent)}.toast.show{opacity:1;transform:translateY(0)}
-
-footer{padding:3rem 9vw;border-top:1px solid var(--line);display:flex;gap:1.5rem;color:var(--muted);font-size:.72rem}footer b{color:var(--cream)}
-
-@media(max-width:760px){
-  header{padding:0 5vw}nav{gap:.8rem}nav a{font-size:.58rem}
-  .hero{padding:20vw 7vw 14vw}.hero h1{font-size:15vw}.hero::after{opacity:.07;width:55vw}
-  .section{padding:14vw 6vw}.cards{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}.stats{display:none}
-  .heroActions{flex-direction:column}.sectionHead{align-items:start;flex-direction:column;gap:.8rem}
-  .latestRow{grid-template-columns:42px 105px 1fr 20px;padding:1rem .25rem}.latestTitle{font-size:.88rem}
-  .rankingHead,.rankingRow{grid-template-columns:42px minmax(0,1fr) 68px}.rankingHead span:nth-child(3),.rankingArtist{display:none}
-  .socialGrid{grid-template-columns:1fr}.socialGrid>.socialCard:last-child:nth-child(odd){grid-column:auto;width:100%}
-  .songTableHead,.songDbRow{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 72px}.sortBtn,.songTitleLink,.songArtist,.songCount{padding:.95rem .6rem}
-  .playerHead{align-items:start;flex-direction:column}.playerLayout{grid-template-columns:1fr}#archiveTitle{font-size:clamp(1.55rem,7vw,2.15rem)}
-  .historyCard{grid-template-columns:105px 1fr}.historyListen{grid-column:2;text-align:left}
-  .artistSongCard{grid-template-columns:1fr 95px 22px;padding:.95rem .6rem}
-  .toast{right:16px;bottom:16px;left:16px;max-width:none}footer{flex-wrap:wrap}
+  min-height:145px;
+  padding:1.5rem;
+  border:1px solid var(--line);
+  background:rgba(255,250,244,.72);
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  grid-template-rows:auto 1fr;
+  gap:.6rem 1rem;
 }
 
-.toast{color:#fffaf4}
+.socialCard:hover{
+  border-color:var(--accent);
+}
 
+.socialIndex{
+  color:var(--main);
+  font:600 .65rem "Playfair Display",serif;
+}
 
-/* ===== v3 / approved palette + true 麻の葉 direction ===== */
+.socialCard strong{
+  font:600 clamp(1.3rem,3vw,2.2rem) "Playfair Display",serif;
+}
+
+.socialCard small{
+  grid-column:2;
+  color:var(--muted);
+  font:600 .62rem "Playfair Display",serif;
+  letter-spacing:.1em;
+}
+
+.socialArrow{
+  grid-column:3;
+  grid-row:1/span 2;
+  align-self:center;
+  color:var(--accent);
+}
+
+.socialCardDisabled{
+  opacity:.5;
+}
+
+.socialNote{
+  color:var(--muted);
+  font-size:.75rem;
+}
+
+.toolbar{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;
+  align-items:end;
+  margin-bottom:3rem;
+}
+
+.search span{
+  display:block;
+  color:var(--accent);
+  font-size:.7rem;
+  letter-spacing:.15em;
+  margin-bottom:.7rem;
+}
+
+.search input{
+  width:100%;
+  background:transparent;
+  color:var(--text);
+  border:0;
+  border-bottom:1px solid var(--line);
+  padding:.9rem 0;
+  font-size:1.15rem;
+  outline:0;
+}
+
+.search input:focus{
+  border-color:var(--accent);
+}
+
+.stats{
+  display:flex;
+  align-items:baseline;
+  gap:.6rem;
+}
+
+.stats strong{
+  font:600 2.1rem "Playfair Display";
+  color:var(--accent);
+}
+
+.stats span{
+  color:var(--muted);
+  font-size:.65rem;
+}
+
+.songTableHead,.songDbRow{
+  display:grid;
+  grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 120px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+}
+
+.sortBtn{
+  padding:1rem;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  text-align:left;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.sortBtn:hover,.sortBtn.active{
+  color:var(--cream);
+}
+
+.countHead,.songCount{
+  text-align:right;
+}
+
+.songTitleLink,.songArtist,.songCount{
+  padding:1.1rem 1rem;
+}
+
+.songTitleLink{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  font-weight:600;
+}
+
+.songArtist,.songCount{
+  color:var(--muted);
+}
+
+.songTitleLink:hover,.artistLink:hover{
+  color:var(--accent);
+}
+
+.artistLink{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+.playerHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:2rem;
+  margin-bottom:2rem;
+}
+
+.playerHead h2,#archiveTitle{
+  margin:.5rem 0;
+  font:600 clamp(1.8rem,3vw,2.8rem) "Shippori Mincho",serif;
+  line-height:1.3;
+  letter-spacing:.02em;
+}
+
+.share{
+  background:var(--main);
+  color:#fff;
+  border:1px solid var(--main);
+  padding:.95rem 1.2rem;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.share:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+}
+
+.playerLayout{
+  display:grid;
+  grid-template-columns:minmax(0,1.8fr) minmax(280px,.8fr);
+  gap:1rem;
+}
+
+.video{
+  aspect-ratio:16/9;
+  background:#000;
+}
+
+.video iframe,#player{
+  width:100%;
+  height:100%;
+}
+
+.setlist{
+  border:1px solid var(--line);
+  overflow:auto;
+}
+
+.setlistHead{
+  display:flex;
+  justify-content:space-between;
+  padding:1rem;
+  border-bottom:1px solid var(--line);
+  color:var(--accent);
+  font-size:.68rem;
+  letter-spacing:.1em;
+}
+
+.track{
+  width:100%;
+  display:grid;
+  grid-template-columns:65px 1fr;
+  padding:1rem;
+  border:0;
+  border-bottom:1px solid var(--line);
+  background:transparent;
+  color:var(--muted);
+  text-align:left;
+  cursor:pointer;
+}
+
+.track:hover,.track.active{
+  color:var(--text);
+}
+
+.time{
+  color:var(--accent);
+  font:600 .7rem "Playfair Display",serif;
+}
+
+.trackArtist{
+  color:var(--muted);
+  font-size:.82em;
+}
+
+.historyHero{
+  padding-top:6vw;
+}
+
+.historyTitle{
+  font:600 clamp(2.7rem,7vw,6rem)/1 "Shippori Mincho",serif;
+  margin:1rem 0 2rem;
+}
+
+.historyMeta{
+  display:flex;
+  gap:3rem;
+  flex-wrap:wrap;
+}
+
+.historyMeta div{
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+}
+
+.historyMeta span{
+  color:var(--accent);
+  font-size:.65rem;
+  letter-spacing:.12em;
+}
+
+.historyMeta i{
+  font-style:normal;
+  color:var(--accent);
+}
+
+.historyCard{
+  display:grid;
+  grid-template-columns:150px 1fr 110px;
+  gap:1rem;
+  align-items:center;
+  padding:1.2rem 1rem;
+  border-bottom:1px solid var(--line);
+}
+
+.historyDate{
+  color:var(--accent);
+  font-size:.75rem;
+}
+
+.historyArchiveTitle{
+  font-weight:600;
+}
+
+.historyListen{
+  text-align:right;
+  color:var(--muted);
+  font-size:.68rem;
+}
+
+.artistSongCard{
+  display:grid;
+  grid-template-columns:1fr 180px 28px;
+  gap:1rem;
+  align-items:center;
+  padding:1.15rem 1rem;
+  border-bottom:1px solid var(--line);
+}
+
+.artistSongTitle{
+  font-weight:600;
+}
+
+.artistSongCount{
+  text-align:right;
+  color:var(--muted);
+  font-size:.7rem;
+}
+
+.toast{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:100;
+  max-width:min(420px,calc(100vw - 32px));
+  padding:.95rem 1.1rem;
+  border:1px solid var(--line);
+  box-shadow:0 14px 40px rgba(53,47,56,.18);
+  font-size:.82rem;
+  opacity:0;
+  transform:translateY(14px);
+  pointer-events:none;
+  transition:.2s;
+}
+
+.toast::before{
+  content:"✓";
+  margin-right:.55rem;
+  color:var(--accent);
+  font-weight:700;
+}
+
+.toast.error::before{
+  content:"!";
+  color:var(--accent);
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+footer{
+  padding:3rem 9vw;
+  display:flex;
+  gap:1.5rem;
+  font-size:.72rem;
+}
+
+@media (max-width:760px){
+  header{
+    padding:0 5vw;
+  }
+
+  nav{
+    gap:.8rem;
+  }
+
+  nav a{
+    font-size:.58rem;
+  }
+
+  .hero{
+    padding:20vw 7vw 14vw;
+  }
+
+  .hero h1{
+    font-size:15vw;
+  }
+
+  .hero::after{
+    opacity:.07;
+    width:55vw;
+  }
+
+  .section{
+    padding:14vw 6vw;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .toolbar{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    display:none;
+  }
+
+  .heroActions{
+    flex-direction:column;
+  }
+
+  .sectionHead{
+    align-items:start;
+    flex-direction:column;
+    gap:.8rem;
+  }
+
+  .latestRow{
+    grid-template-columns:42px 105px 1fr 20px;
+    padding:1rem .25rem;
+  }
+
+  .latestTitle{
+    font-size:.88rem;
+  }
+
+  .rankingHead,.rankingRow{
+    grid-template-columns:42px minmax(0,1fr) 68px;
+  }
+
+  .rankingHead span:nth-child(3),.rankingArtist{
+    display:none;
+  }
+
+  .socialGrid{
+    grid-template-columns:1fr;
+  }
+
+  .socialGrid>.socialCard:last-child:nth-child(odd){
+    grid-column:auto;
+    width:100%;
+  }
+
+  .songTableHead,.songDbRow{
+    grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 72px;
+  }
+
+  .sortBtn,.songTitleLink,.songArtist,.songCount{
+    padding:.95rem .6rem;
+  }
+
+  .playerHead{
+    align-items:start;
+    flex-direction:column;
+  }
+
+  .playerLayout{
+    grid-template-columns:1fr;
+  }
+
+  #archiveTitle{
+    font-size:clamp(1.55rem,7vw,2.15rem);
+  }
+
+  .historyCard{
+    grid-template-columns:105px 1fr;
+  }
+
+  .historyListen{
+    grid-column:2;
+    text-align:left;
+  }
+
+  .artistSongCard{
+    grid-template-columns:1fr 95px 22px;
+    padding:.95rem .6rem;
+  }
+
+  .toast{
+    right:16px;
+    bottom:16px;
+    left:16px;
+    max-width:none;
+  }
+
+  footer{
+    flex-wrap:wrap;
+  }
+}
+
 header{
-  background:rgba(248,242,237,.90);
   border-bottom:1px solid rgba(109,76,97,.20);
   box-shadow:0 8px 30px rgba(90,59,84,.05);
 }
-.logo{color:var(--deep)}
-.logo span{color:var(--gold)}
-nav a:hover{color:var(--accent)}
+
+.logo{
+  color:var(--deep);
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+nav a:hover{
+  color:var(--accent);
+}
 
 .hero{
   min-height:64vh;
-  background:
-    linear-gradient(90deg,rgba(255,250,245,.82),rgba(255,250,245,.36)),
-    radial-gradient(circle at 76% 42%,rgba(204,170,173,.18),transparent 32%);
 }
+
 .hero::before{
   content:"";
   position:absolute;
@@ -205,6 +823,7 @@ nav a:hover{color:var(--accent)}
   background-size:86px auto;
   border:1px solid rgba(109,76,97,.18);
 }
+
 .hero::after{
   content:"";
   position:absolute;
@@ -214,22 +833,25 @@ nav a:hover{color:var(--accent)}
   aspect-ratio:1;
   border-radius:50%;
   opacity:.18;
-  background-color:rgba(204,170,173,.18);
   background-image:url("./assets/asanoha.png");
   background-size:92px auto;
   border:1px solid rgba(109,76,97,.22);
   transform:none;
 }
-.hero h1{color:var(--deep);text-shadow:0 1px 0 rgba(255,255,255,.45)}
-.hero h1 em{color:var(--accent)}
-.eyebrow{color:var(--accent)}
 
-.section{
-  background:rgba(255,250,245,.43);
+.hero h1{
+  color:var(--deep);
+  text-shadow:0 1px 0 rgba(255,255,255,.45);
 }
-.section:nth-of-type(even){
-  background:rgba(248,242,237,.58);
+
+.hero h1 em{
+  color:var(--accent);
 }
+
+.eyebrow{
+  color:var(--accent);
+}
+
 .section:nth-of-type(even)::before{
   height:4px;
   opacity:.55;
@@ -237,27 +859,28 @@ nav a:hover{color:var(--accent)}
 }
 
 .primaryButton,.share{
-  background:linear-gradient(180deg,#755368,#64455c);
   border-color:var(--deep);
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 5px 14px rgba(90,59,84,.12);
 }
+
 .primaryButton:hover,.share:hover{
   background:var(--accent);
 }
+
 .ghostButton{
-  background:rgba(255,250,245,.78);
   color:var(--deep);
   border-color:rgba(109,76,97,.34);
 }
+
 .ghostButton:hover{
   color:#fff;
   background:var(--accent);
 }
 
 .card,.socialCard{
-  background:rgba(255,250,245,.72);
   box-shadow:0 8px 28px rgba(90,59,84,.045);
 }
+
 .card::after{
   width:110px;
   height:110px;
@@ -269,13 +892,23 @@ nav a:hover{color:var(--accent)}
   background-image:url("./assets/asanoha.png");
   background-size:70px auto;
 }
-.card-date,.latestDate,.historyDate,.time{color:var(--accent)}
-.latestNumber,.rankNumber,.socialIndex{color:var(--rose)}
-.rankingSong span,.rankingArtist span,.rankingCount,.songArrow,.artistSongArrow,.latestArrow{color:var(--accent)}
+
+.card-date,.latestDate,.historyDate,.time{
+  color:var(--accent);
+}
+
+.latestNumber,.rankNumber,.socialIndex{
+  color:var(--rose);
+}
+
+.rankingSong span,.rankingArtist span,.rankingCount,.songArrow,.artistSongArrow,.latestArrow{
+  color:var(--accent);
+}
 
 .rankingRow,.latestRow,.historyCard,.artistSongCard{
   background:rgba(255,250,245,.30);
 }
+
 .rankingRow:hover,.latestRow:hover,.historyCard:hover,.artistSongCard:hover{
   background:rgba(204,170,173,.13);
 }
@@ -284,6 +917,7 @@ nav a:hover{color:var(--accent)}
   position:relative;
   overflow:hidden;
 }
+
 .socialCard::after{
   content:"";
   position:absolute;
@@ -299,20 +933,30 @@ nav a:hover{color:var(--accent)}
 .songTableWrap,.latestList,.rankingTable,.historyList,.artistSongList{
   background:rgba(255,250,245,.30);
 }
-.songDbRow:hover{background:rgba(204,170,173,.11)}
-.sortBtn:hover,.sortBtn.active,.songTitleLink:hover,.artistLink:hover{color:var(--accent)}
 
-.setlist{background:rgba(248,242,237,.92)}
-.track:hover,.track.active{background:rgba(204,170,173,.15)}
-.video{box-shadow:0 14px 36px rgba(90,59,84,.12)}
+.songDbRow:hover{
+  background:rgba(204,170,173,.11);
+}
+
+.sortBtn:hover,.sortBtn.active,.songTitleLink:hover,.artistLink:hover{
+  color:var(--accent);
+}
+
+.track:hover,.track.active{
+  background:rgba(204,170,173,.15);
+}
+
+.video{
+  box-shadow:0 14px 36px rgba(90,59,84,.12);
+}
 
 footer{
   position:relative;
   overflow:hidden;
-  background:var(--deep);
   color:#d8c5cd;
   border-top:0;
 }
+
 footer::after{
   content:"";
   position:absolute;
@@ -326,96 +970,100 @@ footer::after{
   background-size:80px auto;
   filter:brightness(3);
 }
-footer b{color:#fff7f0}
+
+footer b{
+  color:#fff7f0;
+}
 
 .toast{
-  background:rgba(90,59,84,.96);
   color:#fffaf5;
   border-color:rgba(255,255,255,.15);
 }
 
-@media(max-width:760px){
-  .hero::before{width:145px;height:145px;left:-70px;opacity:.13}
-  .hero::after{width:62vw;right:-26vw;top:1%;opacity:.12}
+@media (max-width:760px){
+  .hero::before{
+    width:145px;
+    height:145px;
+    left:-70px;
+    opacity:.13;
+  }
+
+  .hero::after{
+    width:62vw;
+    right:-26vw;
+    top:1%;
+    opacity:.12;
+  }
 }
 
+.hero::after{
+  background-color:rgba(203,169,189,.20);
+}
 
-/* ===== v5 / #74557B palette study ===== */
-body{
-  background:
-    radial-gradient(circle at 84% 7%,rgba(203,169,189,.25),transparent 28%),
-    radial-gradient(circle at 3% 62%,rgba(116,85,123,.09),transparent 24%),
-    linear-gradient(180deg,#f7f0f3 0%,#f1e9ed 50%,#e9dfe9 100%);
-}
-header{background:rgba(250,245,247,.91)}
-.hero{
-  background:
-    linear-gradient(90deg,rgba(255,249,246,.84),rgba(255,249,246,.38)),
-    radial-gradient(circle at 76% 42%,rgba(203,169,189,.20),transparent 32%);
-}
-.hero::after{background-color:rgba(203,169,189,.20)}
-.section{background:rgba(255,249,246,.46)}
-.section:nth-of-type(even){background:rgba(250,245,247,.62)}
 .primaryButton,.share{
   background:linear-gradient(180deg,#806087,#684a70);
 }
-.card,.socialCard{background:rgba(255,249,246,.76)}
-.rankingRow,.latestRow,.historyCard,.artistSongCard,
-.songTableWrap,.latestList,.rankingTable,.historyList,.artistSongList{
-  background:rgba(255,249,246,.33);
-}
+
 .rankingRow:hover,.latestRow:hover,.historyCard:hover,.artistSongCard:hover,
 .songDbRow:hover,.track:hover,.track.active{
   background:rgba(203,169,189,.15);
 }
-.setlist{background:rgba(250,245,247,.94)}
-footer{background:#5d4164}
-.toast{background:rgba(93,65,100,.97)}
 
+footer{
+  background:#5d4164;
+}
 
-/* ===== v6 / lavender background adjustment ===== */
+.toast{
+  background:rgba(93,65,100,.97);
+}
+
 :root{
   --bg:#ddd1df;
   --surface:#eee5ef;
   --surface2:#d8c9dc;
   --cream:#f8f1f5;
 }
+
 body{
-  background:
-    radial-gradient(circle at 84% 7%,rgba(154,109,145,.22),transparent 30%),
+  background:radial-gradient(circle at 84% 7%,rgba(154,109,145,.22),transparent 30%),
     radial-gradient(circle at 4% 62%,rgba(116,85,123,.16),transparent 27%),
     linear-gradient(180deg,#e8dfea 0%,#ddd1df 52%,#d5c6da 100%);
 }
+
 header{
   background:rgba(238,229,239,.92);
 }
+
 .hero{
-  background:
-    linear-gradient(90deg,rgba(239,230,240,.80),rgba(221,209,223,.56)),
+  background:linear-gradient(90deg,rgba(239,230,240,.80),rgba(221,209,223,.56)),
     radial-gradient(circle at 76% 42%,rgba(203,169,189,.25),transparent 34%);
 }
+
 .section{
   background:rgba(239,230,240,.48);
 }
+
 .section:nth-of-type(even){
   background:rgba(222,209,225,.54);
 }
+
 .card,.socialCard{
   background:rgba(244,236,242,.68);
 }
+
 .rankingRow,.latestRow,.historyCard,.artistSongCard,
 .songTableWrap,.latestList,.rankingTable,.historyList,.artistSongList{
   background:rgba(239,230,240,.38);
 }
+
 .setlist{
   background:rgba(238,229,239,.92);
 }
+
 .ghostButton{
   background:rgba(244,236,242,.68);
 }
 
-
-/* ===== v7 / Taisho hero + #625870 ichimatsu ===== */
 .hero-v7{
   position:relative;
   min-height:680px;
@@ -427,19 +1075,18 @@ header{
   align-items:center;
   isolation:isolate;
   border-bottom:1px solid rgba(116,85,123,.22);
-  background:
-    radial-gradient(circle at 50% 15%,rgba(255,255,255,.16),transparent 30%),
+  background:radial-gradient(circle at 50% 15%,rgba(255,255,255,.16),transparent 30%),
     linear-gradient(180deg,rgba(232,223,234,.88),rgba(221,209,223,.80));
 }
+
 .hero-v7::before{
-  content:"";
   position:absolute;
   inset:0;
   z-index:-3;
-  background-image:url("./assets/asanoha.png");
   background-size:118px auto;
   opacity:.10;
 }
+
 .hero-v7::after{
   content:"";
   position:absolute;
@@ -448,6 +1095,7 @@ header{
   box-shadow:inset 0 0 0 6px rgba(116,85,123,.035);
   pointer-events:none;
 }
+
 .heroPattern{
   position:absolute;
   z-index:-1;
@@ -458,19 +1106,19 @@ header{
   border:1px solid rgba(195,164,109,.48);
   box-shadow:0 18px 55px rgba(93,65,100,.10);
 }
+
 .heroPattern::before{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%),
+  background:linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%),
     linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%);
   background-position:0 0,30px 30px;
   background-size:60px 60px;
   opacity:.44;
 }
+
 .heroPattern::after{
-  content:"";
   position:absolute;
   inset:0;
   background-image:url("./assets/asanoha.png");
@@ -478,8 +1126,16 @@ header{
   opacity:.22;
   mix-blend-mode:multiply;
 }
-.heroPattern-left{left:-150px;top:90px}
-.heroPattern-right{right:-160px;bottom:44px}
+
+.heroPattern-left{
+  left:-150px;
+  top:90px;
+}
+
+.heroPattern-right{
+  right:-160px;
+  bottom:44px;
+}
 
 .heroCenter{
   width:min(860px,100%);
@@ -487,8 +1143,8 @@ header{
   text-align:center;
   position:relative;
 }
+
 .heroEyebrow{
-  display:flex;
   justify-content:center;
   align-items:center;
   gap:18px;
@@ -498,11 +1154,13 @@ header{
   font-size:.78rem;
   color:#625870;
 }
+
 .heroEyebrow i{
   color:var(--gold);
   font-style:normal;
   font-size:.7em;
 }
+
 .heroTitleFrame{
   position:relative;
   width:min(640px,100%);
@@ -510,10 +1168,10 @@ header{
   padding:44px clamp(24px,5vw,56px) 38px;
   background:linear-gradient(180deg,rgba(248,241,245,.82),rgba(238,229,239,.70));
   border:1px solid rgba(195,164,109,.62);
-  box-shadow:
-    0 24px 70px rgba(93,65,100,.10),
+  box-shadow:0 24px 70px rgba(93,65,100,.10),
     inset 0 0 0 6px rgba(116,85,123,.028);
 }
+
 .heroTitleFrame::before,.heroTitleFrame::after{
   content:"◆";
   position:absolute;
@@ -522,15 +1180,19 @@ header{
   color:var(--gold);
   font-size:.72rem;
 }
-.heroTitleFrame::before{left:14px}
-.heroTitleFrame::after{right:14px}
+
+.heroTitleFrame::before{
+  left:14px;
+}
+
+.heroTitleFrame::after{
+  right:14px;
+}
+
 .heroKissa{
   font-family:"Shippori Mincho","Noto Serif JP",serif;
-  letter-spacing:.35em;
-  font-size:.9rem;
-  color:#625870;
-  margin-bottom:14px;
 }
+
 .hero-v7 h1{
   margin:0;
   color:var(--deep);
@@ -541,6 +1203,7 @@ header{
   text-indent:.22em;
   line-height:1.08;
 }
+
 .heroOfficial{
   margin-top:10px;
   font-family:"Playfair Display","Times New Roman",serif;
@@ -549,6 +1212,7 @@ header{
   color:#625870;
   font-size:.95rem;
 }
+
 .heroRule{
   display:flex;
   align-items:center;
@@ -558,14 +1222,22 @@ header{
   width:min(280px,72%);
   color:var(--gold);
 }
+
 .heroRule::before,.heroRule::after{
   content:"";
   height:1px;
   flex:1;
   background:linear-gradient(90deg,transparent,rgba(195,164,109,.9));
 }
-.heroRule::after{background:linear-gradient(90deg,rgba(195,164,109,.9),transparent)}
-.heroRule span{font-size:.7rem}
+
+.heroRule::after{
+  background:linear-gradient(90deg,rgba(195,164,109,.9),transparent);
+}
+
+.heroRule span{
+  font-size:.7rem;
+}
+
 .heroCatchcopy{
   margin:0;
   color:var(--text);
@@ -573,6 +1245,7 @@ header{
   letter-spacing:.12em;
   line-height:1.9;
 }
+
 .heroSide{
   writing-mode:vertical-rl;
   display:flex;
@@ -589,9 +1262,19 @@ header{
   line-height:1.8;
   box-shadow:0 14px 40px rgba(93,65,100,.12);
 }
-.heroSide span+span{margin-top:1.1em}
-.heroSide-left{justify-self:start}
-.heroSide-right{justify-self:end}
+
+.heroSide span+span{
+  margin-top:1.1em;
+}
+
+.heroSide-left{
+  justify-self:start;
+}
+
+.heroSide-right{
+  justify-self:end;
+}
+
 .hero-v7 .heroActions{
   display:grid;
   grid-template-columns:1.08fr .9fr 1.08fr;
@@ -599,6 +1282,7 @@ header{
   margin:28px auto 0;
   width:min(860px,100%);
 }
+
 .hero-v7 .heroActions a{
   min-height:74px;
   display:flex;
@@ -609,8 +1293,16 @@ header{
   border:1px solid rgba(195,164,109,.65);
   box-shadow:inset 0 0 0 4px rgba(255,255,255,.05);
 }
-.hero-v7 .primaryButton{background:linear-gradient(180deg,#74557B,#5d4164)}
-.hero-v7 .ghostButton{background:rgba(248,241,245,.68);color:#5d4164}
+
+.hero-v7 .primaryButton{
+  background:linear-gradient(180deg,#74557B,#5d4164);
+}
+
+.hero-v7 .ghostButton{
+  background:rgba(248,241,245,.68);
+  color:#5d4164;
+}
+
 .heroScroll{
   display:flex;
   align-items:center;
@@ -622,6 +1314,7 @@ header{
   letter-spacing:.28em;
   color:#625870;
 }
+
 .heroScroll i{
   display:block;
   width:1px;
@@ -630,31 +1323,66 @@ header{
 }
 
 @media (max-width:900px){
-  .hero-v7{grid-template-columns:1fr;min-height:auto;padding-top:62px}
-  .heroSide{display:none}
-  .heroPattern{width:280px;height:280px;opacity:.70}
-  .heroPattern-left{left:-160px;top:50px}
-  .heroPattern-right{right:-150px;bottom:10px}
+  .hero-v7{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding-top:62px;
+  }
+
+  .heroSide{
+    display:none;
+  }
+
+  .heroPattern{
+    width:280px;
+    height:280px;
+    opacity:.70;
+  }
+
+  .heroPattern-left{
+    left:-160px;
+    top:50px;
+  }
+
+  .heroPattern-right{
+    right:-150px;
+    bottom:10px;
+  }
 }
+
 @media (max-width:640px){
-  .hero-v7{padding:50px 18px 38px}
-  .hero-v7::after{inset:10px}
-  .heroTitleFrame{padding:34px 22px 30px}
-  .hero-v7 h1{font-size:clamp(2.7rem,16vw,4.6rem);letter-spacing:.14em;text-indent:.14em}
-  .hero-v7 .heroActions{grid-template-columns:1fr}
-  .hero-v7 .heroActions a{min-height:62px}
+  .hero-v7{
+    padding:50px 18px 38px;
+  }
+
+  .hero-v7::after{
+    inset:10px;
+  }
+
+  .heroTitleFrame{
+    padding:34px 22px 30px;
+  }
+
+  .hero-v7 h1{
+    font-size:clamp(2.7rem,16vw,4.6rem);
+    letter-spacing:.14em;
+    text-indent:.14em;
+  }
+
+  .hero-v7 .heroActions{
+    grid-template-columns:1fr;
+  }
+
+  .hero-v7 .heroActions a{
+    min-height:62px;
+  }
 }
 
-
-/* ===== v8 / circular accent cleanup ===== */
-/* 円形アクセントは #625870 の市松模様だけにする */
 .heroPattern::after{
   content:none !important;
   display:none !important;
 }
 
-
-/* ===== v9 / force both circular accents to ichimatsu only ===== */
 .heroPattern,
 .heroPattern-left,
 .heroPattern-right{
@@ -669,8 +1397,7 @@ header{
   display:block !important;
   position:absolute !important;
   inset:0 !important;
-  background:
-    linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%),
+  background:linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%),
     linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%) !important;
   background-position:0 0,30px 30px !important;
   background-size:60px 60px !important;
@@ -686,15 +1413,6 @@ header{
   background-image:none !important;
 }
 
-
-/* ===== no-left-ornament test ===== */
-.heroPattern-left{
-  display:none !important;
-}
-
-
-/* ===== Asanoha duplicate-layer cleanup ===== */
-/* ファーストビュー全面に重なっていた2枚目の麻の葉レイヤーだけを停止 */
 .hero-v7::before{
   content:none !important;
   display:none !important;
@@ -702,13 +1420,10 @@ header{
   background-image:none !important;
 }
 
-/* 左の丸装飾は引き続き非表示 */
 .heroPattern-left{
   display:none !important;
 }
 
-
-/* ===== hero title update: 喫茶〇〇 / 歌枠らいぶらりゐ ===== */
 .heroKissa{
   margin-bottom:18px;
   font-size:clamp(.95rem,1.8vw,1.2rem);
@@ -722,14 +1437,8 @@ header{
   color:var(--deep);
   font-family:"Shippori Mincho","Noto Serif JP",serif;
   font-weight:600;
-  font-size:clamp(2.4rem,6.2vw,5rem) !important;
-  line-height:1.25 !important;
-  letter-spacing:.14em !important;
-  text-indent:.14em !important;
-  white-space:normal;
 }
 
-/* Official Site は使用しない */
 .heroOfficial{
   display:none !important;
 }
@@ -742,15 +1451,6 @@ header{
   }
 }
 
-
-/* ===== 歌枠らいぶらりゐ：1行固定 ===== */
-.heroLibraryTitle{
-  white-space:nowrap !important;
-  font-size:clamp(2rem,5vw,4.25rem) !important;
-  letter-spacing:.10em !important;
-  text-indent:.10em !important;
-}
-
 @media (max-width:640px){
   .heroLibraryTitle{
     font-size:clamp(1.55rem,8vw,2.65rem) !important;
@@ -759,8 +1459,6 @@ header{
   }
 }
 
-
-/* ===== hero title fit + catchcopy removal ===== */
 .heroLibraryTitle{
   white-space:nowrap !important;
   width:100%;
@@ -776,7 +1474,6 @@ header{
   display:none !important;
 }
 
-/* キャッチコピー削除後の下側余白を整える */
 .heroRule{
   margin-bottom:0 !important;
 }
@@ -788,8 +1485,6 @@ header{
   }
 }
 
-
-/* ===== remove eyebrow / add matching upper gold ornament ===== */
 .heroEyebrow{
   display:none !important;
 }
@@ -798,48 +1493,36 @@ header{
   margin:0 auto 22px !important;
 }
 
-/* 上下で同じ金色装飾になるよう統一 */
 .heroRule-top::before,
 .heroRule-top::after{
   opacity:1;
 }
 
-
-/* ===== hero CTA buttons: unified Taisho palette ===== */
-/* 3つとも同じ紫系を土台にし、中央だけ少し淡くして階調をつける */
 .hero-v7 .heroActions .primaryButton,
 .hero-v7 .heroActions .ghostButton{
   color:#f8f1f5 !important;
   background:linear-gradient(180deg,#74557B 0%,#625870 100%) !important;
   border:1px solid rgba(195,164,109,.72) !important;
-  box-shadow:
-    inset 0 0 0 4px rgba(248,241,245,.045),
+  box-shadow:inset 0 0 0 4px rgba(248,241,245,.045),
     0 8px 22px rgba(93,65,100,.10) !important;
-  transition:
-    transform .22s ease,
+  transition:transform .22s ease,
     background .22s ease,
     box-shadow .22s ease;
 }
 
-/* 真ん中の「曲を探す」は同系色の少し柔らかい紫 */
 .hero-v7 .heroActions .ghostButton:first-of-type{
   background:linear-gradient(180deg,#806887 0%,#6d5976 100%) !important;
 }
 
-/* hoverも同じルールで統一 */
 .hero-v7 .heroActions .primaryButton:hover,
 .hero-v7 .heroActions .ghostButton:hover{
   color:#fffaf7 !important;
   background:linear-gradient(180deg,#806087 0%,#684d70 100%) !important;
   transform:translateY(-2px);
-  box-shadow:
-    inset 0 0 0 4px rgba(248,241,245,.07),
+  box-shadow:inset 0 0 0 4px rgba(248,241,245,.07),
     0 12px 28px rgba(93,65,100,.16) !important;
 }
 
-
-/* ===== section heading refinement ===== */
-/* セクション内の大見出しを、主張しすぎないサイズへ */
 .section h2,
 .sectionTitle,
 .sectionHeader h2{
@@ -848,23 +1531,19 @@ header{
   letter-spacing:.08em !important;
 }
 
-/* 小画面でも必要以上に大きくしない */
 @media (max-width:640px){
   .section h2,
-  .sectionTitle,
-  .sectionHeader h2{
+    .sectionTitle,
+    .sectionHeader h2{
     font-size:clamp(1.35rem,6vw,1.8rem) !important;
     letter-spacing:.05em !important;
   }
 }
 
-
-/* ===== Explore cards: smaller, softer, keep Asanoha accent ===== */
 #explore .card{
   padding:22px 24px !important;
   min-height:150px !important;
-  background:
-    linear-gradient(135deg,rgba(248,241,245,.82),rgba(216,201,220,.72)) !important;
+  background:linear-gradient(135deg,rgba(248,241,245,.82),rgba(216,201,220,.72)) !important;
   border:1px solid rgba(98,88,112,.34) !important;
   box-shadow:0 8px 22px rgba(93,65,100,.07) !important;
 }
@@ -880,7 +1559,6 @@ header{
   line-height:1.65 !important;
 }
 
-/* ボタン本体を少し小さく、ファーストビューとは違う淡い藤色へ */
 #explore .card .button,
 #explore .card a[class*="Button"],
 #explore .card > a{
@@ -894,11 +1572,6 @@ header{
   box-shadow:none !important;
 }
 
-/* 右下の麻の葉ワンポイントは既存デザインを維持 */
-#explore .card::after{
-  opacity:inherit;
-}
-
 @media (max-width:640px){
   #explore .card{
     padding:18px 20px !important;
@@ -906,59 +1579,26 @@ header{
   }
 }
 
-
-/* ===== Explore card: Asanoha pattern fading from bottom-right ===== */
 #explore .card{
   position:relative;
   overflow:hidden;
 }
 
-/* 右下から広がる麻の葉パターン */
 #explore .card::after{
   content:"" !important;
   position:absolute !important;
-  right:-18px !important;
-  bottom:-18px !important;
-  width:58% !important;
-  height:72% !important;
   pointer-events:none !important;
-
   background-image:url("./assets/asanoha.png") !important;
   background-repeat:repeat !important;
-  background-size:72px auto !important;
-  background-position:right bottom !important;
-
   opacity:.62 !important;
-
-  /* 右下ほど濃く、左上へ向かうほど消える */
-  -webkit-mask-image:linear-gradient(
-    135deg,
-    transparent 0%,
-    rgba(0,0,0,.08) 24%,
-    rgba(0,0,0,.38) 52%,
-    rgba(0,0,0,.78) 76%,
-    #000 100%
-  );
-  mask-image:linear-gradient(
-    135deg,
-    transparent 0%,
-    rgba(0,0,0,.08) 24%,
-    rgba(0,0,0,.38) 52%,
-    rgba(0,0,0,.78) 76%,
-    #000 100%
-  );
-
   z-index:0 !important;
 }
 
-/* カードの文字・リンクは模様より前面に */
 #explore .card > *{
   position:relative;
   z-index:1;
 }
 
-
-/* ===== Explore card: expand Asanoha upward ===== */
 #explore .card::after{
   right:-12px !important;
   bottom:-10px !important;
@@ -966,8 +1606,6 @@ header{
   height:100% !important;
   background-size:62px auto !important;
   background-position:right bottom !important;
-
-  /* 上側にも2〜3段見えるよう、フェードを少し長くする */
   -webkit-mask-image:linear-gradient(
     135deg,
     transparent 0%,
@@ -986,8 +1624,6 @@ header{
   ) !important;
 }
 
-
-/* ===== ご案内：コンパクトな3列ボタン ===== */
 #socials .socialGrid,
 #socials .snsGrid,
 #socials [class*="social"][class*="Grid"]{
@@ -999,7 +1635,6 @@ header{
   margin-right:auto !important;
 }
 
-/* 各リンクを上のカード類に近いコンパクトさへ */
 #socials .socialLink,
 #socials .snsLink,
 #socials a[class*="social"],
@@ -1009,45 +1644,41 @@ header{
   font-size:.86rem !important;
 }
 
-/* 最終行が1個なら中央列へ */
 #socials .socialGrid > :last-child:nth-child(3n + 1),
 #socials .snsGrid > :last-child:nth-child(3n + 1),
 #socials [class*="social"][class*="Grid"] > :last-child:nth-child(3n + 1){
   grid-column:2 !important;
 }
 
-/* 最終行が2個なら、2つを中央寄せに見せる */
 #socials .socialGrid > :nth-last-child(2):nth-child(3n + 1),
 #socials .snsGrid > :nth-last-child(2):nth-child(3n + 1),
 #socials [class*="social"][class*="Grid"] > :nth-last-child(2):nth-child(3n + 1){
   grid-column:1 / 2 !important;
   transform:translateX(50%) !important;
 }
+
 #socials .socialGrid > :last-child:nth-child(3n + 2),
 #socials .snsGrid > :last-child:nth-child(3n + 2),
 #socials [class*="social"][class*="Grid"] > :last-child:nth-child(3n + 2){
   transform:translateX(50%) !important;
 }
 
-/* スマホでは無理に3列にせず1列 */
 @media (max-width:640px){
   #socials .socialGrid,
-  #socials .snsGrid,
-  #socials [class*="social"][class*="Grid"]{
+    #socials .snsGrid,
+    #socials [class*="social"][class*="Grid"]{
     grid-template-columns:1fr !important;
     max-width:360px !important;
   }
 
   #socials .socialGrid > *,
-  #socials .snsGrid > *,
-  #socials [class*="social"][class*="Grid"] > *{
+    #socials .snsGrid > *,
+    #socials [class*="social"][class*="Grid"] > *{
     grid-column:auto !important;
     transform:none !important;
   }
 }
 
-
-/* ===== ご案内：レイアウト修正版 ===== */
 #socials .socialsGrid{
   display:flex !important;
   flex-wrap:wrap !important;
@@ -1057,7 +1688,6 @@ header{
   margin:24px auto 0 !important;
 }
 
-/* 最大3個/段。余りは justify-content:center で自然に中央揃え */
 #socials .socialCard{
   flex:0 1 calc((100% - 24px) / 3) !important;
   width:auto !important;
@@ -1068,7 +1698,6 @@ header{
   box-sizing:border-box !important;
 }
 
-/* 文字も一回りコンパクトに */
 #socials .socialCard .socialName{
   font-size:clamp(1.05rem,1.8vw,1.35rem) !important;
   line-height:1.15 !important;
@@ -1088,35 +1717,32 @@ header{
   line-height:1.25 !important;
 }
 
-/* 以前の中央寄せ用 transform / grid 指定を確実に無効化 */
 #socials .socialsGrid > *{
   grid-column:auto !important;
   transform:none !important;
 }
 
-/* タブレットは2列 */
 @media (max-width:760px){
   #socials .socialsGrid{
     max-width:560px !important;
   }
+
   #socials .socialCard{
     flex-basis:calc((100% - 12px) / 2) !important;
   }
 }
 
-/* スマホは1列 */
 @media (max-width:480px){
   #socials .socialsGrid{
     max-width:340px !important;
   }
+
   #socials .socialCard{
     flex-basis:100% !important;
     min-height:88px !important;
   }
 }
 
-
-/* class-name compatibility */
 #socials .socialGrid{
   display:flex !important;
   flex-wrap:wrap !important;
@@ -1125,6 +1751,7 @@ header{
   max-width:760px !important;
   margin:24px auto 0 !important;
 }
+
 #socials .socialGrid > *{
   flex:0 1 calc((100% - 24px) / 3) !important;
   width:auto !important;
@@ -1135,24 +1762,30 @@ header{
   transform:none !important;
   box-sizing:border-box !important;
 }
+
 #socials .socialGrid h3{
   font-size:clamp(1.05rem,1.8vw,1.35rem) !important;
   line-height:1.15 !important;
 }
+
 #socials .socialGrid p,
 #socials .socialGrid small,
 #socials .socialGrid span{
   font-size:.70rem !important;
 }
+
 @media (max-width:760px){
-  #socials .socialGrid > *{ flex-basis:calc((100% - 12px) / 2) !important; }
+  #socials .socialGrid > *{
+    flex-basis:calc((100% - 12px) / 2) !important;
+  }
 }
+
 @media (max-width:480px){
-  #socials .socialGrid > *{ flex-basis:100% !important; }
+  #socials .socialGrid > *{
+    flex-basis:100% !important;
+  }
 }
 
-
-/* ===== ご案内：歌をさがすカードとデザイン統一 ===== */
 #socials .socialGrid > *,
 #socials .socialsGrid > *{
   min-height:82px !important;
@@ -1168,7 +1801,6 @@ header{
   overflow:hidden !important;
 }
 
-/* YouTube / X / BOOTH 等を「曲名からさがす」と同程度へ */
 #socials .socialGrid h3,
 #socials .socialsGrid .socialName,
 #socials .socialsGrid h3,
@@ -1180,7 +1812,6 @@ header{
   margin-bottom:5px !important;
 }
 
-/* 補助文字もカードに合わせて控えめに */
 #socials .socialGrid p,
 #socials .socialGrid small,
 #socials .socialGrid span,
@@ -1191,7 +1822,6 @@ header{
   line-height:1.45 !important;
 }
 
-/* ご案内カードにも右下から麻の葉が浮かぶ意匠 */
 #socials .socialGrid > *,
 #socials .socialsGrid > *{
   position:relative !important;
@@ -1236,8 +1866,6 @@ header{
   z-index:1 !important;
 }
 
-
-/* ===== ご案内：番号削除 & アーカイブページ共通化 ===== */
 #socials .socialIndex{
   display:none !important;
 }
@@ -1264,48 +1892,40 @@ header{
 }
 
 .archiveSocialSection{
-  margin-top:18px !important;
   padding-top:44px !important;
 }
 
-
-/* ===== ご案内セクション：縦の余白を圧縮 ===== */
 #socials.section,
 .archiveSocialSection{
   padding-top:26px !important;
   padding-bottom:28px !important;
 }
 
-/* 見出し下の大きな空きを詰める */
 #socials .socialGrid,
 #socials .socialsGrid{
   margin-top:10px !important;
 }
 
-/* アーカイブ側で追加していた上余白も縮小 */
 .archiveSocialSection{
   margin-top:8px !important;
 }
 
-/* ご案内見出し周辺もコンパクトに */
 #socials .eyebrow{
   margin-bottom:3px !important;
 }
+
 #socials h2{
   margin-bottom:0 !important;
 }
 
-/* PCではカード上端を見出し側へ寄せる */
 @media (min-width:761px){
   #socials.section,
-  .archiveSocialSection{
+    .archiveSocialSection{
     padding-top:20px !important;
     padding-bottom:24px !important;
   }
 }
 
-
-/* ===== ご案内：ボタン文字サイズ最終調整 ===== */
 #socials .socialGrid .socialCard strong,
 #socials .socialsGrid .socialCard strong,
 #socials .socialCard .socialName,
@@ -1330,12 +1950,6 @@ header{
   font-size:.72rem !important;
 }
 
-
-/* ===== ご案内：3列 + 余り中央揃え 決定版 ===== */
-/*
-  calc((100% - 24px) / 3) はブラウザによって無効になるため、
-  33.333% - 8px の形で固定する。
-*/
 #socials #socialLinks{
   display:flex !important;
   flex-wrap:wrap !important;
@@ -1353,16 +1967,12 @@ header{
   width:calc(33.333333% - 8px) !important;
   max-width:calc(33.333333% - 8px) !important;
   min-width:0 !important;
-
-  /* 過去の中央寄せ指定を完全リセット */
   grid-column:auto !important;
   justify-self:auto !important;
   transform:none !important;
   box-sizing:border-box !important;
 }
 
-/* 2個余れば、その2個が同じ幅のまま中央へ。
-   1個余れば、その1個が同じ幅のまま中央へ。 */
 @media (max-width:760px){
   #socials #socialLinks{
     max-width:560px !important;
@@ -1387,13 +1997,17 @@ header{
   }
 }
 
-
 /* =========================================================
-   TOP下層セクション装飾
-   ファーストビューより控えめに、金線 + 市松 + 麻の葉を反復
+   FINAL LAYOUT OVERRIDES
    ========================================================= */
 
-/* セクションそのものを装飾の基準に */
+/* The current design uses a normal-flow header on every page. */
+body > header{
+  position:relative !important;
+  z-index:20;
+}
+
+/* ---------- TOP sections ---------- */
 #latest,
 #ranking,
 #explore,
@@ -1402,7 +2016,6 @@ header{
   isolation:isolate;
 }
 
-/* 見出し付近に細い金線 */
 #latest .sectionHead,
 #ranking .sectionHead,
 #explore > .eyebrow,
@@ -1422,7 +2035,19 @@ header{
   pointer-events:none;
 }
 
-/* Explore / ご案内は見出し構造が違うので h2 の下に */
+#latest .sectionHead::before,
+#ranking .sectionHead::before{
+  content:"◆";
+  position:absolute;
+  left:88px;
+  bottom:-19px;
+  color:#C3A46D;
+  font-size:8px;
+  line-height:1;
+  opacity:.78;
+  pointer-events:none;
+}
+
 #explore > h2,
 #socials > h2{
   position:relative;
@@ -1441,100 +2066,53 @@ header{
   pointer-events:none;
 }
 
-/* 金線の先に小さな菱形 */
-#latest .sectionHead::before,
-#ranking .sectionHead::before{
-  content:"◆";
-  position:absolute;
-  left:88px;
-  bottom:-19px;
-  font-size:8px;
-  line-height:1;
-  color:#C3A46D;
-  opacity:.78;
-  pointer-events:none;
-}
-
 #explore > h2::before,
 #socials > h2::before{
   content:"◆";
   position:absolute;
   left:80px;
   bottom:-15px;
+  color:#C3A46D;
   font-size:8px;
   line-height:1;
-  color:#C3A46D;
   opacity:.78;
   pointer-events:none;
 }
 
-/* 左右交互に、薄い麻の葉を覗かせる */
 #latest::after,
-#explore::after{
+#explore::after,
+#ranking::after,
+#socials::after{
   content:"";
+  display:block;
   position:absolute;
-  right:-54px;
-  top:26px;
-  width:190px;
-  height:150px;
+  top:8px;
+  width:min(38vw,520px);
+  height:260px;
   background:url("./assets/asanoha.png") repeat;
-  background-size:66px auto;
-  opacity:.085;
+  background-size:82px auto;
   pointer-events:none;
   z-index:-1;
-  -webkit-mask-image:linear-gradient(270deg,#000 0%,rgba(0,0,0,.58) 42%,transparent 100%);
-  mask-image:linear-gradient(270deg,#000 0%,rgba(0,0,0,.58) 42%,transparent 100%);
+}
+
+#latest::after,
+#explore::after{
+  right:-36px;
+  background-position:right top;
+  opacity:.105;
+  -webkit-mask-image:linear-gradient(250deg,#000 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.18) 70%,transparent 100%);
+  mask-image:linear-gradient(250deg,#000 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.18) 70%,transparent 100%);
 }
 
 #ranking::after,
 #socials::after{
-  content:"";
-  position:absolute;
-  left:-54px;
-  top:28px;
-  width:190px;
-  height:150px;
-  background:url("./assets/asanoha.png") repeat;
-  background-size:66px auto;
-  opacity:.075;
-  pointer-events:none;
-  z-index:-1;
-  -webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.58) 42%,transparent 100%);
-  mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.58) 42%,transparent 100%);
+  left:-36px;
+  background-position:left top;
+  opacity:.095;
+  -webkit-mask-image:linear-gradient(110deg,#000 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.18) 70%,transparent 100%);
+  mask-image:linear-gradient(110deg,#000 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.18) 70%,transparent 100%);
 }
 
-/* 小さな市松アクセント。左右交互に配置 */
-#latest::before,
-#explore::before,
-#ranking::before,
-#socials::before{
-  content:"";
-  position:absolute;
-  width:34px;
-  height:34px;
-  opacity:.18;
-  pointer-events:none;
-  z-index:-1;
-  background:
-    linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%),
-    linear-gradient(45deg,#625870 25%,transparent 25%,transparent 75%,#625870 75%);
-  background-size:16px 16px;
-  background-position:0 0,8px 8px;
-}
-
-#latest::before,
-#explore::before{
-  right:12px;
-  top:38px;
-}
-
-#ranking::before,
-#socials::before{
-  left:12px;
-  top:40px;
-}
-
-/* 装飾がカードより前に出ないように */
 #latest > *,
 #ranking > *,
 #explore > *,
@@ -1543,227 +2121,80 @@ header{
   z-index:1;
 }
 
-/* スマホでは端の柄をさらに控えめに */
-@media (max-width:640px){
-  #latest::after,
-  #ranking::after,
-  #explore::after,
-  #socials::after{
-    width:120px;
-    height:110px;
-    opacity:.055;
-  }
-
-  #latest::before,
-  #ranking::before,
-  #explore::before,
-  #socials::before{
-    width:26px;
-    height:26px;
-    opacity:.13;
-  }
-}
-
-
-/* =========================================================
-   下層装飾 refinement
-   小さい市松を撤去 / 麻の葉を大きくフェード / 上余白を圧縮
-   ========================================================= */
-
-/* 前版の小さな市松アクセントは撤去 */
-#latest::before,
-#ranking::before,
-#explore::before,
-#socials::before{
-  content:none !important;
-  display:none !important;
-}
-
-/* 各セクション上部の余白を少し圧縮 */
-#latest.section,
-#ranking.section,
-#explore.section{
-  padding-top:46px !important;
-}
-
-/* ご案内は既にコンパクトなので、その設計を維持 */
-#socials.section{
-  padding-top:20px !important;
-}
-
-/* 麻の葉を「端のワンポイント」ではなく大きな背景装飾へ */
-#latest::after,
-#explore::after{
-  content:"" !important;
-  display:block !important;
-  position:absolute !important;
-  right:-36px !important;
-  top:8px !important;
-  width:min(38vw,520px) !important;
-  height:260px !important;
-  background:url("./assets/asanoha.png") repeat !important;
-  background-size:82px auto !important;
-  background-position:right top !important;
-  opacity:.105 !important;
-  pointer-events:none !important;
-  z-index:-1 !important;
-  -webkit-mask-image:
-    linear-gradient(270deg,#000 0%,rgba(0,0,0,.72) 28%,rgba(0,0,0,.22) 68%,transparent 100%),
-    linear-gradient(180deg,#000 0%,rgba(0,0,0,.72) 50%,transparent 100%) !important;
-  -webkit-mask-composite:source-in !important;
-  mask-image:linear-gradient(250deg,#000 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.18) 70%,transparent 100%) !important;
-}
-
-#ranking::after,
-#socials::after{
-  content:"" !important;
-  display:block !important;
-  position:absolute !important;
-  left:-36px !important;
-  top:8px !important;
-  width:min(38vw,520px) !important;
-  height:260px !important;
-  background:url("./assets/asanoha.png") repeat !important;
-  background-size:82px auto !important;
-  background-position:left top !important;
-  opacity:.095 !important;
-  pointer-events:none !important;
-  z-index:-1 !important;
-  -webkit-mask-image:
-    linear-gradient(90deg,#000 0%,rgba(0,0,0,.72) 28%,rgba(0,0,0,.22) 68%,transparent 100%),
-    linear-gradient(180deg,#000 0%,rgba(0,0,0,.72) 50%,transparent 100%) !important;
-  -webkit-mask-composite:source-in !important;
-  mask-image:linear-gradient(110deg,#000 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.18) 70%,transparent 100%) !important;
-}
-
-/* 金線＋菱形は前版をそのまま活かす */
-
-/* スマホでは背景装飾を少し小さく */
-@media (max-width:640px){
-  #latest.section,
-  #ranking.section,
-  #explore.section{
-    padding-top:34px !important;
-  }
-
-  #latest::after,
-  #ranking::after,
-  #explore::after,
-  #socials::after{
-    width:58vw !important;
-    height:180px !important;
-    background-size:70px auto !important;
-    opacity:.07 !important;
-  }
-}
-
-
-/* =========================================================
-   TOP finishing pass: section rhythm / vertical spacing
-   ========================================================= */
-
-/* 内容量に対して余白が広かったセクションを詰める */
 #latest.section{
   padding-top:38px !important;
   padding-bottom:42px !important;
 }
-
 #ranking.section{
   padding-top:38px !important;
   padding-bottom:44px !important;
 }
-
 #explore.section{
   padding-top:36px !important;
   padding-bottom:42px !important;
 }
-
 #socials.section{
   padding-top:24px !important;
   padding-bottom:26px !important;
 }
 
-/* 見出しからコンテンツまでの距離を揃える */
 #latest .sectionHead,
 #ranking .sectionHead{
   margin-bottom:24px !important;
 }
-
-#explore > h2{
-  margin-bottom:22px !important;
-}
-
-#socials > h2{
-  margin-bottom:12px !important;
-}
-
-/* リスト・ランキング下の不要な縦伸びを防ぐ */
+#explore > h2{margin-bottom:22px !important;}
+#socials > h2{margin-bottom:12px !important;}
 #latest .latestList,
 #ranking .rankingList,
-#ranking .rankingTable{
-  margin-bottom:0 !important;
-}
+#ranking .rankingTable{margin-bottom:0 !important;}
 
-/* スマホでも同じリズムを維持 */
-@media (max-width:640px){
-  #latest.section,
-  #ranking.section,
-  #explore.section{
-    padding-top:30px !important;
-    padding-bottom:34px !important;
-  }
-
-  #socials.section{
-    padding-top:22px !important;
-    padding-bottom:24px !important;
-  }
-}
-
-
-/* ===== ご案内：小さすぎたカードを一回り戻す ===== */
-/* 「歌をさがす」は変更せず、ご案内だけ約7割程度の存在感へ */
 #socials #socialLinks > .socialCard{
   min-height:108px !important;
   padding:20px 22px !important;
 }
-
-/* メイン文字もほんの少しだけ戻す */
 #socials #socialLinks > .socialCard strong,
 #socials #socialLinks > .socialCard .socialName,
 #socials #socialLinks > .socialCard h3{
   font-size:1.02rem !important;
   line-height:1.2 !important;
 }
-
-/* 補助文字は控えめなまま */
-#socials #socialLinks > .socialCard small{
-  font-size:.66rem !important;
-}
-
-/* 麻の葉がカード拡大に合わせて少し見えるように */
+#socials #socialLinks > .socialCard small{font-size:.66rem !important;}
 #socials #socialLinks > .socialCard::after{
   width:62% !important;
   height:100% !important;
   opacity:.36 !important;
 }
 
-@media (max-width:480px){
-  #socials #socialLinks > .socialCard{
-    min-height:100px !important;
-    padding:18px 20px !important;
-  }
+/* ---------- Shared subpage title ornament ---------- */
+.pageTitleRule{
+  width:min(280px,72%);
+  height:18px;
+  margin:20px 0 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  color:var(--gold);
+}
+.pageTitleRule::before,
+.pageTitleRule::after{
+  content:"";
+  display:block;
+  height:1px;
+  flex:1;
+}
+.pageTitleRule::before{background:linear-gradient(90deg,transparent,rgba(195,164,109,.9));}
+.pageTitleRule::after{background:linear-gradient(90deg,rgba(195,164,109,.9),transparent);}
+.pageTitleRule span{
+  color:var(--gold);
+  font-size:.7rem;
+  line-height:1;
 }
 
-
-/* =========================================================
-   ARCHIVE INDEX — 歌枠の記録
-   ========================================================= */
-
+/* ---------- Archive index ---------- */
 .archiveIndexPage{
-  background:
-    linear-gradient(180deg,rgba(232,223,234,.74),rgba(221,209,223,.78) 55%,rgba(213,198,218,.76));
+  background:linear-gradient(180deg,rgba(232,223,234,.74),rgba(221,209,223,.78) 55%,rgba(213,198,218,.76));
 }
-
 .archiveIndexHero{
   position:relative;
   overflow:hidden;
@@ -1771,7 +2202,6 @@ header{
   border-bottom:1px solid rgba(116,85,123,.22);
   background:rgba(244,238,245,.44);
 }
-
 .archiveIndexHero::before{
   content:"";
   position:absolute;
@@ -1781,7 +2211,6 @@ header{
   opacity:.025;
   pointer-events:none;
 }
-
 .archiveIndexHero::after{
   content:"";
   position:absolute;
@@ -1795,17 +2224,8 @@ header{
   mask-image:radial-gradient(circle at center,#000 20%,rgba(0,0,0,.78) 50%,transparent 74%);
   pointer-events:none;
 }
-
-.archiveIndexHeroInner{
-  position:relative;
-  z-index:1;
-  max-width:1040px;
-}
-
-.archiveIndexHero .eyebrow{
-  margin:0 0 12px;
-}
-
+.archiveIndexHeroInner{position:relative;z-index:1;max-width:1040px;}
+.archiveIndexHero .eyebrow{margin:0 0 12px;}
 .archiveIndexHero h1{
   margin:0;
   color:var(--main);
@@ -1813,32 +2233,6 @@ header{
   letter-spacing:.07em;
   line-height:1.15;
 }
-
-.archiveTitleRule{
-  width:min(280px,42vw);
-  height:18px;
-  display:flex;
-  align-items:center;
-  margin:18px 0 15px;
-}
-
-.archiveTitleRule::before,
-.archiveTitleRule::after{
-  content:"";
-  height:1px;
-  flex:1;
-  background:var(--gold,#C3A46D);
-  opacity:.78;
-}
-
-.archiveTitleRule span{
-  width:7px;
-  height:7px;
-  margin:0 9px;
-  border:1px solid var(--gold,#C3A46D);
-  transform:rotate(45deg);
-}
-
 .archiveLead{
   margin:0;
   color:var(--muted);
@@ -1846,13 +2240,12 @@ header{
   letter-spacing:.05em;
   line-height:2;
 }
-
 .archiveIndexSection{
+  position:relative;
   overflow:hidden;
   padding-top:52px !important;
   padding-bottom:64px !important;
 }
-
 .archiveIndexSection::before{
   content:"";
   position:absolute;
@@ -1866,13 +2259,7 @@ header{
   mask-image:radial-gradient(circle at center,#000 18%,rgba(0,0,0,.62) 46%,transparent 72%);
   pointer-events:none;
 }
-
-.archiveIndexCards{
-  position:relative;
-  z-index:1;
-  gap:14px !important;
-}
-
+.archiveIndexCards{position:relative;z-index:1;gap:14px !important;}
 .archiveIndexCard{
   min-height:138px;
   padding:22px 26px 20px;
@@ -1884,7 +2271,6 @@ header{
   border-color:rgba(116,85,123,.24);
   box-shadow:0 9px 22px rgba(93,65,100,.055);
 }
-
 .archiveIndexCard::after{
   content:"";
   position:absolute;
@@ -1900,13 +2286,11 @@ header{
   mask-image:linear-gradient(110deg,transparent 0%,rgba(0,0,0,.08) 28%,#000 100%);
   pointer-events:none;
 }
-
 .archiveIndexCard:hover{
   border-color:rgba(195,164,109,.72);
   transform:translateY(-2px);
   box-shadow:0 12px 26px rgba(93,65,100,.09);
 }
-
 .archiveIndexCard .card-date{
   grid-column:1;
   position:relative;
@@ -1916,8 +2300,8 @@ header{
   font-size:.72rem;
   font-weight:600;
   letter-spacing:.09em;
+  white-space:nowrap;
 }
-
 .archiveIndexCard h3{
   grid-column:1;
   position:relative;
@@ -1928,7 +2312,6 @@ header{
   font-size:1.16rem;
   line-height:1.55;
 }
-
 .archiveIndexCard .card-meta{
   grid-column:1;
   position:relative;
@@ -1940,7 +2323,6 @@ header{
   font-weight:600;
   letter-spacing:.12em;
 }
-
 .archiveCardArrow{
   grid-column:2;
   grid-row:1/4;
@@ -1948,512 +2330,50 @@ header{
   position:relative;
   z-index:2;
   padding-left:28px;
-  color:var(--gold,#C3A46D);
+  color:var(--gold);
   font-size:.86rem;
 }
 
-@media (max-width:640px){
-  .archiveIndexHero{
-    padding:50px 7vw 44px;
-  }
-
-  .archiveIndexHero::after{
-    width:230px;
-    height:230px;
-    right:-85px;
-    top:-72px;
-    background-size:155px auto;
-  }
-
-  .archiveIndexHero h1{
-    font-size:clamp(2rem,10vw,3rem);
-  }
-
-  .archiveIndexSection{
-    padding-top:36px !important;
-    padding-bottom:42px !important;
-  }
-
-  .archiveIndexCard{
-    min-height:128px;
-    padding:19px 18px 18px;
-  }
-
-  .archiveIndexCard::after{
-    width:58%;
-    background-size:125px auto;
-  }
-
-  .archiveIndexCard h3{
-    font-size:1.02rem;
-  }
-
-  .archiveCardArrow{
-    padding-left:12px;
-  }
-}
-
-
-/* =========================================================
-   ARCHIVE DETAIL — 一覧ページの意匠へ統一
-   ========================================================= */
-
-/* 詳細ページの背景模様は動画を邪魔しない濃度へ */
-.archivePage,
-.archiveDetail,
-body.archive-detail{
-  background-color:#E8DFEA;
-}
-
-.archivePage::before,
-.archiveDetail::before{
-  opacity:.025 !important;
-}
-
-/* 戻る導線・日付・曲数 */
-.archiveBack,
-.backLink,
-.archive-detail .back{
-  color:#74557B !important;
-  letter-spacing:.06em;
-}
-
-.archiveDate,
-.archive-detail .date,
-.archiveMeta,
-.archive-detail .meta{
-  color:#9A6D91 !important;
-  font-family:"Shippori Mincho","Noto Serif JP",serif;
-  letter-spacing:.08em;
-}
-
-/* プレイヤーとセットリストの枠を紫＋金の文法へ */
-.playerWrap,
-.archivePlayer,
-.setlist,
-.setList{
+/* ---------- Archive detail ---------- */
+.setlist{
+  background:rgba(244,238,245,.76) !important;
   border-color:rgba(116,85,123,.25) !important;
 }
-
-.setlist,
-.setList{
-  background:rgba(244,238,245,.76) !important;
-}
-
-.setlistHeader,
-.setListHeader{
-  color:#74557B !important;
-  border-bottom:1px solid rgba(116,85,123,.22) !important;
-  letter-spacing:.12em;
-}
-
-.setlist a:hover,
-.setList a:hover,
-.setlistRow:hover{
-  background:rgba(195,164,109,.10) !important;
-}
-
-/* SHARE：機能はそのまま、見た目だけ一回り小さく */
-.shareBtn,
-#shareBtn,
-button[data-share]{
-  min-width:0 !important;
-  padding:9px 15px !important;
-  font-size:.72rem !important;
-  line-height:1.1 !important;
-  letter-spacing:.08em !important;
-  border:1px solid rgba(195,164,109,.65) !important;
-  background:#74557B !important;
-  color:#fff !important;
-  box-shadow:0 5px 12px rgba(93,65,100,.10) !important;
-}
-
-/* ご案内はTOPで確定した中サイズ感を維持 */
-.archivePage #socials #socialLinks > .socialCard,
-.archiveDetail #socials #socialLinks > .socialCard{
-  min-height:108px !important;
-  padding:20px 22px !important;
-}
-
-@media (max-width:640px){
-  .shareBtn,
-  #shareBtn,
-  button[data-share]{
-    padding:8px 13px !important;
-    font-size:.69rem !important;
-  }
-}
-
-
-/* ===== Archive detail final polish ===== */
-
-/* タイトル周辺に一覧ページと同じ小さな金線＋菱形 */
-.archiveTitle,
-.archive-detail .title,
-.archiveHeader h1{
-  position:relative;
-}
-
-.archiveTitle::after,
-.archive-detail .title::after,
-.archiveHeader h1::after{
-  content:"";
-  display:block;
-  width:132px;
-  height:10px;
-  margin-top:12px;
-  background:
-    linear-gradient(#C3A46D,#C3A46D) left center/58px 1px no-repeat,
-    linear-gradient(#C3A46D,#C3A46D) right center/58px 1px no-repeat;
-  opacity:.72;
-}
-
-/* SHARE はさらに一回りだけ小さく */
-.shareBtn,
-#shareBtn,
-button[data-share]{
+.share{
   padding:7px 12px !important;
-  font-size:.66rem !important;
   min-height:30px !important;
+  font-size:.66rem !important;
   letter-spacing:.07em !important;
 }
 
-/* 旧クラス名にも当てる */
-.share,
-.share-button,
-button.share{
-  padding:7px 12px !important;
-  font-size:.66rem !important;
-  min-height:30px !important;
-  letter-spacing:.07em !important;
-}
-
-@media (max-width:640px){
-  .shareBtn,
-  #shareBtn,
-  button[data-share],
-  .share,
-  .share-button,
-  button.share{
-    padding:7px 11px !important;
-    font-size:.64rem !important;
-  }
-}
-
-
-/* =========================================================
-   SONGS INDEX — 歌の目録
-   ========================================================= */
-
+/* ---------- Song database ---------- */
 .songsIndexPage{
+  position:relative;
+  z-index:1;
   background:linear-gradient(180deg,rgba(232,223,234,.74),rgba(221,209,223,.78) 55%,rgba(213,198,218,.76));
 }
-
-/* 旧SONGSヒーローを「歌枠の記録」と兄弟デザインへ */
-.songsIndexPage .pageHero,
-.songsIndexPage .songsHero,
-.songsIndexPage > section:first-child{
+.songsPageHero{
   position:relative;
   overflow:hidden;
   min-height:0 !important;
-  padding-top:72px !important;
-  padding-bottom:62px !important;
-  background:rgba(244,238,245,.44);
-  border-bottom:1px solid rgba(116,85,123,.22);
+  padding:68px 9vw 54px !important;
+  background:rgba(244,238,245,.44) !important;
+  border-bottom:1px solid rgba(116,85,123,.22) !important;
+  text-align:left;
 }
-
-.songsIndexPage .pageHero::after,
-.songsIndexPage .songsHero::after,
-.songsIndexPage > section:first-child::after{
+.songsPageHero::after{
   content:"";
   position:absolute;
   width:330px;
   height:330px;
   right:-72px;
   top:-96px;
-  background:url("../assets/asanoha.png") center/210px auto repeat;
+  background:url("./assets/asanoha.png") center/210px auto repeat;
   opacity:.075;
   -webkit-mask-image:radial-gradient(circle at center,#000 20%,rgba(0,0,0,.78) 50%,transparent 74%);
   mask-image:radial-gradient(circle at center,#000 20%,rgba(0,0,0,.78) 50%,transparent 74%);
   pointer-events:none;
 }
-
-.songsIndexPage h1{
-  color:#74557B !important;
-  font:600 clamp(2.35rem,5vw,4.6rem) "Shippori Mincho","Noto Serif JP",serif !important;
-  letter-spacing:.07em !important;
-  line-height:1.15 !important;
-}
-
-/* 見出し下の金線＋菱形 */
-.songsIndexPage h1::after{
-  content:"";
-  display:block;
-  width:min(280px,42vw);
-  height:18px;
-  margin-top:18px;
-  background:
-    linear-gradient(#C3A46D,#C3A46D) left center/calc(50% - 12px) 1px no-repeat,
-    linear-gradient(#C3A46D,#C3A46D) right center/calc(50% - 12px) 1px no-repeat;
-  opacity:.78;
-}
-
-.songsIndexPage .songsSection,
-.songsIndexPage .databaseSection,
-.songsIndexPage > section:nth-child(2){
-  position:relative;
-  overflow:hidden;
-  padding-top:48px !important;
-  padding-bottom:62px !important;
-}
-
-/* 検索欄 */
-.songsIndexPage input[type="search"],
-.songsIndexPage input[type="text"]{
-  border:0 !important;
-  border-bottom:1px solid rgba(116,85,123,.38) !important;
-  background:transparent !important;
-  color:#3f3343 !important;
-  padding:11px 2px !important;
-}
-
-.songsIndexPage input:focus{
-  outline:none !important;
-  border-bottom-color:#C3A46D !important;
-}
-
-/* 曲数表示 */
-.songsIndexPage .songCount,
-.songsIndexPage .count{
-  color:#74557B !important;
-  font-family:"Shippori Mincho","Noto Serif JP",serif;
-  letter-spacing:.10em;
-}
-
-/* 表：機能性は保ちつつTOPのカード表現へ */
-.songsIndexPage table{
-  background:rgba(244,238,245,.68) !important;
-  border:1px solid rgba(116,85,123,.20) !important;
-  box-shadow:0 8px 22px rgba(93,65,100,.045);
-}
-
-.songsIndexPage thead{
-  background:rgba(232,223,234,.78) !important;
-  border-bottom:1px solid rgba(195,164,109,.55) !important;
-}
-
-.songsIndexPage th{
-  color:#74557B !important;
-  font-weight:500 !important;
-}
-
-.songsIndexPage td{
-  border-color:rgba(116,85,123,.16) !important;
-}
-
-.songsIndexPage tbody tr{
-  transition:background .18s ease;
-}
-
-.songsIndexPage tbody tr:hover{
-  background:rgba(195,164,109,.09) !important;
-}
-
-.songsIndexPage tbody a{
-  color:inherit;
-}
-
-@media (max-width:640px){
-  .songsIndexPage .pageHero,
-  .songsIndexPage .songsHero,
-  .songsIndexPage > section:first-child{
-    padding-top:50px !important;
-    padding-bottom:44px !important;
-  }
-
-  .songsIndexPage .pageHero::after,
-  .songsIndexPage .songsHero::after,
-  .songsIndexPage > section:first-child::after{
-    width:230px;
-    height:230px;
-    right:-85px;
-    top:-72px;
-    background-size:155px auto;
-  }
-
-  .songsIndexPage .songsSection,
-  .songsIndexPage .databaseSection,
-  .songsIndexPage > section:nth-child(2){
-    padding-top:36px !important;
-    padding-bottom:42px !important;
-  }
-}
-
-
-/* =========================================================
-   SONGS INDEX FIX — precise targeting only
-   ========================================================= */
-
-/* Undo broad first-child section assumptions from previous pass */
-.songsFixed > section:first-child,
-.songsFixed > section:nth-child(2){
-  min-height:initial !important;
-}
-
-/* Header must stay in normal document flow */
-body > header{
-  position:relative !important;
-  z-index:20;
-}
-
-/* Hero: target the page's existing hero container by content area */
-.songsFixed .pageHero,
-.songsFixed .songsHero,
-.songsFixed .hero,
-.songsFixed .mv{
-  position:relative;
-  overflow:hidden;
-  min-height:0 !important;
-  padding-top:68px !important;
-  padding-bottom:54px !important;
-  background:rgba(244,238,245,.44) !important;
-  border-bottom:1px solid rgba(116,85,123,.22) !important;
-}
-
-/* If the page lacks a named hero class, style the container that owns the h1 */
-.songsFixed h1{
-  color:#74557B !important;
-  font:600 clamp(2.35rem,5vw,4.6rem) "Shippori Mincho","Noto Serif JP",serif !important;
-  letter-spacing:.07em !important;
-  line-height:1.15 !important;
-  margin-top:0 !important;
-}
-
-.songsFixed h1::after{
-  content:"";
-  display:block;
-  width:min(280px,42vw);
-  height:18px;
-  margin-top:18px;
-  background:
-    linear-gradient(#C3A46D,#C3A46D) left center/calc(50% - 12px) 1px no-repeat,
-    linear-gradient(#C3A46D,#C3A46D) right center/calc(50% - 12px) 1px no-repeat;
-  opacity:.78;
-}
-
-/* Prevent header overlap artifacts */
-.songsFixed{
-  position:relative;
-  z-index:1;
-}
-
-/* Search/table region spacing only */
-.songsFixed .searchArea,
-.songsFixed .songsList,
-.songsFixed .database,
-.songsFixed .songDatabase{
-  padding-top:44px !important;
-  padding-bottom:56px !important;
-}
-
-/* Keep current table functionality/readability */
-.songsFixed table{
-  background:rgba(244,238,245,.68) !important;
-  border:1px solid rgba(116,85,123,.20) !important;
-  box-shadow:0 8px 22px rgba(93,65,100,.045);
-}
-
-.songsFixed thead{
-  background:rgba(232,223,234,.78) !important;
-  border-bottom:1px solid rgba(195,164,109,.55) !important;
-}
-
-.songsFixed tbody tr:hover{
-  background:rgba(195,164,109,.09) !important;
-}
-
-/* Total songs label */
-.songsFixed .songCount,
-.songsFixed .count,
-.songsFixed .total{
-  color:#74557B !important;
-  font-family:"Shippori Mincho","Noto Serif JP",serif;
-  letter-spacing:.10em;
-}
-
-@media (max-width:640px){
-  .songsFixed .pageHero,
-  .songsFixed .songsHero,
-  .songsFixed .hero,
-  .songsFixed .mv{
-    padding-top:48px !important;
-    padding-bottom:40px !important;
-  }
-}
-
-
-/* =========================================================
-   GOLD ORNAMENT UNIFICATION
-   TOP と同じ「ぼかし金線 + ◆」へ統一
-   ========================================================= */
-
-/* 旧アーカイブ専用装飾は無効化 */
-.archiveTitleRule{
-  display:none !important;
-}
-
-/* 曲一覧で追加していた疑似要素の金線も無効化 */
-.songsFixed h1::after,
-.songsIndexPage h1::after{
-  content:none !important;
-  display:none !important;
-}
-
-/* TOP の .heroRule と同じ造形。
-   サブページでは見出しが左揃えなので位置だけ左に合わせる。 */
-.pageTitleRule{
-  width:min(280px,72%) !important;
-  margin:20px 0 18px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:14px !important;
-  color:var(--gold) !important;
-}
-
-.pageTitleRule::before,
-.pageTitleRule::after{
-  content:"" !important;
-  display:block !important;
-  height:1px !important;
-  flex:1 !important;
-}
-
-.pageTitleRule::before{
-  background:linear-gradient(90deg,transparent,rgba(195,164,109,.9)) !important;
-}
-
-.pageTitleRule::after{
-  background:linear-gradient(90deg,rgba(195,164,109,.9),transparent) !important;
-}
-
-.pageTitleRule span{
-  color:var(--gold) !important;
-  font-size:.7rem !important;
-  line-height:1 !important;
-}
-
-/* SONGS hero: archive pageと同じ落ち着いた高さに */
-.songsPageHero{
-  position:relative;
-  overflow:hidden;
-  min-height:0 !important;
-  padding:72px 9vw 62px !important;
-  background:rgba(244,238,245,.44) !important;
-  border-bottom:1px solid rgba(116,85,123,.22) !important;
-  text-align:left !important;
-}
-
 .songsPageHero h1{
   margin:0 !important;
   color:var(--main) !important;
@@ -2462,7 +2382,6 @@ body > header{
   text-indent:0 !important;
   line-height:1.15 !important;
 }
-
 .songsLead{
   margin:0;
   color:var(--muted);
@@ -2470,306 +2389,152 @@ body > header{
   letter-spacing:.05em;
   line-height:2;
 }
-
-@media (max-width:640px){
-  .songsPageHero{
-    padding:50px 7vw 44px !important;
-  }
-
-  .pageTitleRule{
-    width:min(250px,76%) !important;
-    margin:17px 0 15px !important;
-  }
+.songsIndexPage > section:nth-child(2){
+  position:relative;
+  overflow:hidden;
+  padding-top:48px !important;
+  padding-bottom:62px !important;
 }
-
-
-/* =========================================================
-   PAGE TITLE GOLD RULE — duplicate fix
-   サブページ見出しはこの1本だけを描画
-   ========================================================= */
-
-.heroRule.pageTitleRule{
-  position:relative !important;
-  height:18px !important;
-  background:none !important;
+.songsIndexPage input[type="search"],
+.songsIndexPage input[type="text"]{
   border:0 !important;
-  box-shadow:none !important;
+  border-bottom:1px solid rgba(116,85,123,.38) !important;
+  background:transparent !important;
+  color:#3f3343 !important;
+  padding:11px 2px !important;
+}
+.songsIndexPage input:focus{
+  outline:none !important;
+  border-bottom-color:#C3A46D !important;
 }
 
-/* TOP側 .heroRule の既存描画を明示的に上書き */
-.heroRule.pageTitleRule::before,
-.heroRule.pageTitleRule::after{
-  content:"" !important;
-  position:static !important;
-  transform:none !important;
-  width:auto !important;
-  height:1px !important;
-  display:block !important;
-  flex:1 1 auto !important;
-  opacity:1 !important;
-  border:0 !important;
-  box-shadow:none !important;
+/* ---------- Song history ---------- */
+.historyTitleRule,
+.artistTitleRule{
+  width:220px;
+  max-width:68%;
+  margin:13px 0 20px;
 }
-
-.heroRule.pageTitleRule::before{
-  background:linear-gradient(90deg,transparent,rgba(195,164,109,.9)) !important;
-}
-
-.heroRule.pageTitleRule::after{
-  background:linear-gradient(90deg,rgba(195,164,109,.9),transparent) !important;
-}
-
-.heroRule.pageTitleRule span{
-  display:block !important;
-  position:static !important;
-  width:auto !important;
-  height:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  transform:none !important;
-  background:none !important;
-  border:0 !important;
-  box-shadow:none !important;
-  color:#C3A46D !important;
-  font-size:.7rem !important;
-  line-height:1 !important;
-}
-
-/* h1自身に残っている旧装飾は完全停止 */
-.songsPageHero h1::before,
-.songsPageHero h1::after,
-.archiveIndexHero h1::before,
-.archiveIndexHero h1::after{
-  content:none !important;
-  display:none !important;
-}
-
-
-/* =========================================================
-   SONG HISTORY — 歌唱履歴
-   ========================================================= */
-
-/* 上部の余白を圧縮 */
-.songHistoryPage .hero,
-.historyPage .hero,
-body:has(.history-list) .hero,
-body:has(#historyList) .hero{
-  min-height:0 !important;
-  padding-top:62px !important;
-  padding-bottom:50px !important;
-}
-
-/* 歌唱履歴見出し：TOPと同じ金線＋◆ */
-.historySection h2::after,
-.history-list-section h2::after{
-  content:"◆";
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:280px;
-  max-width:72%;
-  height:18px;
-  margin:14px 0 20px;
-  color:#C3A46D;
-  font-size:.7rem;
-  line-height:1;
-  background:
-    linear-gradient(90deg,transparent,rgba(195,164,109,.9)) left center/calc(50% - 14px) 1px no-repeat,
-    linear-gradient(90deg,rgba(195,164,109,.9),transparent) right center/calc(50% - 14px) 1px no-repeat;
-}
-
-/* 履歴行をアーカイブ一覧のカード表現へ */
-.history-list a,
-#historyList a,
-.historyRow{
+#historyList a{
   position:relative;
   overflow:hidden;
   background:linear-gradient(110deg,rgba(244,238,245,.93),rgba(232,223,234,.82)) !important;
   border-color:rgba(116,85,123,.22) !important;
   transition:transform .18s ease,border-color .18s ease,background .18s ease;
 }
-
-.history-list a::after,
-#historyList a::after,
-.historyRow::after{
-  content:"";
-  position:absolute;
-  right:0;
-  bottom:0;
-  width:32%;
-  height:100%;
-  background:url("../../assets/asanoha.png") right bottom/135px auto repeat;
-  opacity:.07;
-  -webkit-mask-image:linear-gradient(110deg,transparent,#000);
-  mask-image:linear-gradient(110deg,transparent,#000);
-  pointer-events:none;
-}
-
-.history-list a:hover,
-#historyList a:hover,
-.historyRow:hover{
+#historyList a:hover{
   transform:translateY(-1px);
   border-color:rgba(195,164,109,.68) !important;
   background:rgba(244,238,245,.96) !important;
 }
-
-.historyDate,
-.history-date{
-  color:#9A6D91 !important;
-  font-family:"Shippori Mincho","Noto Serif JP",serif;
-  letter-spacing:.06em;
-}
-
-@media (max-width:640px){
-  .songHistoryPage .hero,
-  .historyPage .hero,
-  body:has(.history-list) .hero,
-  body:has(#historyList) .hero{
-    padding-top:44px !important;
-    padding-bottom:38px !important;
-  }
-}
-
-
-/* =========================================================
-   HISTORY POLISH — date spacing / total / title rule
-   ========================================================= */
-
-/* 歌唱履歴の金線はHTMLに1個だけ置いたものを使用 */
-.historyTitleRule{
-  width:220px !important;
-  max-width:68% !important;
-  margin:13px 0 20px !important;
-}
-
-/* 旧CSS疑似要素による履歴見出し装飾は停止 */
-.historySection h2::after,
-.history-list-section h2::after{
-  content:none !important;
-  display:none !important;
-}
-
-/* 漢数字の日付は「年 月 日」の塊で一行表示 */
-.historyDate,
-.history-date,
-#historyList .date,
-.historyRow .date,
-.archiveIndexCard .card-date,
-.archiveDate,
-.archive-detail .date{
-  white-space:nowrap !important;
-}
-
-/* 履歴カードの日付列を少し広げる */
-#historyList > *,
-.history-list > *,
-.historyRow{
-  grid-template-columns:minmax(150px,auto) minmax(0,1fr) auto !important;
-}
-
-@media (max-width:640px){
-  .historyDate,
-  .history-date,
-  #historyList .date{
-    white-space:normal !important;
-  }
-}
-
-
-/* =========================================================
-   SONG HISTORY — actual structure fix
-   ========================================================= */
-
-/* 実際のカードclassに直接当てる。日付を必ず1行にする */
 #historyList .historyCard{
   grid-template-columns:220px minmax(0,1fr) 72px !important;
   column-gap:18px !important;
 }
-
 #historyList .historyDate{
-  white-space:nowrap !important;
   min-width:220px !important;
+  color:#9A6D91 !important;
+  font-family:"Shippori Mincho","Noto Serif JP",serif;
+  letter-spacing:.06em;
+  white-space:nowrap !important;
 }
-
-/* 「視聴」は右端でコンパクトに */
 #historyList .historyListen{
   white-space:nowrap !important;
   text-align:right !important;
 }
 
-/* 以前の狭い列指定を上書き */
-@media (min-width:641px){
-  #historyList .historyCard{
-    grid-template-columns:220px minmax(0,1fr) 72px !important;
-  }
-}
-
-/* スマホでは日付を独立行にして無理に詰めない */
+/* ---------- Responsive ---------- */
 @media (max-width:640px){
+  #latest.section,
+  #ranking.section,
+  #explore.section{
+    padding-top:30px !important;
+    padding-bottom:34px !important;
+  }
+  #socials.section{
+    padding-top:22px !important;
+    padding-bottom:24px !important;
+  }
+  #latest::after,
+  #ranking::after,
+  #explore::after,
+  #socials::after{
+    width:58vw;
+    height:180px;
+    background-size:70px auto;
+    opacity:.07;
+  }
+
+  .pageTitleRule{
+    width:min(250px,76%);
+    margin:17px 0 15px;
+  }
+
+  .archiveIndexHero{padding:50px 7vw 44px;}
+  .archiveIndexHero::after{
+    width:230px;
+    height:230px;
+    right:-85px;
+    top:-72px;
+    background-size:155px auto;
+  }
+  .archiveIndexHero h1{font-size:clamp(2rem,10vw,3rem);}
+  .archiveIndexSection{
+    padding-top:36px !important;
+    padding-bottom:42px !important;
+  }
+  .archiveIndexCard{
+    min-height:128px;
+    padding:19px 18px 18px;
+  }
+  .archiveIndexCard::after{
+    width:58%;
+    background-size:125px auto;
+  }
+  .archiveIndexCard h3{font-size:1.02rem;}
+  .archiveCardArrow{padding-left:12px;}
+
+  .share{
+    padding:7px 11px !important;
+    font-size:.64rem !important;
+  }
+
+  .songsPageHero{
+    padding-top:48px !important;
+    padding-bottom:40px !important;
+  }
+  .songsPageHero::after{
+    width:230px;
+    height:230px;
+    right:-85px;
+    top:-72px;
+    background-size:155px auto;
+  }
+  .songsIndexPage > section:nth-child(2){
+    padding-top:36px !important;
+    padding-bottom:42px !important;
+  }
+
   #historyList .historyCard{
     grid-template-columns:1fr auto !important;
     row-gap:7px !important;
   }
-
   #historyList .historyDate{
     grid-column:1 / -1 !important;
     min-width:0 !important;
     white-space:nowrap !important;
   }
-
-  #historyList .historyArchiveTitle{
-    grid-column:1 !important;
-  }
-
+  #historyList .historyArchiveTitle{grid-column:1 !important;}
   #historyList .historyListen{
     grid-column:2 !important;
     align-self:center !important;
   }
+  .artistTitleRule{width:190px;}
 }
 
-/* ===== Artist page redesign ===== */
-body:has(#artistName) .hero{
-  min-height:0!important;
-  padding-top:62px!important;
-  padding-bottom:50px!important;
-}
-.artistTitleRule{
-  width:220px!important;
-  max-width:68%!important;
-  margin:13px 0 20px!important;
-}
-#songList > *{
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(110deg,rgba(244,238,245,.93),rgba(232,223,234,.82))!important;
-  border-color:rgba(116,85,123,.22)!important;
-  transition:transform .18s ease,border-color .18s ease,background .18s ease;
-}
-#songList > *::after{
-  content:"";
-  position:absolute;
-  right:0;bottom:0;
-  width:32%;height:100%;
-  background:url("../assets/asanoha.png") right bottom/135px auto repeat;
-  opacity:.07;
-  -webkit-mask-image:linear-gradient(110deg,transparent,#000);
-  mask-image:linear-gradient(110deg,transparent,#000);
-  pointer-events:none;
-}
-#songList > *:hover{
-  transform:translateY(-1px);
-  border-color:rgba(195,164,109,.68)!important;
-  background:rgba(244,238,245,.96)!important;
-}
-#songList .count,#songList .performances{
-  white-space:nowrap!important;
-  text-align:right!important;
-  color:#74557B!important;
-}
-@media(max-width:640px){
-  body:has(#artistName) .hero{
-    padding-top:44px!important;
-    padding-bottom:38px!important;
+@media (max-width:480px){
+  #socials #socialLinks > .socialCard{
+    min-height:100px !important;
+    padding:18px 20px !important;
   }
-  .artistTitleRule{width:190px!important;}
 }

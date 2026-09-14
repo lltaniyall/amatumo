@@ -14,13 +14,13 @@
 
 <section class="section">
   <p class="eyebrow">SONG LIST</p>
-  <h2>歌った曲</h2><div class="heroRule pageTitleRule artistTitleRule" aria-hidden="true"><span>◆</span></div>
+  <h2>歌った曲</h2><div class="pageTitleRule artistTitleRule" aria-hidden="true"><span>◆</span></div>
   <div class="artistSongList" id="artistSongList"></div>
   <p id="notFound" class="muted" hidden>このアーティストの楽曲が見つかりませんでした。</p>
 </section>
 </main>
 
-<footer><b>NAME</b><span>ARTIST SONGS</span></footer>
+<footer><b>NAME</b><span>歌手別</span></footer>
 
 <script src="../data/archives.js"></script>
 <script>
@@ -62,7 +62,7 @@ if(!songs.length){
     return `
       <a class="artistSongCard" href="../songs/history/?${p.toString()}">
         <div class="artistSongTitle">${song.title}</div>
-        <div class="artistSongCount">${song.count}回${song.count===1?"":"S"}</div>
+        <div class="artistSongCount">${song.count}回</div>
         <div class="artistSongArrow">↗</div>
       </a>
     `;

@@ -14,13 +14,13 @@
 
 <section class="section">
   <p class="eyebrow">ARCHIVES</p>
-  <h2>歌唱履歴</h2><div class="heroRule pageTitleRule historyTitleRule" aria-hidden="true"><span>◆</span></div>
+  <h2>歌唱履歴</h2><div class="pageTitleRule historyTitleRule" aria-hidden="true"><span>◆</span></div>
   <div id="historyList" class="historyList"></div>
   <p id="notFound" class="muted" hidden>該当する歌唱履歴が見つかりませんでした。</p>
 </section>
 </main>
 
-<footer><b>NAME</b><span>PERFORMANCE HISTORY</span></footer>
+<footer><b>NAME</b><span>歌唱履歴</span></footer>
 
 <script src="../../data/archives.js"></script>
 <script>
@@ -42,7 +42,7 @@ document.getElementById("artistName").textContent = artistName || "未登録";
 
 const performances = [];
 
-歌唱履歴S.forEach(archive => {
+ARCHIVES.forEach(archive => {
   archive.songs
     .filter(song =>
       song.type === "song" &&

@@ -40,7 +40,7 @@
     </div>
 
     <div class="heroActions">
-      <a href="#latest" class="primaryButton">LATEST</a>
+      <a href="#latest" class="primaryButton">この頃の歌枠 ↓</a>
       <a href="#explore" class="ghostButton">歌をさがす ↓</a>
       <a href="./songs/" class="ghostButton">歌の目録 ↗</a>
     </div>
@@ -165,7 +165,7 @@ document.getElementById("latestList").innerHTML = latestArchives.map((archive, i
 // Song ranking TOP 10
 const songMap = new Map();
 
-プロフィールS.forEach(archive => {
+ARCHIVES.forEach(archive => {
   archive.songs
     .filter(song => song.type === "song")
     .forEach(song => {

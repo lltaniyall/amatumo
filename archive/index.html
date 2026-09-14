@@ -17,7 +17,7 @@
     <div class="archiveIndexHeroInner">
       <p class="eyebrow">LIVE ARCHIVE</p>
       <h1>歌枠の記録</h1>
-      <div class="heroRule pageTitleRule" aria-hidden="true"><span>◆</span></div>
+      <div class="pageTitleRule" aria-hidden="true"><span>◆</span></div>
       <p class="archiveLead">これまでの歌枠を、配信日ごとにまとめてゐます。</p>
     </div>
   </section>
@@ -27,7 +27,7 @@
   </section>
 </main>
 
-<footer><b>NAME</b><span>ARCHIVE</span></footer>
+<footer><b>NAME</b><span>歌枠の記録</span></footer>
 
 <script src="../data/archives.js"></script>
 <script>
@@ -59,7 +59,7 @@ function formatDaijiCount(n){
   return String(n).split("").map(x => daiji[Number(x)] || "〇").join("") + "曲";
 }
 
-root.innerHTML = [...歌枠の記録S].reverse().map(a => {
+root.innerHTML = [...ARCHIVES].reverse().map(a => {
   const count = a.songs.filter(s => s.type === "song").length;
   return `<a class="card archiveIndexCard" href="./${a.date}/">
     <span class="card-date">${formatArchiveDate(a.date)}</span>
