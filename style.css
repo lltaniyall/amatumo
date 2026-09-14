@@ -539,6 +539,7 @@ nav a{
   width:100%;
   display:grid;
   grid-template-columns:78px 1fr;
+  align-items:center;
   padding:1rem;
   border:0;
   border-bottom:1px solid var(--line);
@@ -553,7 +554,7 @@ nav a{
 }
 
 .time{
-  color:var(--accent);
+  color:var(--main);
   font-family:"Noto Serif JP","Shippori Mincho",serif;
   font-size:.7rem;
   font-weight:600;
@@ -562,6 +563,7 @@ nav a{
   font-variant-numeric:lining-nums tabular-nums;
   font-feature-settings:"lnum" 1,"tnum" 1;
   white-space:nowrap;
+  align-self:center;
 }
 
 .trackArtist{
