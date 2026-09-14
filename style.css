@@ -526,7 +526,7 @@ nav a{
   top:0;
   z-index:2;
   display:flex;
-  justify-content:space-between;
+  justify-content:flex-start;
   padding:1rem;
   border-bottom:1px solid var(--line);
   background:rgba(244,238,245,.96);
@@ -538,7 +538,7 @@ nav a{
 .track{
   width:100%;
   display:grid;
-  grid-template-columns:65px 1fr;
+  grid-template-columns:78px 1fr;
   padding:1rem;
   border:0;
   border-bottom:1px solid var(--line);
@@ -554,7 +554,14 @@ nav a{
 
 .time{
   color:var(--accent);
-  font:600 .7rem "Playfair Display",serif;
+  font-family:"Noto Serif JP","Shippori Mincho",serif;
+  font-size:.7rem;
+  font-weight:600;
+  line-height:1.35;
+  letter-spacing:.02em;
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+  white-space:nowrap;
 }
 
 .trackArtist{

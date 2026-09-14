@@ -24,10 +24,10 @@ const archive=ARCHIVES.find(a=>a.date===date);
 
 const fmt=x=>{
   x=Math.floor(x||0);
-  let h=Math.floor(x/3600),m=Math.floor(x%3600/60),s=x%60;
-  return h
-    ? `${h}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`
-    : `${m}:${String(s).padStart(2,"0")}`;
+  const h=Math.floor(x/3600);
+  const m=Math.floor(x%3600/60);
+  const s=x%60;
+  return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
 };
 
 if(!archive){
@@ -108,7 +108,6 @@ function update(){
   if(!ready)return;
   let n=player.getCurrentTime();
   currentTime=n;
-  $("#clock").textContent=fmt(n);
 
   let idx=0;
   archive.songs.forEach((s,i)=>{
