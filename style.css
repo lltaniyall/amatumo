@@ -1310,24 +1310,6 @@ header{
   color:#5d4164;
 }
 
-.heroScroll{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:8px;
-  margin-top:22px;
-  font-size:.68rem;
-  letter-spacing:.28em;
-  color:#625870;
-}
-
-.heroScroll i{
-  display:block;
-  width:1px;
-  height:34px;
-  background:linear-gradient(#625870,transparent);
-}
 
 @media (max-width:900px){
   .hero-v7{
