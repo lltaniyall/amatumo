@@ -1092,8 +1092,7 @@ header{
   padding:84px clamp(24px,5vw,72px) 56px;
   overflow:hidden;
   display:grid;
-  grid-template-columns:minmax(70px,120px) minmax(0,1fr) minmax(70px,120px);
-  gap:clamp(18px,3vw,40px);
+  grid-template-columns:minmax(0,1fr);
   align-items:center;
   isolation:isolate;
   border-bottom:1px solid rgba(116,85,123,.22);
@@ -1268,41 +1267,27 @@ header{
   line-height:1.9;
 }
 
-.heroSide{
-  writing-mode:vertical-rl;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-  min-height:310px;
-  padding:26px 14px;
-  border:1px solid rgba(195,164,109,.52);
-  background:linear-gradient(180deg,rgba(98,88,112,.96),rgba(93,65,100,.94));
-  color:#f8f1f5;
-  font-family:"Shippori Mincho","Noto Serif JP",serif;
-  letter-spacing:.18em;
-  line-height:1.8;
-  box-shadow:0 14px 40px rgba(93,65,100,.12);
-}
-
-.heroSide span+span{
-  margin-top:1.1em;
-}
-
-.heroSide-left{
-  justify-self:start;
-}
-
-.heroSide-right{
-  justify-self:end;
-}
 
 .hero-v7 .heroActions{
   display:grid;
-  grid-template-columns:1.08fr .9fr 1.08fr;
+  grid-template-columns:repeat(6,minmax(0,1fr));
   gap:14px;
   margin:28px auto 0;
-  width:min(860px,100%);
+  width:min(940px,100%);
+}
+
+.hero-v7 .heroActions a:nth-child(1),
+.hero-v7 .heroActions a:nth-child(2),
+.hero-v7 .heroActions a:nth-child(3){
+  grid-column:span 2;
+}
+
+.hero-v7 .heroActions a:nth-child(4){
+  grid-column:2 / span 2;
+}
+
+.hero-v7 .heroActions a:nth-child(5){
+  grid-column:4 / span 2;
 }
 
 .hero-v7 .heroActions a{
@@ -1351,10 +1336,6 @@ header{
     padding-top:62px;
   }
 
-  .heroSide{
-    display:none;
-  }
-
   .heroPattern{
     width:280px;
     height:280px;
@@ -1392,7 +1373,18 @@ header{
   }
 
   .hero-v7 .heroActions{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .hero-v7 .heroActions a:nth-child(1),
+  .hero-v7 .heroActions a:nth-child(2),
+  .hero-v7 .heroActions a:nth-child(3),
+  .hero-v7 .heroActions a:nth-child(4){
+    grid-column:auto;
+  }
+
+  .hero-v7 .heroActions a:nth-child(5){
+    grid-column:1 / -1;
   }
 
   .hero-v7 .heroActions a{
@@ -2560,104 +2552,77 @@ body > header{
     padding:18px 20px !important;
   }
 }
-
-
-/* === Top hero redesign: smoke ornaments + 5 action buttons === */
-.hero-v7{
-  grid-template-columns:minmax(160px,1fr) minmax(0,860px) minmax(160px,1fr) !important;
-}
-
-.heroSmoke{
+/* =========================================================
+   TOP HERO — 霞モチーフ / Practice 03 採用版
+   承認済み練習画像の連続した霞を、透明PNGアセットとして左右に配置
+   ========================================================= */
+.heroCenter{
   position:relative;
-  align-self:center;
-  justify-self:stretch;
-  min-height:320px;
-  pointer-events:none;
-  filter:drop-shadow(0 16px 32px rgba(130,110,138,.12));
+  z-index:3;
 }
 
-.heroSmoke::before,
-.heroSmoke::after{
-  content:"";
+.heroKasumiAsset{
   position:absolute;
-  inset:0;
-  border-radius:50%;
-  background:
-    radial-gradient(ellipse at 35% 35%, rgba(255,255,255,.72) 0%, rgba(255,255,255,.48) 14%, rgba(255,255,255,0) 46%),
-    radial-gradient(ellipse at 62% 48%, rgba(193,171,201,.28) 0%, rgba(193,171,201,.12) 18%, rgba(193,171,201,0) 52%),
-    radial-gradient(ellipse at 50% 70%, rgba(154,131,164,.18) 0%, rgba(154,131,164,.08) 16%, rgba(154,131,164,0) 46%);
-  filter:blur(18px);
-  opacity:.92;
+  z-index:1;
+  pointer-events:none;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  opacity:1;
 }
 
-.heroSmoke::after{
-  inset:14% 10% 8% 12%;
-  background:
-    radial-gradient(ellipse at 32% 58%, rgba(255,255,255,.78) 0%, rgba(255,255,255,.50) 18%, rgba(255,255,255,0) 54%),
-    radial-gradient(ellipse at 58% 34%, rgba(211,195,217,.34) 0%, rgba(211,195,217,.18) 18%, rgba(211,195,217,0) 50%),
-    radial-gradient(ellipse at 70% 72%, rgba(173,151,181,.16) 0%, rgba(173,151,181,.06) 15%, rgba(173,151,181,0) 42%);
-  filter:blur(28px);
-  transform:rotate(-8deg);
+.heroKasumi-left{
+  left:-36px;
+  top:122px;
+  width:min(43vw,760px);
+  aspect-ratio:760 / 475;
+  background-image:url("./assets/hero-kasumi-left.png");
 }
 
-.heroSmoke-left::before,
-.heroSmoke-left::after{
-  left:-8%;
+.heroKasumi-right{
+  right:-34px;
+  top:228px;
+  width:min(42vw,762px);
+  aspect-ratio:762 / 455;
+  background-image:url("./assets/hero-kasumi-right.png");
 }
 
-.heroSmoke-right::before,
-.heroSmoke-right::after{
-  right:-8%;
-  transform:scaleX(-1) rotate(-8deg);
-}
-
-.hero-v7 .heroActions{
-  width:min(1080px,100%) !important;
-  grid-template-columns:repeat(5, minmax(0,1fr)) !important;
-  gap:12px !important;
-}
-
-.hero-v7 .heroActions a{
-  min-height:68px !important;
-  padding:0 12px;
-  font-size:.98rem;
-  line-height:1.35;
+.heroPattern{
+  z-index:0;
 }
 
 @media (max-width:1180px){
-  .hero-v7 .heroActions{
-    grid-template-columns:repeat(3, minmax(0,1fr)) !important;
+  .heroKasumi-left{
+    left:-150px;
+    top:130px;
+    width:570px;
   }
-  .hero-v7 .heroActions a:nth-child(4){
-    grid-column:1 / 2;
-  }
-  .hero-v7 .heroActions a:nth-child(5){
-    grid-column:2 / 4;
+
+  .heroKasumi-right{
+    right:-155px;
+    top:240px;
+    width:565px;
   }
 }
 
 @media (max-width:900px){
-  .hero-v7{
-    grid-template-columns:1fr !important;
+  .heroKasumi-left{
+    left:-230px;
+    top:126px;
+    width:520px;
+    opacity:.72;
   }
-  .heroSmoke{
-    display:none;
-  }
-  .hero-v7 .heroActions{
-    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
-    width:min(720px,100%) !important;
-  }
-  .hero-v7 .heroActions a:nth-child(5){
-    grid-column:1 / 3;
+
+  .heroKasumi-right{
+    right:-235px;
+    top:250px;
+    width:510px;
+    opacity:.72;
   }
 }
 
 @media (max-width:640px){
-  .hero-v7 .heroActions{
-    grid-template-columns:1fr !important;
-    width:100% !important;
-  }
-  .hero-v7 .heroActions a:nth-child(5){
-    grid-column:auto;
+  .heroKasumiAsset{
+    display:none;
   }
 }
