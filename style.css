@@ -18,10 +18,14 @@
 
 html{
   scroll-behavior:smooth;
+  max-width:100%;
+  overflow-x:hidden;
 }
 
 body{
   margin:0;
+  max-width:100%;
+  overflow-x:hidden;
   color:var(--text);
   font-family:"Noto Serif JP","Shippori Mincho",serif;
 }
@@ -688,15 +692,29 @@ footer{
 
 @media (max-width:760px){
   header{
-    padding:0 5vw;
+    height:64px;
+    padding:0 4.5vw;
+    gap:12px;
+    overflow:hidden;
+  }
+
+  .logo{
+    flex:0 0 auto;
+    white-space:nowrap;
+    font-size:.92rem;
+    letter-spacing:.12em;
   }
 
   nav{
-    gap:.8rem;
+    min-width:0;
+    gap:.56rem;
+    margin-left:auto;
   }
 
   nav a{
-    font-size:.58rem;
+    white-space:nowrap;
+    font-size:.52rem;
+    letter-spacing:.08em;
   }
 
   .hero{
@@ -1344,6 +1362,23 @@ header{
     inset:10px;
   }
 
+  .heroPattern{
+    width:220px;
+    height:220px;
+    opacity:.44;
+    box-shadow:0 12px 36px rgba(93,65,100,.06);
+  }
+
+  .heroPattern-left{
+    left:-138px;
+    top:42px;
+  }
+
+  .heroPattern-right{
+    right:-126px;
+    bottom:42px;
+  }
+
   .heroTitleFrame{
     padding:34px 22px 30px;
   }
@@ -1356,6 +1391,8 @@ header{
 
   .hero-v7 .heroActions{
     grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    margin-top:22px;
   }
 
   .hero-v7 .heroActions a:nth-child(1),
@@ -1570,8 +1607,18 @@ header{
 
 @media (max-width:640px){
   #explore .card{
-    padding:18px 20px !important;
-    min-height:135px !important;
+    padding:14px 18px !important;
+    min-height:112px !important;
+  }
+
+  #explore .card h3{
+    font-size:1.08rem !important;
+    margin:7px 0 5px !important;
+  }
+
+  #explore .card p{
+    font-size:.78rem !important;
+    line-height:1.5 !important;
   }
 }
 
@@ -2441,6 +2488,20 @@ body > header{
 
 /* ---------- Responsive ---------- */
 @media (max-width:640px){
+  main,
+  .hero,
+  .section,
+  footer{
+    max-width:100%;
+  }
+
+  #latest,
+  #ranking,
+  #explore,
+  #socials{
+    overflow:hidden;
+  }
+
   #latest.section,
   #ranking.section,
   #explore.section{
@@ -2459,6 +2520,16 @@ body > header{
     height:180px;
     background-size:70px auto;
     opacity:.07;
+  }
+
+  #latest::after,
+  #explore::after{
+    right:-10px;
+  }
+
+  #ranking::after,
+  #socials::after{
+    left:-10px;
   }
 
   .pageTitleRule{
@@ -2530,8 +2601,20 @@ body > header{
 
 @media (max-width:480px){
   #socials #socialLinks > .socialCard{
-    min-height:100px !important;
-    padding:18px 20px !important;
+    min-height:82px !important;
+    padding:13px 16px !important;
+  }
+
+  #socials #socialLinks > .socialCard strong{
+    font-size:.88rem !important;
+  }
+
+  #socials #socialLinks > .socialCard small{
+    font-size:.58rem !important;
+  }
+
+  #socials #socialLinks > .socialCard .socialArrow{
+    font-size:.66rem !important;
   }
 }
 /* =========================================================
@@ -2606,5 +2689,23 @@ body > header{
 @media (max-width:640px){
   .heroKasumiAsset{
     display:none;
+  }
+}
+
+
+@media (max-width:390px){
+  header{
+    padding-left:14px;
+    padding-right:14px;
+    gap:8px;
+  }
+  .logo{
+    font-size:.84rem;
+    letter-spacing:.09em;
+  }
+  nav{gap:.42rem;}
+  nav a{
+    font-size:.48rem;
+    letter-spacing:.055em;
   }
 }
