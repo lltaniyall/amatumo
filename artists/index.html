@@ -1,20 +1,20 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ARTIST | 活動名</title><link rel="stylesheet" href="../style.css"></head><body>
-<header><a class="logo" href="../">NAME<span>_</span></a><nav><a href="../archive/">ARCHIVE</a><a href="../songs/">SONGS</a></nav></header>
+<header><a class="logo" href="../">NAME<span>_</span></a><nav><a href="../archive/">ARCHIVE</a><a href="../songs/">曲数</a></nav></header>
 
 <main>
 <section class="section historyHero">
-  <a class="backlink" href="../songs/">← SONG DATABASE</a>
+  <a class="backlink" href="../songs/">← 歌の目録へ</a>
   <p class="eyebrow">ARTIST SONGS</p>
   <h1 id="artistTitle" class="historyTitle">ARTIST</h1>
   <div class="historyMeta">
-    <div><span>SONGS</span><strong><i id="songTotal">0</i> TITLES</strong></div>
-    <div><span>PERFORMANCES</span><strong><i id="performanceTotal">0</i> TOTAL</strong></div>
+    <div><span>曲数</span><strong><i id="songTotal">0</i> TITLES</strong></div>
+    <div><span>歌った回数</span><strong><i id="performanceTotal">0</i> TOTAL</strong></div>
   </div>
 </section>
 
 <section class="section">
   <p class="eyebrow">SONG LIST</p>
-  <h2>歌唱曲</h2>
+  <h2>歌った曲</h2><div class="heroRule pageTitleRule artistTitleRule" aria-hidden="true"><span>◆</span></div>
   <div class="artistSongList" id="artistSongList"></div>
   <p id="notFound" class="muted" hidden>このアーティストの楽曲が見つかりませんでした。</p>
 </section>
@@ -62,7 +62,7 @@ if(!songs.length){
     return `
       <a class="artistSongCard" href="../songs/history/?${p.toString()}">
         <div class="artistSongTitle">${song.title}</div>
-        <div class="artistSongCount">${song.count} PERFORMANCE${song.count===1?"":"S"}</div>
+        <div class="artistSongCount">${song.count}回${song.count===1?"":"S"}</div>
         <div class="artistSongArrow">↗</div>
       </a>
     `;
