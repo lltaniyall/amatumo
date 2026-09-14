@@ -1,9 +1,9 @@
 const ARCHIVES = [
 {
-"date": "2026-07-26",
-"title": "【 歌枠 】好きな曲歌つたりのんびり雑談したりする日曜日♡【 甘萬つもり｜#個人Vtuber 】",
-"videoId": "45Sc-gQ-wPg",
-"songs": [
+    "date": "2026-12-21",
+    "title": "冬の夜歌 / DEMO",
+    "videoId": "M7lc1UVf-VE",
+    "songs": [
 {
 "title": "開始",
 "time": 57,
