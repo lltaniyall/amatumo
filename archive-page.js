@@ -50,9 +50,35 @@ $("#tracks").innerHTML=archive.songs.map(s=>
   </button>`
 ).join("");
 
+
 document.querySelectorAll(".track").forEach(b=>{
   b.onclick=()=>seek(+b.dataset.t,true);
 });
+
+const videoBox=$(".video");
+const setlistBox=$(".setlist");
+
+function syncSetlistHeight(){
+  if(!videoBox || !setlistBox)return;
+  const height=Math.round(videoBox.getBoundingClientRect().height);
+  if(height>0){
+    setlistBox.style.height=`${height}px`;
+    setlistBox.style.maxHeight=`${height}px`;
+  }
+}
+
+if(videoBox && setlistBox){
+  syncSetlistHeight();
+
+  if("ResizeObserver" in window){
+    const resizeObserver=new ResizeObserver(syncSetlistHeight);
+    resizeObserver.observe(videoBox);
+  }else{
+    window.addEventListener("resize",syncSetlistHeight,{passive:true});
+  }
+
+  window.addEventListener("load",syncSetlistHeight,{once:true});
+}
 
 function seek(t,play=false){
   currentTime=t;

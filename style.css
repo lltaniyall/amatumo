@@ -495,6 +495,11 @@ nav a{
   display:grid;
   grid-template-columns:minmax(0,1.8fr) minmax(280px,.8fr);
   gap:1rem;
+  align-items:start;
+}
+
+.playerLayout > *{
+  min-width:0;
 }
 
 .video{
@@ -509,14 +514,22 @@ nav a{
 
 .setlist{
   border:1px solid var(--line);
-  overflow:auto;
+  min-height:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
 }
 
 .setlistHead{
+  position:sticky;
+  top:0;
+  z-index:2;
   display:flex;
   justify-content:space-between;
   padding:1rem;
   border-bottom:1px solid var(--line);
+  background:rgba(244,238,245,.96);
   color:var(--accent);
   font-size:.68rem;
   letter-spacing:.1em;
