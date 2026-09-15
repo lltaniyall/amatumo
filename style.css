@@ -757,19 +757,21 @@ footer{
   }
 
   .latestRow{
-    grid-template-columns:34px 88px minmax(0,1fr) 18px;
-    column-gap:.6rem;
-    padding:1rem .18rem;
+    grid-template-columns:24px 74px minmax(0,1fr) 14px;
+    column-gap:.375rem;
+    padding:1rem .1rem;
   }
 
   .latestDate{
-    font-size:.68rem;
+    font-size:.72rem;
     letter-spacing:.035em;
+    white-space:nowrap;
   }
 
   .latestTitle{
-    font-size:.82rem;
-    line-height:1.55;
+    min-width:0;
+    font-size:.78rem !important;
+    line-height:1.5;
   }
 
   .rankingHead,.rankingRow{
