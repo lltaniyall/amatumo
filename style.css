@@ -2408,10 +2408,19 @@ body > header{
   position:relative;
   overflow:hidden;
   min-height:0 !important;
-  padding:68px 9vw 54px !important;
+  padding:72px 9vw 62px !important;
   background:rgba(244,238,245,.44) !important;
   border-bottom:1px solid rgba(116,85,123,.22) !important;
   text-align:left;
+}
+.songsPageHero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("./assets/asanoha.png");
+  background-size:220px auto;
+  opacity:.025;
+  pointer-events:none;
 }
 .songsPageHero::after{
   content:"";
@@ -2426,6 +2435,11 @@ body > header{
   mask-image:radial-gradient(circle at center,#000 20%,rgba(0,0,0,.78) 50%,transparent 74%);
   pointer-events:none;
 }
+.songsPageHeroInner{
+  position:relative;
+  z-index:1;
+  max-width:1040px;
+}
 .songsPageHero h1{
   margin:0 !important;
   color:var(--main) !important;
@@ -2436,7 +2450,7 @@ body > header{
 }
 .songsLead{
   margin:0;
-  color:var(--muted);
+  color:var(--muted) !important;
   font-size:.86rem;
   letter-spacing:.05em;
   line-height:2;
