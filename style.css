@@ -2440,6 +2440,11 @@ body > header{
   z-index:1;
   max-width:1040px;
 }
+
+/* SONG DATABASE eyebrow: match LIVE ARCHIVE exactly */
+.songsPageHero .eyebrow{
+  color:var(--accent) !important;
+}
 .songsPageHero h1{
   margin:0 !important;
   color:var(--main) !important;
