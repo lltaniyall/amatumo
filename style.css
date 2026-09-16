@@ -2546,7 +2546,12 @@ body > header{
     margin:17px 0 15px;
   }
 
-  .archiveIndexHero{padding:50px 7vw 44px;}
+  .archiveIndexHero{padding:42px 7vw 32px;}
+  .archiveIndexHero .eyebrow{margin:0 0 8px; font-size:.72rem;}
+  .archiveIndexHero h1{font-size:clamp(1.85rem,9vw,2.7rem); line-height:1.18;}
+  .archiveLead{font-size:.78rem; line-height:1.8;}
+  .pageTitleRule{margin:14px 0 13px;}
+
   .archiveIndexHero::after{
     width:230px;
     height:230px;
@@ -2554,20 +2559,23 @@ body > header{
     top:-72px;
     background-size:155px auto;
   }
-  .archiveIndexHero h1{font-size:clamp(2rem,10vw,3rem);}
+  .archiveIndexHero h1{font-size:clamp(1.85rem,9vw,2.7rem); line-height:1.18;}
   .archiveIndexSection{
-    padding-top:36px !important;
-    padding-bottom:42px !important;
+    padding-top:30px !important;
+    padding-bottom:38px !important;
   }
   .archiveIndexCard{
-    min-height:128px;
-    padding:19px 18px 18px;
+    min-height:118px;
+    padding:17px 16px 16px;
   }
   .archiveIndexCard::after{
     width:58%;
     background-size:125px auto;
   }
-  .archiveIndexCard h3{font-size:1.02rem;}
+  .archiveIndexCard h3{font-size:.94rem; line-height:1.42;}
+  .archiveIndexCard .card-date{font-size:.68rem;}
+  .archiveIndexCard .card-meta{font-size:.72rem;}
+  .archiveCardArrow{font-size:.78rem;}
   .archiveCardArrow{padding-left:12px;}
 
   .share{
