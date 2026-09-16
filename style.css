@@ -2546,11 +2546,11 @@ body > header{
     margin:17px 0 15px;
   }
 
-  .archiveIndexHero{padding:42px 7vw 32px;}
-  .archiveIndexHero .eyebrow{margin:0 0 8px; font-size:.72rem;}
-  .archiveIndexHero h1{font-size:clamp(1.85rem,9vw,2.7rem); line-height:1.18;}
-  .archiveLead{font-size:.78rem; line-height:1.8;}
-  .pageTitleRule{margin:14px 0 13px;}
+  .archiveIndexHero{padding:34px 7vw 24px;}
+  .archiveIndexHero .eyebrow{margin:0 0 7px; font-size:.68rem;}
+  .archiveIndexHero h1{font-size:clamp(1.7rem,8.4vw,2.45rem); line-height:1.16;}
+  .archiveLead{font-size:.74rem; line-height:1.7;}
+  .pageTitleRule{margin:12px 0 11px;}
 
   .archiveIndexHero::after{
     width:230px;
@@ -2559,7 +2559,7 @@ body > header{
     top:-72px;
     background-size:155px auto;
   }
-  .archiveIndexHero h1{font-size:clamp(1.85rem,9vw,2.7rem); line-height:1.18;}
+  .archiveIndexHero h1{font-size:clamp(1.7rem,8.4vw,2.45rem); line-height:1.16;}
   .archiveIndexSection{
     padding-top:30px !important;
     padding-bottom:38px !important;
