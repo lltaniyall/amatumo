@@ -3124,3 +3124,50 @@ footer #footDate{
   .songsIndexPage .songTitleLink{font-size:.81rem !important;}
   .songsIndexPage .songArtist{font-size:.76rem !important;}
 }
+
+/* =========================================================
+   MOBILE HISTORY / ARTIST HERO COMPACT
+   歌唱履歴・歌手別ページの上部だけをスマホ向けに圧縮
+   ========================================================= */
+@media (max-width:640px){
+  .historyHero{
+    padding:30px 6vw 28px !important;
+  }
+
+  .historyHero .backlink{
+    margin-bottom:18px !important;
+    font-size:.66rem !important;
+    letter-spacing:.07em !important;
+  }
+
+  .historyHero .eyebrow{
+    margin:0 0 8px !important;
+    font-size:.66rem !important;
+    line-height:1.35 !important;
+  }
+
+  .historyHero .historyTitle{
+    margin:8px 0 18px !important;
+    font-size:clamp(2.15rem,10vw,3.1rem) !important;
+    line-height:1.05 !important;
+    letter-spacing:.02em !important;
+  }
+
+  .historyHero .historyMeta{
+    gap:2rem !important;
+  }
+
+  .historyHero .historyMeta div{
+    gap:.28rem !important;
+  }
+
+  .historyHero .historyMeta span{
+    font-size:.62rem !important;
+    letter-spacing:.10em !important;
+  }
+
+  .historyHero .historyMeta strong{
+    font-size:1rem !important;
+    line-height:1.35 !important;
+  }
+}
