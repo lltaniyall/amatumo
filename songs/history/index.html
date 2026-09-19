@@ -37,8 +37,36 @@ const songName = params.get("song") || "";
 const artistName = params.get("artist") || "";
 
 document.title = songName ? `${songName} 歌唱履歴 | 活動名` : "歌唱履歴 | 活動名";
-document.getElementById("songTitle").textContent = songName || "SONG";
+const songTitleEl = document.getElementById("songTitle");
+songTitleEl.textContent = songName || "SONG";
 document.getElementById("artistName").textContent = artistName || "未登録";
+
+function fitMobileHistoryTitle(){
+  songTitleEl.classList.remove("is-long","is-very-long");
+  if(window.innerWidth > 640) return;
+
+  const lineCount = () => {
+    const style = getComputedStyle(songTitleEl);
+    const lh = parseFloat(style.lineHeight);
+    if(!Number.isFinite(lh) || lh <= 0) return 1;
+    return Math.round(songTitleEl.getBoundingClientRect().height / lh);
+  };
+
+  // 通常サイズで3行以上なら、一段だけ縮小。
+  if(lineCount() >= 3){
+    songTitleEl.classList.add("is-long");
+  }
+
+  // 一段縮小後も4行以上なら、もう一段だけ縮小。
+  requestAnimationFrame(() => {
+    if(lineCount() >= 4){
+      songTitleEl.classList.add("is-very-long");
+    }
+  });
+}
+
+requestAnimationFrame(fitMobileHistoryTitle);
+window.addEventListener("resize", fitMobileHistoryTitle);
 
 const performances = [];
 

@@ -3171,3 +3171,36 @@ footer #footDate{
     line-height:1.35 !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE LONG TEXT REFINEMENT
+   - 歌手別の曲名欄は回数列を必要最小限にして横幅を確保
+   - 歌唱履歴の長い曲名は段階的に縮小（下限あり）
+   ========================================================= */
+@media (max-width:640px){
+  .artistSongCard{
+    grid-template-columns:minmax(0,1fr) auto 22px !important;
+    column-gap:.65rem !important;
+  }
+
+  .artistSongTitle{
+    min-width:0 !important;
+  }
+
+  .artistSongCount{
+    min-width:2.2em !important;
+    width:auto !important;
+    white-space:nowrap !important;
+  }
+
+  .historyHero .historyTitle.is-long{
+    font-size:clamp(1.95rem,8.6vw,2.65rem) !important;
+    line-height:1.08 !important;
+  }
+
+  .historyHero .historyTitle.is-very-long{
+    font-size:clamp(1.80rem,7.6vw,2.35rem) !important;
+    line-height:1.10 !important;
+  }
+}
