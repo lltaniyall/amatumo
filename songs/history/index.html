@@ -7,7 +7,7 @@
   <p class="eyebrow">PERFORMANCE HISTORY</p>
   <h1 id="songTitle" class="historyTitle">SONG</h1>
   <div class="historyMeta">
-    <div><span>歌手名</span><strong><a id="artistName" class="historyArtistLink" href="../../artists/">-</a></strong></div>
+    <div><span>歌手名</span><strong id="artistName">-</strong></div>
     <div><span>歌った回数</span><strong><i id="totalCount">0</i>回</strong></div>
   </div>
 </section>
@@ -39,14 +39,7 @@ const artistName = params.get("artist") || "";
 document.title = songName ? `${songName} 歌唱履歴 | 活動名` : "歌唱履歴 | 活動名";
 const songTitleEl = document.getElementById("songTitle");
 songTitleEl.textContent = songName || "SONG";
-const artistNameEl = document.getElementById("artistName");
-artistNameEl.textContent = artistName || "未登録";
-if(artistName){
-  const artistParams = new URLSearchParams({artist: artistName});
-  artistNameEl.href = `../../artists/?${artistParams.toString()}`;
-}else{
-  artistNameEl.removeAttribute("href");
-}
+document.getElementById("artistName").textContent = artistName || "未登録";
 
 function fitMobileHistoryTitle(){
   songTitleEl.classList.remove("is-long","is-very-long");
