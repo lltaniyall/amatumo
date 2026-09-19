@@ -580,7 +580,7 @@ nav a{
 }
 
 .historyTitle{
-  font:600 clamp(2.7rem,7vw,6rem)/1 "Shippori Mincho",serif;
+  font:600 clamp(2.4rem,5.2vw,5rem)/1.05 "Shippori Mincho",serif;
   margin:1rem 0 2rem;
 }
 
@@ -605,6 +605,23 @@ nav a{
 .historyMeta i{
   font-style:normal;
   color:var(--accent);
+}
+
+.historyArtistLink{
+  color:inherit;
+  text-decoration:none;
+  transition:color .18s ease;
+}
+
+.historyArtistLink::after{
+  content:" ↗";
+  color:var(--accent);
+  font-size:.66em;
+  font-weight:400;
+}
+
+.historyArtistLink:hover{
+  color:var(--main);
 }
 
 .historyCard{
