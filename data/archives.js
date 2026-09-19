@@ -40,6 +40,12 @@ const ARCHIVES = [
 "type": "song"
 },
 {
+"title": "テレキャスタービーボーイ(long ver.)",
+"artist": "すりぃ",
+"time": 1668,
+"type": "song"
+},
+{
 "title": "月光花",
 "artist": "Janne Da Arc",
 "time": 3857,
