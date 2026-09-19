@@ -28,7 +28,36 @@ const params = new URLSearchParams(location.search);
 const artist = params.get("artist") || "";
 
 document.title = artist ? `${artist} 楽曲一覧 | 活動名` : "ARTIST | 活動名";
-document.getElementById("artistTitle").textContent = artist || "ARTIST";
+
+const artistTitleEl = document.getElementById("artistTitle");
+artistTitleEl.textContent = artist || "ARTIST";
+
+function fitMobileArtistTitle(){
+  artistTitleEl.classList.remove("is-long","is-very-long");
+  if(window.innerWidth > 640) return;
+
+  const lineCount = () => {
+    const style = getComputedStyle(artistTitleEl);
+    const lh = parseFloat(style.lineHeight);
+    if(!Number.isFinite(lh) || lh <= 0) return 1;
+    return Math.round(artistTitleEl.getBoundingClientRect().height / lh);
+  };
+
+  // 通常サイズで3行以上なら一段階だけ縮小。
+  if(lineCount() >= 3){
+    artistTitleEl.classList.add("is-long");
+  }
+
+  // 一段階縮小しても4行以上なら、もう一段階だけ縮小。
+  requestAnimationFrame(() => {
+    if(lineCount() >= 4){
+      artistTitleEl.classList.add("is-very-long");
+    }
+  });
+}
+
+requestAnimationFrame(fitMobileArtistTitle);
+window.addEventListener("resize", fitMobileArtistTitle);
 
 const map = new Map();
 
